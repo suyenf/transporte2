@@ -132,16 +132,82 @@ class Almacen extends CI_Model {
         ));
     }
     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public function registro_cago($data) {
+        $this->db->insert('cargo', array(
+            'id_cago' => $data['cod_cargo'],
+            'cargo' => $data['cargo']
+        ));
     }
+    
+  public function reg_esp_movil($data) {
+        $this->db->insert('esp_movil', array(
+            'id_espmovil' => $data['id_espmovil'],
+            'marca_movil' => $data['marca_movil'],
+            'modelo_movil' => $data['modelo_movil'],
+            'tipo_movil' => $data['tipo_movil']
+        ));
+    }
+    
+ public function reg_movil($data) {
+        $this->db->insert('movil', array(
+            'id_movil' => $data['cod_movil'],
+            'id_espmovil' => $data['id_espmovil'],
+            'id_estadomovil' => $data['id_estadomovil'],
+            'matricula' => $data['matricula'],
+            'fecha' => $data['fecha_registro'],
+            'id_uresp' => $data['id_uresp'],
+            'km_inicial' => $data['km_inicial']
+        ));
+    }
+
+     public function reg_orden_trabajo($data) {
+        $this->db->insert('orden_trabajo', array(
+            'id_orden' => $data['cod_orden'],
+            'id_movil' => $data['cod_movil'],
+            'id_eot' => $data['cod_eot'],
+            'id_mecanico' => $data['cod_mecanico'],
+            'fecha_eot' => $data['fecha_reg_eot'],
+            'fecha_cot' => $data['fecha_reg_cot'],
+            'km_actual' => $data['km_actual'],
+            'id_tot' => $data['cod_tot']
+        ));
+    }
+     public function reg_pieza($data) {
+        $this->db->insert('pieza', array(
+            'id_pieza' => $data['cod_pieza'],
+            'nom_pieza' => $data['nom_pieza'],
+            'descripcion' => $data['descripcion'],
+            'km_pieza' => $data['km_pieza']
+        ));
+    }
+     public function reg_tipo_usuario($data) {
+        $this->db->insert('tipo_usuario', array(
+            'id_tipou' => $data['cod_tipou'],
+            'nom_tipou' => $data['nom_tipou']
+        ));
+    }
+     public function reg_unidad_resp($data) {
+        $this->db->insert('unidad_resp', array(
+            'id_uresp' => $data['cod_uresp'],
+            'nom_uresp' => $data['nom_uresp']
+        ));
+    }
+     public function reg_unidad_responsable($data) {
+        $this->db->insert('unidad_responsable', array(
+            'id_unidad_responsable' => $data['cod_unidad_responsable'],
+            'unidad_responsable' => $data['unidad_responsable']
+        ));
+    }
+     public function reg_usuario($data) {
+        $this->db->insert('usuario', array(
+            'id_usuario' => $data['cod_usuario'],
+            'id_tipou' => $data['id_tipou'],
+            'nombre_u' => $data['nom_usuario'],
+            'apellido_u' => $data['apell_usuario'],
+            'correo' => $data['correo'],
+            'nom_u' => $data['usuario'],
+            'clave_u' => $data['clave']
+        ));
+    }
+
+}
