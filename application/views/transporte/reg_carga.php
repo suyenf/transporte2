@@ -80,17 +80,41 @@
         </br>
         <?php // echo form_input($producto_numero); ?>
         </br>
-        <?php echo form_label('Nombre del Producto', 'nombre'); ?>
+        <?php echo form_label('Nombre del Producto', 'fecha'); ?>
         </br>
-        <?php echo form_input($nombre_producto); ?>
+        <?php echo form_input($Fecha_carga); ?>
         </br>
-        <?php echo form_label('Cantidad', 'cantidad'); ?>
+        <?php echo form_label('Correlativo', 'correlativo'); ?>
         </br>
-        <?php echo form_input($cant_producto); ?>
+        <?php echo form_input($correlativo); ?>
         </br>
-        <?php echo form_label('Precio del Producto', 'precio'); ?>
+        <?php echo form_label('Proveedor', 'proveedor_id'); ?>
         </br>
-        <?php echo form_input($precio_producto); ?>
+        <?php echo form_input($proveedor); ?>
+        </br>
+        <?php echo form_label('Cliente', 'cliente_id'); ?>
+        </br>
+        <?php echo form_input($cliente); ?>
+        </br>
+        <?php echo form_label('Flete', 'origen_flete'); ?>
+        </br>
+        <?php echo form_input($flete_o); ?>
+        </br>
+        <?php echo form_label('Proveedor', 'proveedor_id'); ?>
+        </br>
+        <?php echo form_input($proveedor); ?>
+        </br>
+        <?php echo form_label('Proveedor', 'proveedor_id'); ?>
+        </br>
+        <?php echo form_input($proveedor); ?>
+        </br>
+        <?php echo form_label('Proveedor', 'proveedor_id'); ?>
+        </br>
+        <?php echo form_input($proveedor); ?>
+        </br>
+        <?php echo form_label('Proveedor', 'proveedor_id'); ?>
+        </br>
+        <?php echo form_input($proveedor); ?>
         
 </br>
         <?php echo form_submit('botonSubmit', 'Enviar');
