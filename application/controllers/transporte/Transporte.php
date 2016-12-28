@@ -14,9 +14,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class Transporte extends CI_Controller {
 
-      public function index() {
+    public function index() {
         
     }
+
  public function crear_carga(){
         $this->load->helper('form');
         $this->load->model('transporte/almacenmodel');
@@ -98,5 +99,18 @@ class Transporte extends CI_Controller {
 //        $this->load->view('transporte/reg_mecanico',$resultado);
 //    }
 
+public function crear_producto(){
+        $this->load->helper('form');
+        $this->load->model('transporte/almacenmodel');
+        $data = array(
+            'nombre_producto' => $this->input->post('nombre_producto'),
+            'codigo_producto' => $this->input->post('codigo_producto'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        $resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
+        print_r($data);
+        $this->load->view('transporte/reg_producto');
+    }
     
 }

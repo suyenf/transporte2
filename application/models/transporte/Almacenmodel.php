@@ -59,14 +59,19 @@ class Almacenmodel extends CI_Model {
         ));
     }
     public function registro_producto($data) {
+
+        //Fecha actual - "2016-05-24 15:02:43-04:30"
+        $hoy = date("Y-m-d H:i:s");
+
         $this->db->insert('almacenes_producto', array(
-            'id' => $data['cod_producto'],
+            // 'id' => $data['cod_producto'], - este es automatico por bd
             'nombre' => $data['nombre_producto'],
             'codigo' => $data['codigo_producto'],
-            'creado' => $data['fecha_creado'],
+            'creado' => $hoy, //este campo sera automatico
             'observacion' => $data['observacion'],
             'activo' => $data['activo'],
-            'usiario_id' => $data['cod_usuario']
+            'usuario_id' => 1 //se coloca 1 como prueba
+            //usuario logueado del sistema - Tambien puede ser removido el campo
         ));
     }
     
