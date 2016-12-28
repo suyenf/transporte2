@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Almacen extends CI_Model {
+class Almacenmodel extends CI_Model {
 
     //private $tabla = 'transporte.comercio'; //esto se hace para no tener necesidad de confundirse con las tablas 
 
@@ -129,9 +129,13 @@ class Almacen extends CI_Model {
         ));
     }
   //INSERTAR INFORMACION    
+   //LISTAS
     
-   
-    
+     public function listar_chofer() {
+        $query = $this->db->get('almacenes_chofer');
+        return $query->result_array();
+    }
+
 //    public function registrocom($data){ /*Registro del Comercio*/
 ////    public function crear(
 //        $this->db->insert('comercio',
