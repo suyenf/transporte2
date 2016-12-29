@@ -14,12 +14,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <link rel="icon" href="../../favicon.ico">
 
         <title></title>
-        <link type="text/css" href="<?= base_url('assets/css/bootstrap.css') ?>" rel="stylesheet" />
-        <link type="text/css" href="<?= base_url('assets/css/bootstrap-theme_flaty.css') ?>" rel="stylesheet" />
-        <link type="text/css" href="<?= base_url('assets/css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet" />
+        <link type="text/css" href="<?= base_url('vendor/bootstrap/css/bootstrap.css') ?>" rel="stylesheet" />
+        <link type="text/css" href="<?= base_url('vendor/bootstrap/css/bootstrap-theme_flaty.css') ?>" rel="stylesheet" />
+        <link type="text/css" href="<?= base_url('vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet" />
 
-        <script type="text/javascript" src="<?= base_url('assets/js/jquery.js') ?>"></script>  
-        <script type="text/javascript" src="<?= base_url('assets/js/bootstrap.js') ?>"></script>  
-        <script type="text/javascript" src="<?= base_url('assets/js/bootstrap-datetimepicker.min.js') ?>"></script>  
+        <script type="text/javascript" src="<?= base_url('vendor/jquery/jquery.js') ?>"></script>  
+        <script type="text/javascript" src="<?= base_url('vendor/js/flot-data.js') ?>"></script>  
+        <script type="text/javascript" src="<?= base_url('vendor/js/morris-data') ?>"></script>  
+        <script type="text/javascript" src="<?= base_url('vendor/bootstrap/js/bootstrap.js') ?>"></script>  
+        <script type="text/javascript" src="<?= base_url('vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') ?>"></script>  
     </head>
     <body role="document">

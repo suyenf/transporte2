@@ -13,7 +13,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @author SuYen
  */
 class Transporte extends CI_Controller {
+    public function __construct() {
+        parent::__construct();
 
+
+        $data['titulo'] = 'Control de Produccion'; // jcapuano
+
+//        $this->load->library('auth'); // jcapuano
+        $this->load->view('base/cabeceras/cabecera', $data);
+        $this->load->view('base/cabeceras/menu', $data);
+        $this->load->helper('url');
+    }
+        private function cab($data) {
+
+        $this->load->view('base/cabeceras/cabecera', $data);
+        $this->load->view('base/cabeceras/menu', $data);
+    }
+
+    private function pie() {
+        $this->load->view('base/piespagina/piepagina_1');
+    }
+    
+    
+    
+    
     public function index() {
         
     }
@@ -54,6 +77,7 @@ class Transporte extends CI_Controller {
             'observacion' => $this->input->post('observacion'),
             'activo' => $this->input->post('activo')
         );
+            
         $resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
         //print_r($data);
         $this->load->view('transporte/reg_producto');
