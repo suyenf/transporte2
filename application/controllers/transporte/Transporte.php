@@ -41,65 +41,11 @@ class Transporte extends CI_Controller {
       
         );
         $resultado['almacenes_carga'] = $this->almacenmodel->registro_carga($data);
-        //            //ARRAY[TABLA] = CARGA EL VALOS QUE SE INGRESA EN $a USANDO UN FUNCION
-        //            //DE OTRO MODELO MOSTRANDO ASI LA BUSQUEDA DE LOS DATOS 
-        //            //print_r($result);
         print_r($data);
         $this->load->view('transporte/reg_carga',$resultado);
     }
-
-    public function choferes($datos) {
-       /* 1 LLAMAR  / $this->load->model('archivo del modelo');
-          /* 2 CARGAR  / $result['TABLA A VER'] = $this->NOMBRE DEL MODELO->LA FUNCION QUE DESEA QUE ESTA DENTRO DEL MODELO SELECCIONADO();
-          /* 3 IMPRIMIR/ $this->load->view('ejemplo_1', $result);
-         */
-
-        //$this->load->helper('form');
-        $this->load->model('transporte/almacenmodel'); //CARGAR EL ARCHIVO DEL MODELO
-        $datos['almacenes_chofer'] = $this->almacenmodel->listar_chofer();
-        //$this->load->view('produccion/form_o'); //FORM DE BUSCAR
-    }
     
-    
-
-//    public function crear_comercio(){
-//        $this->load->helper('form');
-//        $this->load->model('transporte/almacen');
-//        $data = array(
-//            'producto_numero' => $this->input->post('id_producto'),
-//            'nombre_producto' => $this->input->post('nombre'),
-//            'cant_producto' => $this->input->post('cantidad'),
-//            'precio_producto' => $this->input->post('precio')
-//        );
-//        $resultado['comercio'] = $this->almacen->registrocom($data);
-//        //            //ARRAY[TABLA] = CARGA EL VALOS QUE SE INGRESA EN $a USANDO UN FUNCION
-//        //            //DE OTRO MODELO MOSTRANDO ASI LA BUSQUEDA DE LOS DATOS 
-//        //            //print_r($result);
-//               print_r($data);
-//
-//        $this->load->view('transporte/reg_comercio',$resultado);
-//    }
-//
-//    public function crear_mecanico(){
-//        $this->load->helper('form');
-//        $this->load->model('transporte/almacen');
-//        $data = array(
-//            'cedula_mecanico' => $this->input->post('cedula'),
-//            'nombre_mecanico' => $this->input->post('nombre_m'),
-//            'apellido_mecanico' => $this->input->post('apellido_m'),
-//            'direccion' => $this->input->post('direccion'),
-//            'cargo' => $this->input->post('id_cargo'),
-//            'estado_mecanico' => $this->input->post('id_em')
-//        );
-//        $resultado['mecanico'] = $this->almacen->registro_mecanico($data);
-//        //            //ARRAY[TABLA] = CARGA EL VALOS QUE SE INGRESA EN $a USANDO UN FUNCION
-//        //            //DE OTRO MODELO MOSTRANDO ASI LA BUSQUEDA DE LOS DATOS 
-//        //            //print_r($result);
-//        print_r($data);
-//        $this->load->view('transporte/reg_mecanico',$resultado);
-//    }
-
-public function crear_producto(){
+    public function crear_producto(){
         $this->load->helper('form');
         $this->load->model('transporte/almacenmodel');
         $data = array(
@@ -109,8 +55,67 @@ public function crear_producto(){
             'activo' => $this->input->post('activo')
         );
         $resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
-        print_r($data);
+        //print_r($data);
         $this->load->view('transporte/reg_producto');
     }
+
+    public function crear_cliente(){
+        $this->load->helper('form');
+        $this->load->model('transporte/almacenmodel');
+        $data = array(
+            'rif_cliente' => $this->input->post('rif_cliente'),
+            'razon_social' => $this->input->post('razon_social'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        $resultado['almacenes_cliente'] = $this->almacenmodel->registro_cliente($data);
+        //print_r($data);
+        $this->load->view('transporte/reg_cliente');
+    }
     
+    public function crear_chofer(){
+        $this->load->helper('form');
+        $this->load->model('transporte/almacenmodel');
+        $data = array(
+            'cedula' => $this->input->post('cedula'),
+            'nombre' => $this->input->post('nombre'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        $resultado['almacenes_chofer'] = $this->almacenmodel->registro_chofer($data);
+        //print_r($data);
+        $this->load->view('transporte/reg_chofer');
+    }
+
+    public function crear_proveedor(){
+        $this->load->helper('form');
+        $this->load->model('transporte/almacenmodel');
+        $data = array(
+            'rif_proveedor' => $this->input->post('rif_proveedor'),
+            'razon_social' => $this->input->post('razon_social'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        $resultado['almacenes_proveedor'] = $this->almacenmodel->registro_proveedor($data);
+        print_r($data);
+        $this->load->view('transporte/reg_proveedor');
+    }
+
+    public function crear_vehiculo(){
+        $this->load->helper('form');
+        $this->load->model('transporte/almacenmodel');
+        $data = array(
+            'placa' => $this->input->post('placa'),
+            'placa_chuto' => $this->input->post('placa_chuto'),
+            'placa_tanque' => $this->input->post('placa_tanque'),
+            'modelo' => $this->input->post('modelo'),
+            'marca' => $this->input->post('marca'),
+            'anio' => $this->input->post('anio'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        $resultado['almacenes_vehiculo'] = $this->almacenmodel->registro_vehiculo($data);
+        print_r($data);
+        $this->load->view('transporte/reg_vehiculo');
+    }
 }
