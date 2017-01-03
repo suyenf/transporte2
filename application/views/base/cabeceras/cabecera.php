@@ -1,27 +1,45 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8" />
+        <title>Dashboard - Ace Admin</title>
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="overview &amp; stats" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
+        <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-        <title></title>
-        <link type="text/css" href="<?= base_url('vendor/bootstrap/css/bootstrap.css') ?>" rel="stylesheet" />
-        <link type="text/css" href="<?= base_url('vendor/bootstrap/css/bootstrap-theme_flaty.css') ?>" rel="stylesheet" />
-        <link type="text/css" href="<?= base_url('vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') ?>" rel="stylesheet" />
+        <!-- page specific plugin styles -->
 
-        <script type="text/javascript" src="<?= base_url('vendor/jquery/jquery.js') ?>"></script>  
-        <script type="text/javascript" src="<?= base_url('vendor/js/flot-data.js') ?>"></script>  
-        <script type="text/javascript" src="<?= base_url('vendor/js/morris-data') ?>"></script>  
-        <script type="text/javascript" src="<?= base_url('vendor/bootstrap/js/bootstrap.js') ?>"></script>  
-        <script type="text/javascript" src="<?= base_url('vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') ?>"></script>  
+        <!-- text fonts -->
+        <link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+
+        <!-- ace styles -->
+        <link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+        <!--[if lte IE 9]>
+                <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+        <![endif]-->
+        <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+        <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+        <!--[if lte IE 9]>
+          <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+        <![endif]-->
+
+        <!-- inline styles related to this page -->
+
+        <!-- ace settings handler -->
+        <script src="assets/js/ace-extra.min.js"></script>
+
+        <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+        <!--[if lte IE 8]>
+        <script src="assets/js/html5shiv.min.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
     </head>
-    <body role="document">
+
+</div><!-- /.widget-body -->

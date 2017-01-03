@@ -17,22 +17,23 @@ class Transporte extends CI_Controller {
         parent::__construct();
 
 
-        $data['titulo'] = 'Control de Produccion'; // jcapuano
+//        $data['titulo'] = 'Control de Produccion'; // jcapuano
 
 //        $this->load->library('auth'); // jcapuano
-        $this->load->view('base/cabeceras/cabecera', $data);
-        $this->load->view('base/cabeceras/menu', $data);
+        //CAMBIAR LA URL SI SE SUBE A LA WEB, esta es la ruta => (config/config.php/$config['base_url'] = 'http://localhost/transporte2/';)
+        $this->load->view('base/cabeceras/cabecera_1');
+        $this->load->view('base/cabeceras/menu_');
         $this->load->helper('url');
     }
-        private function cab($data) {
-
-        $this->load->view('base/cabeceras/cabecera', $data);
-        $this->load->view('base/cabeceras/menu', $data);
-    }
-
-    private function pie() {
-        $this->load->view('base/piespagina/piepagina_1');
-    }
+//        private function cab($data) {
+//
+//        $this->load->view('base/cabeceras/cabecera', $data);
+//        $this->load->view('base/cabeceras/menu', $data);
+//    }
+//
+//    private function pie() {
+//        $this->load->view('base/piespagina/piepagina_1');
+//    }
     
     
     
