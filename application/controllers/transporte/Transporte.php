@@ -78,9 +78,11 @@ class Transporte extends CI_Controller {
             'observacion' => $this->input->post('observacion'),
             'activo' => $this->input->post('activo')
         );
+
+        $data['choferes'] = $this->almacenmodel->listar_chofer();
             
         $resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
-        //print_r($data);
+        print_r($data);
         $this->load->view('transporte/reg_producto');
     }
 
