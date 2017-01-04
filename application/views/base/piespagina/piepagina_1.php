@@ -1,27 +1,28 @@
+ <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span class="bigger-120">
+                        <span class="blue bolder">Copyright</span>
+                         © Inversión Tecnológica Faudito.F.P. 2016. Todos los derechos reservados.
+                    </span>
 
-        </div>
-        <!-- /#page-wrapper -->
+                    &nbsp; &nbsp;
+                    <span class="action-buttons">
 
-    </div>
-    <!-- /#wrapper -->
+                        <a href="https://www.facebook.com/InversionTecnologicaFaudito/">
+                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                        </a>
 
-    <!-- jQuery -->
-    <script src="<?= base_url('vendor/bower_components/jquery/dist/jquery.min.js') ?>"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?= base_url('vendor/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?= base_url('vendor/bower_components/metisMenu/dist/metisMenu.min.js') ?>"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="<?= base_url('vendor/bower_components/raphael/raphael-min.js') ?>"></script>
-    <script src="<?= base_url('vendor/bower_components/morrisjs/morris.min.js') ?>"></script>
-    <!--<script src="<?= base_url('vesndor/js/morris-data.js') ?>"></script>-->
-
-    <!-- Custom Theme JavaScript -->
-    <script src="<?= base_url('vendor/dist/js/sb-admin-2.js') ?>"></script>
-
+                        <a href="https://twitter.com/InverTecFaudit">
+                            <i class="ace-icon fa fa-twitter-square light-green bigger-150"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/10916551">
+                            <i class="ace-icon fa fa-linkedin-square bigger-150"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>        
 </body>
 
 </html>

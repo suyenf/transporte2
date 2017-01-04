@@ -23,6 +23,7 @@ class Transporte extends CI_Controller {
         //CAMBIAR LA URL SI SE SUBE A LA WEB, esta es la ruta => (config/config.php/$config['base_url'] = 'http://localhost/transporte2/';)
         $this->load->view('base/cabeceras/cabecera_1');
         $this->load->view('base/cabeceras/menu_');
+        $this->load->view('base/piespagina/piepagina_1');
         $this->load->helper('url');
     }
 //        private function cab($data) {

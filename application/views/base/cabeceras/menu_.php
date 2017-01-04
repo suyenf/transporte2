@@ -401,7 +401,7 @@
                             <ul class="submenu">
                                 <li class="">
                                     <a href="<?= base_url('top-menu.html')?>">
-                                        <i class="menu-icon fa fa-caret-right"></i>
+                                        <i class="menu-icon fa fa-user orange"></i>
                                         Cliente
                                     </a>
 
@@ -410,7 +410,7 @@
 
                                 <li class="">
                                     <a href="<?= base_url('two-menu-1.html')?>">
-                                        <i class="menu-icon fa fa-caret-right"></i>
+                                        <i class="menu-icon fa fa-users green"></i>
                                         Proveedor
                                     </a>
 
@@ -419,7 +419,7 @@
 
                                 <li class="">
                                     <a href="<?= base_url('two-menu-2.html')?>">
-                                        <i class="menu-icon fa fa-caret-right"></i>
+                                        <i class="menu-icon fa fa-cubes red"></i>
                                         Producto
                                     </a>
 
@@ -531,7 +531,7 @@
                             <ul class="submenu">
                                 <li class="">
                                     <a href="#">
-                                        <i class="menu-icon fa fa-leaf green"></i>
+                                        <i class="menu-icon fa fa-desktop green"></i>
                                         Registro de Carga
                                     </a>
 
@@ -576,7 +576,7 @@
                 <li class="">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-list"></i>
-                        <span class="menu-text"> Tables </span>
+                        <span class="menu-text"> Reportes </span>
 
                         <b class="arrow fa fa-angle-down"></b>
                     </a>
@@ -587,7 +587,7 @@
                         <li class="">
                             <a href="<?= base_url('tables.html')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Simple &amp; Dynamic
+                                Por Cliente
                             </a>
 
                             <b class="arrow"></b>
@@ -596,7 +596,24 @@
                         <li class="">
                             <a href="<?= base_url('jqgrid.html')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                jqGrid plugin
+                                 Por Proveedor
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        
+                        <li class="">
+                            <a href="<?= base_url('jqgrid.html')?>">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                 Por Producto
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="<?= base_url('jqgrid.html')?>">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                 Por Carga
                             </a>
 
                             <b class="arrow"></b>
@@ -604,7 +621,7 @@
                     </ul>
                 </li>
 
-                <li class="">
+             <!--   <li class="">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-pencil-square-o"></i>
                         <span class="menu-text"> Forms </span>
@@ -660,8 +677,8 @@
                             <b class="arrow"></b>
                         </li>
                     </ul>
-                </li>
-
+                </li>-->
+<!--
                 <li class="active">
                     <a href="<?= base_url('widgets.html')?>">
                         <i class="menu-icon fa fa-list-alt"></i>
@@ -670,8 +687,8 @@
 
                     <b class="arrow"></b>
                 </li>
-
-                <li class="">
+-->
+ <!--            <li class="">
                     <a href="<?= base_url('calendar.html')?>">
                         <i class="menu-icon fa fa-calendar"></i>
 
@@ -779,8 +796,8 @@
                             <b class="arrow"></b>
                         </li>
                     </ul>
-                </li>
-
+                </li> -->
+<!--
                 <li class="">
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-file-o"></i>
@@ -843,6 +860,7 @@
                         </li>
                     </ul>
                 </li>
+            -->
             </ul><!-- /.nav-list -->
 
             <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
@@ -938,7 +956,7 @@
                             </div><!-- /.pull-left -->
                         </div><!-- /.ace-settings-box -->
                     </div><!-- /.ace-settings-container -->
-
+<!--
                     <div class="page-header">
                         <h1>
                             Widgets
@@ -1692,32 +1710,6 @@
                 </div><!-- /.page-content -->
             </div>
         </div><!-- /.main-content -->
-
-        <div class="footer">
-            <div class="footer-inner">
-                <div class="footer-content">
-                    <span class="bigger-120">
-                        <span class="blue bolder">Ace</span>
-                        Application &copy; 2013-2014
-                    </span>
-
-                    &nbsp; &nbsp;
-                    <span class="action-buttons">
-                        <a href="#">
-                            <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                        </a>
-
-                        <a href="#">
-                            <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-                        </a>
-
-                        <a href="#">
-                            <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </div>
 
         <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
             <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
