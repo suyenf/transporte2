@@ -177,8 +177,9 @@ class Almacenmodel extends CI_Model {
         ));
     }
     
-     public function listar_chofer() {
+    public function listar_chofer() {
         $query = $this->db->get('almacenes_chofer');
+        
         return $query->result_array();
     }
 }
