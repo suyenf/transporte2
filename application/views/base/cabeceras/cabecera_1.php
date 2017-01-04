@@ -3,6 +3,7 @@
     <head>
 
         <meta charset="utf-8">
+        <title>Vendecar</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
@@ -54,7 +55,7 @@
         <script type="text/javascript">
                 if('ontouchstart' in document.documentElement) document.write("<script src='<?= base_url ('assets/js/jquery.mobile.custom.min.js')?>>"+"<"+"/script>");
         </script>
-        <script src="<?= base_url('assets/js/bootstrap.min.js')?>"></script>
+       
 
         <!-- page specific plugin scripts -->
 
@@ -71,7 +72,6 @@
 
         <!-- ace scripts -->
         <script src="<?= base_url('assets/js/ace-elements.min.js')?>"></script>
-        <script src="<?= base_url('assets/js/ace.min.js')?>"></script>
 
         <!-- inline scripts related to this page -->
         <script type="text/javascript">

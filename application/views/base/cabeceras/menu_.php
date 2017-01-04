@@ -1,5 +1,5 @@
 <body >
-<div class="skin-2">
+<div class="skin-1">
     <div id="navbar" class="navbar navbar-default          ace-save-state">
         <div class="navbar-container ace-save-state" id="navbar-container">
             <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
@@ -13,10 +13,12 @@
             </button>
 
             <div class="navbar-header pull-left">
-                <a href="<?= base_url('index.html')?>" class="navbar-brand">
+                <a  class="navbar-brand">
+                <!--<a href="index.html" class="navbar-brand">-->
                     <small>
-                        <i class="fa fa-leaf"></i>
-                        Ace Admin
+                        <i class="fa fa-calculator"></i>
+                        VendeCar
+                        
                     </small>
                 </a>
             </div>
@@ -280,27 +282,25 @@
 
                     <li class="light-blue dropdown-modal">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                            <img class="nav-user-photo" src="<?= base_url('assets/images/avatars/user.jpg')?>" alt="Jason's Photo" />
-                            <span class="user-info">
-                                <small>Welcome,</small>
-                                Jason
-                            </span>
+                            <!--<img class="nav-user-photo" src="<?= base_url('assets/images/avatars/user.jpg')?>" alt="Jason's Photo" />-->
+                            <p class="user-info" style="color: #F4F9FD">
+                                NOMBRE
+                            </p>
 
-                            <i class="ace-icon fa fa-caret-down"></i>
+                            <i class="ace-icon fa fa-caret-down" style="color: #F4F9FD"></i>
                         </a>
-
                         <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                             <li>
                                 <a href="#">
                                     <i class="ace-icon fa fa-cog"></i>
-                                    Settings
+                                    Ajustes
                                 </a>
                             </li>
 
                             <li>
-                                <a href="<?= base_url('profile.html')?>">
+                                <a href="profile.html">
                                     <i class="ace-icon fa fa-user"></i>
-                                    Profile
+                                    Perfil
                                 </a>
                             </li>
 
@@ -309,7 +309,7 @@
                             <li>
                                 <a href="#">
                                     <i class="ace-icon fa fa-power-off"></i>
-                                    Logout
+                                    Cerrar Sesión
                                 </a>
                             </li>
                         </ul>
@@ -366,9 +366,10 @@
 
             <ul class="nav nav-list">
                 <li class="">
-                    <a href="<?= base_url('index.html')?>">
+                    <!--<a href="<?= base_url('index.php')?>">-->
+                    <a >
                         <i class="menu-icon fa fa-tachometer"></i>
-                        <span class="menu-text"> Dashboard </span>
+                        <span class="menu-text"> Tablero </span>
                     </a>
 
                     <b class="arrow"></b>
@@ -378,7 +379,7 @@
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-desktop"></i>
                         <span class="menu-text">
-                            UI &amp; Elements
+                           Carga
                         </span>
 
                         <b class="arrow fa fa-angle-down"></b>
@@ -391,7 +392,7 @@
                             <a href="#" class="dropdown-toggle">
                                 <i class="menu-icon fa fa-caret-right"></i>
 
-                                Layouts
+                                Registros 
                                 <b class="arrow fa fa-angle-down"></b>
                             </a>
 
@@ -401,7 +402,7 @@
                                 <li class="">
                                     <a href="<?= base_url('top-menu.html')?>">
                                         <i class="menu-icon fa fa-caret-right"></i>
-                                        Top Menu
+                                        Cliente
                                     </a>
 
                                     <b class="arrow"></b>
@@ -410,7 +411,7 @@
                                 <li class="">
                                     <a href="<?= base_url('two-menu-1.html')?>">
                                         <i class="menu-icon fa fa-caret-right"></i>
-                                        Two Menus 1
+                                        Proveedor
                                     </a>
 
                                     <b class="arrow"></b>
@@ -419,22 +420,22 @@
                                 <li class="">
                                     <a href="<?= base_url('two-menu-2.html')?>">
                                         <i class="menu-icon fa fa-caret-right"></i>
-                                        Two Menus 2
+                                        Producto
                                     </a>
 
                                     <b class="arrow"></b>
                                 </li>
 
-                                <li class="">
+<!--                                <li class="">
                                     <a href="<?= base_url('mobile-menu-1.html')?>">
                                         <i class="menu-icon fa fa-caret-right"></i>
                                         Default Mobile Menu
                                     </a>
 
                                     <b class="arrow"></b>
-                                </li>
+                                </li>-->
 
-                                <li class="">
+<!--                                <li class="">
                                     <a href="<?= base_url('mobile-menu-2.html')?>">
                                         <i class="menu-icon fa fa-caret-right"></i>
                                         Mobile Menu 2
@@ -450,47 +451,47 @@
                                     </a>
 
                                     <b class="arrow"></b>
-                                </li>
+                                </li>-->
                             </ul>
                         </li>
 
-                        <li class="">
+<!--                        <li class="">
                             <a href="<?= base_url('typography.html')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                Typography
+                                Entrada de Carga
                             </a>
 
                             <b class="arrow"></b>
-                        </li>
+                        </li>-->
 
-                        <li class="">
+<!--                        <li class="">
                             <a href="<?= base_url('elements.html')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Elements
                             </a>
 
                             <b class="arrow"></b>
-                        </li>
+                        </li>-->
 
-                        <li class="">
+<!--                        <li class="">
                             <a href="<?= base_url('buttons.html')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Buttons &amp; Icons
                             </a>
 
                             <b class="arrow"></b>
-                        </li>
+                        </li>-->
 
-                        <li class="">
+<!--                        <li class="">
                             <a href="<?= base_url('content-slider.html')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Content Sliders
                             </a>
 
                             <b class="arrow"></b>
-                        </li>
+                        </li>-->
 
-                        <li class="">
+<!--                        <li class="">
                             <a href="<?= base_url('treeview.html')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Treeview
@@ -515,13 +516,13 @@
                             </a>
 
                             <b class="arrow"></b>
-                        </li>
+                        </li>-->
 
                         <li class="">
                             <a href="#" class="dropdown-toggle">
                                 <i class="menu-icon fa fa-caret-right"></i>
 
-                                Three Level Menu
+                                Entrada de Carga
                                 <b class="arrow fa fa-angle-down"></b>
                             </a>
 
@@ -531,7 +532,7 @@
                                 <li class="">
                                     <a href="#">
                                         <i class="menu-icon fa fa-leaf green"></i>
-                                        Item #1
+                                        Registro de Carga
                                     </a>
 
                                     <b class="arrow"></b>
@@ -541,7 +542,7 @@
                                     <a href="#" class="dropdown-toggle">
                                         <i class="menu-icon fa fa-pencil orange"></i>
 
-                                        4th level
+                                        Recibo/Entrada
                                         <b class="arrow fa fa-angle-down"></b>
                                     </a>
 
@@ -855,19 +856,19 @@
                     <ul class="breadcrumb">
                         <li>
                             <i class="ace-icon fa fa-home home-icon"></i>
-                            <a href="#">Home</a>
+                            <a href="#">Inicio</a>
                         </li>
                         <li class="active">Widgets</li>
                     </ul><!-- /.breadcrumb -->
 
-                    <div class="nav-search" id="nav-search">
+<!--                    <div class="nav-search" id="nav-search">
                         <form class="form-search">
                             <span class="input-icon">
-                                <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                                <input type="text" placeholder="Buscar ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
                                 <i class="ace-icon fa fa-search nav-search-icon"></i>
                             </span>
                         </form>
-                    </div><!-- /.nav-search -->
+                    </div> /.nav-search -->
                 </div>
 
                 <div class="page-content">
@@ -887,7 +888,7 @@
                                             <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
                                         </select>
                                     </div>
-                                    <span>&nbsp; Choose Skin</span>
+                                    <span>&nbsp; Elija el Skin</span>
                                 </div>
 
 <!--                                <div class="ace-settings-item">
@@ -922,17 +923,17 @@
                             <div class="pull-left width-50">
                                 <div class="ace-settings-item">
                                     <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
-                                    <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+                                    <label class="lbl" for="ace-settings-hover"> Submenú en Hover</label>
                                 </div>
 
                                 <div class="ace-settings-item">
                                     <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
-                                    <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+                                    <label class="lbl" for="ace-settings-compact"> Barra lateral compacta</label>
                                 </div>
 
                                 <div class="ace-settings-item">
                                     <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
-                                    <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+                                    <label class="lbl" for="ace-settings-highlight"> Alt. Elemento activo</label>
                                 </div>
                             </div><!-- /.pull-left -->
                         </div><!-- /.ace-settings-box -->
