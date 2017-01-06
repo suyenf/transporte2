@@ -336,26 +336,28 @@
 
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    
+                    <button class="btn btn-warning">
+                        <i class="ace-icon fa fa-user" href="<?= base_url('index.php')?> title="Reg.de Cliente"></i>
+                    </button>
+
                     <button class="btn btn-success">
-                        <i class="ace-icon fa fa-signal"></i>
+                        <i class="ace-icon fa fa-users" title="Reg.de Proveedor"></i>
+                    </button>
+
+                    <button class="btn btn-danger ">
+                        <i class="ace-icon fa fa-cubes" title="Reg.de Productos"></i>
                     </button>
 
                     <button class="btn btn-info">
-                        <i class="ace-icon fa fa-pencil"></i>
-                    </button>
-
-                    <button class="btn btn-warning">
-                        <i class="ace-icon fa fa-users"></i>
-                    </button>
-
-                    <button class="btn btn-danger">
-                        <i class="ace-icon fa fa-cogs"></i>
+                        <i class="ace-icon fa fa-list" title="Reportes"></i>
                     </button>
                 </div>
 
                 <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    
                     <span class="btn btn-success"></span>
-
+                    
                     <span class="btn btn-info"></span>
 
                     <span class="btn btn-warning"></span>

@@ -40,7 +40,7 @@ class Transporte extends CI_Controller {
     
     
     public function index() {
-        
+            
     }
 
  public function crear_carga(){

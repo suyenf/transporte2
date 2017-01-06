@@ -3,12 +3,14 @@
     <head>
 
         <meta charset="utf-8">
-        <title>Vendecar</title>
+        <title>VendeCar</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
+     <!-- Put favicon.ico and apple-touch-icologo.jpgn(s).png in the images folder -->
+        <link href="<?= base_url('assets/images/favicon.ico')?>" rel="shortcut icon" >
+        
         <title><?php echo $titulo  ?><?php if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>
 
         <!-- Bootstrap Core CSS -->
