@@ -1,7 +1,9 @@
  <div class="footer">
             <div class="footer-inner">
-                <div class="footer-content">
+                <div >
+<!--                <div class="footer-content">-->
                     <span class="bigger-120">
+                        
                         <span class="blue bolder">Copyright</span>
                          © Inversión Tecnológica Faudito.F.P. 2016. Todos los derechos reservados.
                     </span>
@@ -23,6 +25,3 @@
                 </div>
             </div>
         </div>        
-</body>
-
-</html>
