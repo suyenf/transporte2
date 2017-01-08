@@ -14,38 +14,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class Transporte extends CI_Controller {
     public function __construct() {
-        parent::__construct();
-
-
-//        $data['titulo'] = 'Control de Produccion'; // jcapuano
-
-//        $this->load->library('auth'); // jcapuano
-        //CAMBIAR LA URL SI SE SUBE A LA WEB, esta es la ruta => (config/config.php/$config['base_url'] = 'http://localhost/transporte2/';)
+		parent::__construct();
+		
         $this->load->view('base/cabeceras/cabecera_1');
         $this->load->view('base/cabeceras/menu_');
         $this->load->view('base/piespagina/piepagina_1');
         $this->load->helper('url');
+        $this->load->helper('form');
+        $this->load->model('transporte/almacenmodel');
+        $this->load->library('form_validation');
     }
-//        private function cab($data) {
-//
-//        $this->load->view('base/cabeceras/cabecera', $data);
-//        $this->load->view('base/cabeceras/menu', $data);
-//    }
-//
-//    private function pie() {
-//        $this->load->view('base/piespagina/piepagina_1');
-//    }
-    
-    
-    
-    
+   
     public function index() {
             
     }
 
  public function crear_carga(){
-        $this->load->helper('form');
-        $this->load->model('transporte/almacenmodel');
+        
         $data = array(
             'cod_carga' => $this->input->post('id'),
             'fecha_registro' => $this->input->post('fecha'),
@@ -71,25 +56,28 @@ class Transporte extends CI_Controller {
     }
     
     public function crear_producto(){
-        $this->load->helper('form');
-        $this->load->model('transporte/almacenmodel');
+		
+		$this->form_validation->set_rules('nombre_producto', 'Nombre de producto', 'required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('codigo_producto', 'Codigo de producto', 'required|min_length[5]|max_length[10]');
+		
         $data = array(
             'nombre_producto' => $this->input->post('nombre_producto'),
             'codigo_producto' => $this->input->post('codigo_producto'),
             'observacion' => $this->input->post('observacion'),
+            // Falta validar el combo de activo
             'activo' => $this->input->post('activo')
         );
 
-        $data['choferes'] = $this->almacenmodel->listar_chofer();
+        //$data['choferes'] = $this->almacenmodel->listar_chofer();
             
-        $resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
-//        print_r($data);
-        $this->load->view('transporte/reg_producto');
+		if ($this->form_validation->run() == FALSE)
+			$this->load->view('transporte/reg_producto');
+		else
+			$resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
     }
 
     public function crear_cliente(){
-        $this->load->helper('form');
-        $this->load->model('transporte/almacenmodel');
+
         $data = array(
             'rif_cliente' => $this->input->post('rif_cliente'),
             'razon_social' => $this->input->post('razon_social'),
@@ -97,13 +85,12 @@ class Transporte extends CI_Controller {
             'activo' => $this->input->post('activo')
         );
         $resultado['almacenes_cliente'] = $this->almacenmodel->registro_cliente($data);
-        //print_r($data);
+
         $this->load->view('transporte/reg_cliente');
     }
     
     public function crear_chofer(){
-        $this->load->helper('form');
-        $this->load->model('transporte/almacenmodel');
+
         $data = array(
             'cedula' => $this->input->post('cedula'),
             'nombre' => $this->input->post('nombre'),
@@ -111,13 +98,12 @@ class Transporte extends CI_Controller {
             'activo' => $this->input->post('activo')
         );
         $resultado['almacenes_chofer'] = $this->almacenmodel->registro_chofer($data);
-        //print_r($data);
+
         $this->load->view('transporte/reg_chofer');
     }
 
     public function crear_proveedor(){
-        $this->load->helper('form');
-        $this->load->model('transporte/almacenmodel');
+		
         $data = array(
             'rif_proveedor' => $this->input->post('rif_proveedor'),
             'razon_social' => $this->input->post('razon_social'),
@@ -125,7 +111,7 @@ class Transporte extends CI_Controller {
             'activo' => $this->input->post('activo')
         );
         $resultado['almacenes_proveedor'] = $this->almacenmodel->registro_proveedor($data);
-        print_r($data);
+
         $this->load->view('transporte/reg_proveedor');
     }
 
@@ -143,7 +129,7 @@ class Transporte extends CI_Controller {
             'activo' => $this->input->post('activo')
         );
         $resultado['almacenes_vehiculo'] = $this->almacenmodel->registro_vehiculo($data);
-        print_r($data);
+
         $this->load->view('transporte/reg_vehiculo');
     }
 }

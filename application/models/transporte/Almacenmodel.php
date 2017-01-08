@@ -177,9 +177,15 @@ class Almacenmodel extends CI_Model {
         ));
     }
     
-    public function listar_chofer() {
+    public function listar_chofer(){
+		$query = $this->db->where('activo','1');
         $query = $this->db->get('almacenes_chofer');
         
-        return $query->result_array();
-    }
+        $datos = array();      
+        foreach($query->result() as $row)
+			$datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->cedula, ENT_QUOTES)." - ".htmlspecialchars($row->nombre, ENT_QUOTES);
+
+        $query->free_result();
+        return $datos;
+}
 }
