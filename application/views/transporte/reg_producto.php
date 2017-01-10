@@ -2,8 +2,6 @@
 	$nombre_producto = array('name' => 'nombre_producto','class' =>'form-control','placeholder' => 'Nombre del producto');
 	$codigo_producto = array('name' => 'codigo_producto','class' =>'form-control', 'placeholder' => 'Codigo de producto');
 	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de producto');
-	//$activo = array('name' => 'activo','class' =>'form-control', 'value' => '1', 'checked' => TRUE);
-	//echo form_open('transporte/transporte/crear_producto'); /* Usar Form_open para abrir el controlador */
 ?>
 <div class="col-sm-12">
     <div class="widget-header">

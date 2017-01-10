@@ -1,15 +1,60 @@
-        <h1>Registro de Chofer</h1>
-        <?php
-            $cedula = array('name' => 'cedula', 'placeholder' => 'Cedula de Chofer');    
-            $nombre = array('name' => 'nombre', 'placeholder' => 'Nombre de Chofer');
-            $observacion = array('name' => 'observacion', 'placeholder' => 'Observacion de Cliente');
-            $activo = array('name' => 'activo', 'value' => '1', 'checked' => TRUE);
-            echo form_open('transporte/transporte/crear_chofer'); /* Usar Form_open para abrir el controlador */
-        ?>
+<?php
+	$cedula = array('name' => 'cedula','class' =>'form-control', 'placeholder' => 'Cedula Chofer');
+	$nombre = array('name' => 'nombre','class' =>'form-control', 'placeholder' => 'Nombre Chofer');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Cliente');
+?>
+<div class="col-sm-12">
+    <div class="widget-header">
+        <h1 class="widget-title">Registro de Choferes</h1>
+    </div>
+</div>
 
-        <?php echo form_label('Cedula', 'Cedula'); echo form_input($cedula); ?><br>
-        <?php echo form_label('Nombre', 'Nombre'); echo form_input($nombre); ?><br>
-        <?php echo form_label('Observacion', 'Observacion'); echo form_input($observacion); ?><br>
-        <?php echo form_label('Activo', 'Activo'); echo form_checkbox($activo); ?><br>
+<!-- Errores se formulario -->
+<div style = "color: red;">
+      <?php echo validation_errors(); ?>
+</div>
 
-        <?php echo form_submit('botonSubmit', 'Enviar'); echo form_close(); ?>
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_chofer'); ?>" method="post" role="form">
+                    
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Cedula Chofer</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($cedula);?><br>
+				</div> 
+			</div>
+			 
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Nombre Chofer</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($nombre); ?><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($observacion); ?><br><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Activo</strong></big> </label>
+					<?php // echo form_label('Activo', 'Activo');?>                
+				<label>
+					<input name="switch-field-1" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
+					<span class="lbl"></span>
+				</label>
+			</div>
+				  
+			<div class="form-group">
+				<div class="col-md-offset-3 col-md-9">
+					<button class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar');?>
+						<i class="ace-icon fa fa-check bigger-130"></i>Guardar
+					</button>
+				</div>
+			</div>
+		<?php  echo form_close();?> 
+	</div><!-- /.row -->
+</div><!-- /.page-content -->
