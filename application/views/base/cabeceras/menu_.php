@@ -82,7 +82,7 @@
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                     
                     <button class="btn btn-warning">
-                        <i class="ace-icon fa fa-user" href="<?= base_url('index.php')?> title="Reg.de Cliente"></i>
+                        <i class="ace-icon fa fa-user" href="transporte/Transporte/index" title="Reg.de Cliente"></i>
                     </button>
 
                     <button class="btn btn-success">
@@ -112,8 +112,9 @@
 <!-- LISTA VERTICAL -->
             <ul class="nav nav-list">
                 <li class="">
-                    <!--<a href="<?= base_url('index.php')?>">-->
-                    <a >
+                    
+                    <a href="<?= base_url('index.php/transporte/Transporte/index')?>">
+                    <!--<a href="transporte/home.php">-->
                         <i class="menu-icon fa fa-tachometer"></i>
                         <span class="menu-text"> Tablero </span>
                     </a>
@@ -146,27 +147,27 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="<?= base_url('top-menu.html')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_cliente')?>">
                                         <i class="menu-icon fa fa-user orange"></i>
-                                        Cliente
+                                        Clientes
                                     </a>
 
                                     <b class="arrow"></b>
                                 </li>
 
                                 <li class="">
-                                    <a href="<?= base_url('two-menu-1.html')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_proveedor')?>">
                                         <i class="menu-icon fa fa-users green"></i>
-                                        Proveedor
+                                        Proveedores
                                     </a>
 
                                     <b class="arrow"></b>
                                 </li>
 
                                 <li class="">
-                                    <a href="<?= base_url('two-menu-2.html')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_producto')?>">
                                         <i class="menu-icon fa fa-cubes red"></i>
-                                        Producto
+                                        Productos
                                     </a>
 
                                     <b class="arrow"></b>
@@ -186,7 +187,7 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="#">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga')?>">
                                         <i class="menu-icon fa fa-desktop green"></i>
                                         Registro de Carga
                                     </a>
@@ -194,8 +195,8 @@
                                     <b class="arrow"></b>
                                 </li>
 
-                                <li class="">
-                                    <a href="#" class="dropdown-toggle">
+                                <li class="">                                     
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga') ?>">
                                         <i class="menu-icon fa fa-pencil orange"></i>
 
                                         Recibo/Entrada

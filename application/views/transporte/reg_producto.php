@@ -1,10 +1,13 @@
 <?php
-	$nombre_producto = array('name' => 'nombre_producto','class' =>'form-control','placeholder' => 'Nombre del producto');
-	$codigo_producto = array('name' => 'codigo_producto','class' =>'form-control', 'placeholder' => 'Codigo de producto');
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de producto');
+	$nombre_producto = array('name' => 'nombre_producto','class' =>'form-control','placeholder' => 'Nombre del producto','required'=>'true');
+	$codigo_producto = array('name' => 'codigo_producto','class' =>'form-control', 'placeholder' => 'Codigo de producto','required'=>'true');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de producto','required'=>'true');
 	//$activo = array('name' => 'activo','class' =>'form-control', 'value' => '1', 'checked' => TRUE);
-	//echo form_open('transporte/transporte/crear_producto'); /* Usar Form_open para abrir el controlador */
+//	echo form_open('transporte/transporte/reg_producto'); /* Usar Form_open para abrir el controlador */
 ?>
+
+
+
 <div class="col-sm-12">
     <div class="widget-header">
         <h1 class="widget-title">Registro de Productos</h1>
@@ -12,13 +15,14 @@
 </div>
 
 <!-- Errores se formulario -->
-<div style = "color: red;">
-      <?php echo validation_errors(); ?>
-</div>
+<!--<div style = "color: red;">
+      <?php // echo validation_errors(); ?>
+</div>-->
+
 
 <div class="row">
 	<div class="col-xs-12">
-		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_producto'); ?>" method="post" role="form">
+		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_producto'); ?>" method="post">
                     
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Nombre del Producto</strong></big> </label>
@@ -52,13 +56,28 @@
 				  
 			<div class="form-group">
 				<div class="col-md-offset-3 col-md-9">
-					<button class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar');?>
+					<button onclick="miFuncion()" class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar');?>
 						<i class="ace-icon fa fa-check bigger-130"></i>Guardar
 					</button>
 				</div>
 			</div>
-		<?php  echo form_close();?> 
-	</div><!-- /.row -->
+		<?php echo form_close();?> 
+                </form>
+            
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">
+                    <i class="ace-icon fa fa-times"></i>
+                </button>
+
+                <strong>
+                    <i class="ace-icon fa fa-check"></i>
+                    Alerta!
+                </strong>
+
+                <?php echo validation_errors(); ?>
+                <br />
+            </div>
+        </div><!-- /.row -->
 </div><!-- /.page-content -->
               
 

@@ -26,9 +26,11 @@ class Transporte extends CI_Controller {
     }
    
     public function index() {
-            
+      $this->load->view('base/home');      
     }
 
+    
+    
  public function crear_carga(){
         
         $data = array(
