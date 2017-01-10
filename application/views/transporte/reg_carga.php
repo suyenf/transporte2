@@ -37,8 +37,18 @@
 				<div class="col-sm-9">
 					<?php echo form_input($destino_flete);?><br>
 				</div> 
-			</div>        
-			<br>Crear combo html con id unidad (normalito) con los datos de batea, granel y carga suelta </br>
+			</div>    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Unidad</strong></big> </label>
+                        <div class="col-sm-9">
+                        <select name="id_unidad" id="id_unidad">
+                            <option>Batea</option>
+                            <option selected="selected">Granel</option>
+                            <option>Carga Suelta</option>
+                        </select>
+                         </div>
+                    </div>
+			<!--<br>Crear combo html con id unidad (normalito) con los datos de ,  y  </br>-->
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Monto Viatico</strong></big> </label>
 				<div class="col-sm-9">

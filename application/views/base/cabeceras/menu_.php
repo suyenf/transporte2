@@ -81,8 +81,10 @@
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                     
-                    <button class="btn btn-warning">
-                        <i class="ace-icon fa fa-user" href="transporte/Transporte/index" title="Reg.de Cliente"></i>
+                    <button class="btn btn-warning"  >
+                        <i class="ace-icon fa fa-user" src="<?= base_url('index.php/transporte/Transporte/crear_cliente')?>" title="Reg.de Cliente">
+                                                       
+                        </i>
                     </button>
 
                     <button class="btn btn-success">
@@ -116,7 +118,7 @@
                     <a href="<?= base_url('index.php/transporte/Transporte/index')?>">
                     <!--<a href="transporte/home.php">-->
                         <i class="menu-icon fa fa-tachometer"></i>
-                        <span class="menu-text"> Tablero </span>
+                        <span class="menu-text"> Inicio </span>
                     </a>
 
                     <b class="arrow"></b>
