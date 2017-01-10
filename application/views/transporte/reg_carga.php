@@ -1,156 +1,95 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <h1>Orden de Carga</h1>
-        
-         <?php
+<?php
+	$origen_flete = array('name' => 'origen_flete','class' =>'form-control', 'placeholder' => 'Origen Flete');
+	$destino_flete = array('name' => 'destino_flete','class' =>'form-control', 'placeholder' => 'Destino Flete');
+	
+	$monto_viatico = array('name' => 'monto_viatico','class' =>'form-control', 'placeholder' => 'Monto viatico');
+	
+	$modelo = array('name' => 'modelo','class' =>'form-control', 'placeholder' => 'Modelo');
+	$marca = array('name' => 'marca','class' =>'form-control', 'placeholder' => 'Marca');
+	$anio = array('name' => 'anio','class' =>'form-control', 'placeholder' => 'Año');
+	
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Proveedor');
+?>
+<div class="col-sm-12">
+    <div class="widget-header">
+        <h1 class="widget-title">Registro de Carga</h1>
+    </div>
+</div>
 
-        $cod_carga = array(
-        'name' => 'id');
-        
-        $fecha_carga = array(
-        'name' => 'fecha',
-        'placeholder' => 'Escribe la Fecha de Emisión');
-                
-        $correlativo_id = array(
-        'name' => 'correlativo',
-        'placeholder' => 'Indique Nro. de Correlativo');
-        
-        $proveedor = array(
-        'name' => 'proveedor_id',
-        'placeholder' => 'Indique nombre del Proveedor');
-        
-        $cliente = array(
-        'name' => 'cliente_id',
-        'placeholder' => 'Indique nombre del Cliente');
-        
-        $flete_o = array(
-        'name' => 'origen_flete',
-        'placeholder' => 'Indique el Flete de Origen');
-        
-        $flete_d = array(
-        'name' => 'destino_flete',
-        'placeholder' => 'Indique el Flete de detino');
-        
-        $unidad = array(
-        'name' => 'unidad',
-        'placeholder' => 'Indique la Unidad');
-        
-        $viatico = array(
-        'name' => 'monto_viatico',
-        'placeholder' => 'Indique Monto del Viatico');
-        
-        $observacion = array(
-        'name' => 'observacion',
-        'placeholder' => 'Indique Observación');
+<!-- Errores se formulario -->
+<div style = "color: red;">
+      <?php echo validation_errors(); ?>
+</div>
 
-        $estado = array(
-        'name' => 'estado');
-        
-        $activo = array(
-        'name' => 'activo',
-        'placeholder' => 'Indique Activo o no');
-
-        $chofer = array(
-        'name' => 'chofer_id',
-        'placeholder' => 'Indique Chofer');
-
-        $producto = array(
-        'name' => 'producto_id',
-        'placeholder' => 'Indique el Producto');
-
-        $vehiculo = array(
-        'name' => 'vehiculo_id',
-        'placeholder' => 'Indique el Vehiculo');
-
-        $usuario_id = array(
-        'name' => 'usuario_id');
-        
-        
-        
-        
-      ?>
-        
-        
-        <?php
-      echo form_open('transporte/transporte/crear_carga'); /* Usar Form_open para abrir el controlador */
-
-        ?>
-        <?php // echo form_label('Correlativo', 'producto_numero'); ?>        
-
-        </br>
-        <?php // echo form_input($producto_numero); ?>
-        </br>
-        <?php echo form_label('Nombre del Producto', 'fecha'); ?>
-        </br>
-        <?php echo form_input($fecha_carga); ?>
-        </br>
-        <?php echo form_label('Correlativo', 'correlativo'); ?>
-        </br>
-        <?php echo form_input($correlativo_id); ?>
-        </br>
-        <?php echo form_label('Proveedor', 'proveedor_id'); ?>
-        </br>
-        <?php echo form_input($proveedor); ?>
-        </br>
-        <?php echo form_label('Cliente', 'cliente_id'); ?>
-        </br>
-        <?php echo form_input($cliente); ?>
-        </br>
-        <?php echo form_label('Flete', 'origen_flete'); ?>
-        </br>
-        <?php echo form_input($flete_o); ?>
-        </br>
-        <?php echo form_label('Flete Destino', 'destino_flete'); ?>
-        </br>
-        <?php echo form_input($flete_d); ?>
-        </br>
-        <?php echo form_label('Proveedor', 'proveedor_id'); ?>
-        </br>
-        <?php echo form_input($proveedor); ?>
-        </br>
-        <?php echo form_label('Unidad', 'unidad'); ?>
-        </br>
-        <?php echo form_input($unidad); ?>
-        </br>
-        <?php echo form_label('Viatico', 'monto_viatico'); ?>
-        </br>
-        <?php echo form_input($viatico); ?>
-        </br>
-        <?php echo form_label('Observacion', 'observacion'); ?>
-        </br>
-        <?php echo form_input($observacion); ?>
-        </br>
-        <?php // echo form_label('Chofer', 'chofer_id'); ?>
-        <div class="form-group">
-            <label>Chofer</label>
-            <select class="form-control" id="id" name="id_chofer" value="<?php echo set_value('cedula'); ?>" >
-            </select>
-        </div>
-        
-        </br>
-        <?php // echo form_input($chofer); ?>
-        </br>
-        <?php echo form_label('Producto', 'producto_id'); ?>
-        </br>
-        <?php echo form_input($producto); ?>
-        </br>
-        <?php echo form_label('Vehiculo', 'vehiculo_id'); ?>
-        </br>
-        <?php echo form_input($vehiculo); ?>
-        </br>
-        <input type="checkbox" name="activo" value="3">Activo
-        <?php form_input($activo); ?>
-       
-        
-        
-        
-</br>
-        <?php echo form_submit('botonSubmit', 'Enviar');
-        echo form_close();
-        ?>
-</html>
+<div class="row">
+	<div class="col-xs-12">
+		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_carga'); ?>" method="post" role="form">
+                    
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Origen Flete</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($origen_flete);?><br>
+				</div> 
+			</div>       
+			 
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Destino Flete</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($destino_flete);?><br>
+				</div> 
+			</div>        
+			<br>Crear combo html con id unidad (normalito) con los datos de batea, granel y carga suelta </br>
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Monto Viatico</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($monto_viatico);?><br>
+				</div> 
+			</div>
+			 
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Modelo</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($modelo); ?><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Marca</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($marca); ?><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Año</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($anio); ?><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_input($observacion); ?><br><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Activo</strong></big> </label>
+					<?php // echo form_label('Activo', 'Activo');?>                
+				<label>
+					<input name="switch-field-1" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
+					<span class="lbl"></span>
+				</label>
+			</div>
+				  
+			<div class="form-group">
+				<div class="col-md-offset-3 col-md-9">
+					<button class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar');?>
+						<i class="ace-icon fa fa-check bigger-130"></i>Guardar
+					</button>
+				</div>
+			</div>
+		<?php  echo form_close();?> 
+	</div><!-- /.row -->
+</div><!-- /.page-content -->

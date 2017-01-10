@@ -1,9 +1,15 @@
 <?php
+<<<<<<< HEAD
 	$nombre_producto = array('name' => 'nombre_producto','class' =>'form-control','placeholder' => 'Nombre del producto','required'=>'true');
 	$codigo_producto = array('name' => 'codigo_producto','class' =>'form-control', 'placeholder' => 'Codigo de producto','required'=>'true');
 	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de producto','required'=>'true');
 	//$activo = array('name' => 'activo','class' =>'form-control', 'value' => '1', 'checked' => TRUE);
 //	echo form_open('transporte/transporte/reg_producto'); /* Usar Form_open para abrir el controlador */
+=======
+	$nombre_producto = array('name' => 'nombre_producto','class' =>'form-control','placeholder' => 'Nombre del producto');
+	$codigo_producto = array('name' => 'codigo_producto','class' =>'form-control', 'placeholder' => 'Codigo de producto');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de producto');
+>>>>>>> origin/master
 ?>
 
 

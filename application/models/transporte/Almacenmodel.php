@@ -15,10 +15,13 @@ class Almacenmodel extends CI_Model {
     //INSERTAR INFORMACION
     
     public function registro_carga($data) {
+		
+		//Fecha actual - "2016-05-24 15:02:43-04:30"
+        $hoy = date("Y-m-d H:i:s");
+		
         $this->db->insert('almacenes_carga', array(
-            'id' => $data['cod_carga'],
-            'fecha' => $data['fecha_registro'],
-            'correlativo_id' => $data['correlativo_id'],
+            'fecha' => $hoy, //Preguntar si se registran a destiempo
+            //'correlativo_id' => $data['correlativo_id'],
             'origen_flete' => $data['origen_flete'],
             'destino_flete' => $data['destino_flete'],
             'unidad' => $data['unidad'],
@@ -31,7 +34,7 @@ class Almacenmodel extends CI_Model {
             'producto_id' => $data['producto_id'],
             'proveedor_id' => $data['proveedor_id'],
             'vehiculo_id' => $data['vehiculo_id'],
-            'usuario_id' => $data['usuario_id']
+            'usuario_id' => 1
             
         ));
     }
@@ -177,7 +180,7 @@ class Almacenmodel extends CI_Model {
         ));
     }
     
-    public function listar_chofer(){
+    public function listar_choferes(){
 		$query = $this->db->where('activo','1');
         $query = $this->db->get('almacenes_chofer');
         
@@ -187,5 +190,56 @@ class Almacenmodel extends CI_Model {
 
         $query->free_result();
         return $datos;
-}
+	}
+	
+	public function listar_productos(){
+		$query = $this->db->where('activo','1');
+        $query = $this->db->get('almacenes_producto');
+        
+        $datos = array();      
+        foreach($query->result() as $row)
+			$datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->codigo, ENT_QUOTES);
+
+        $query->free_result();
+        return $datos;
+	}
+	
+	public function listar_clientes(){
+		$query = $this->db->where('activo','1');
+        $query = $this->db->get('almacenes_cliente');
+        
+        $datos = array();      
+        foreach($query->result() as $row)
+			$datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->rif, ENT_QUOTES)." - ".htmlspecialchars($row->razon_social, ENT_QUOTES);
+
+
+        $query->free_result();
+        return $datos;
+	}
+	
+	public function listar_proveedores(){
+		$query = $this->db->where('activo','1');
+        $query = $this->db->get('almacenes_proveedor');
+        
+        $datos = array();      
+        foreach($query->result() as $row)
+			$datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->rif, ENT_QUOTES)." - ".htmlspecialchars($row->razon_social, ENT_QUOTES);
+
+
+        $query->free_result();
+        return $datos;
+	}
+	
+	public function listar_vehiculos(){
+		$query = $this->db->where('activo','1');
+        $query = $this->db->get('almacenes_vehiculo');
+        
+        $datos = array();      
+        foreach($query->result() as $row)
+			$datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->placa, ENT_QUOTES);
+
+
+        $query->free_result();
+        return $datos;
+	}
 }
