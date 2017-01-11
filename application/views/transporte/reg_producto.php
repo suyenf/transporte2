@@ -21,30 +21,30 @@
 
 
 <div class="row">
-	<div class="col-xs-12">
+	<div class="col-xs-10">
 		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_producto'); ?>" method="post">
                     <br><br><br>
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Nombre del Producto</strong></big> </label>
-				<div class="col-sm-9">
+				<div class="col-sm-3">
 					<?php echo form_input($nombre_producto);?><br>
 				</div> 
-			</div>
+<!--			</div>
 			 
-			<div class="form-group">
+			<div class="form-group">-->
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Código de Producto</strong></big> </label>
-				<div class="col-sm-9">
+				<div class="col-sm-3">
 					<?php echo form_input($codigo_producto); ?><br>
 				</div>
 			</div>
-			
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>
-				<div class="col-sm-9">
-					<?php echo form_input($observacion); ?><br><br>
-				</div>
-			</div>
-			
+	
+                        <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>
+                        <div class="col-sm-9">
+                            <?php echo form_textarea($observacion); ?>
+                        </div>
+                        </div>
+                    
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Activo</strong></big> </label>
 					<?php // echo form_label('Activo', 'Activo');?>                
@@ -59,7 +59,7 @@
                                      <div class="col-sm-6">
 					<button onclick="miFuncion()" class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar');?>
 						<i class="ace-icon fa fa-check bigger-130"></i>Guardar
-					</button>
+                                        </button> <br><br><br>
 				</div>
 				</div>
 			</div>
