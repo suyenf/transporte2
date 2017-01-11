@@ -28,7 +28,7 @@
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                             <!--<img class="nav-user-photo" src="<?= base_url('assets/images/avatars/user.jpg')?>" alt="Jason's Photo" />-->
                             <p class="user-info" style="color: #F4F9FD">
-                                NOMBRE
+                                Admin
                             </p>
 
                             <i class="ace-icon fa fa-caret-down" style="color: #F4F9FD"></i>
