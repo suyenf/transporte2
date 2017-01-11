@@ -14,8 +14,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class Transporte extends CI_Controller {
     public function __construct() {
-		parent::__construct();
-		
+        parent::__construct();
+        
         $this->load->view('base/cabeceras/cabecera_1');
         $this->load->view('base/cabeceras/menu_');
         $this->load->view('base/piespagina/piepagina_1');
@@ -34,7 +34,7 @@ class Transporte extends CI_Controller {
  public function crear_carga(){
         
         $data = array(
-			//Analizar un correlativo es el ID del registro
+            //Analizar un correlativo es el ID del registro
             //'correlativo_id' => $this->input->post('correlativo_id'),
             'origen_flete' => $this->input->post('origen_flete'),
             'destino_flete' => $this->input->post('destino_flete'),
@@ -49,7 +49,7 @@ class Transporte extends CI_Controller {
             'proveedor_id' => $this->input->post('proveedor_id'),
             'vehiculo_id' => $this->input->post('vehiculo_id')      
         );
-        
+
         $data['productos'] = $this->almacenmodel->listar_productos();
         $data['clientes'] = $this->almacenmodel->listar_clientes();
         $data['proveedores'] = $this->almacenmodel->listar_proveedores();
@@ -62,10 +62,10 @@ class Transporte extends CI_Controller {
     }
     
     public function crear_producto(){
-		
-		$this->form_validation->set_rules('nombre_producto', 'Nombre de producto', 'required|min_length[5]|max_length[100]');
+        
+        $this->form_validation->set_rules('nombre_producto', 'Nombre de producto', 'required|min_length[5]|max_length[100]');
         $this->form_validation->set_rules('codigo_producto', 'Codigo de producto', 'required|min_length[5]|max_length[10]');
-		
+        
         $data = array(
             'nombre_producto' => $this->input->post('nombre_producto'),
             // Este campo se debe validar sea unico en la tabla
@@ -74,37 +74,37 @@ class Transporte extends CI_Controller {
             'activo' => $this->input->post('activo')
         );
             
-		if ($this->form_validation->run() == FALSE)
-			$this->load->view('transporte/reg_producto');
-		else
-			$resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
+        if ($this->form_validation->run() == FALSE)
+            $this->load->view('transporte/reg_producto');
+        else
+            $resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
     }
 
     public function crear_cliente(){
-		
-		$this->form_validation->set_rules('rif_cliente', 'Rif Cliente', 'required|min_length[5]|max_length[20]');
+        
+        $this->form_validation->set_rules('rif_cliente', 'Rif Cliente', 'required|min_length[5]|max_length[20]');
         $this->form_validation->set_rules('razon_social', 'Razon Social', 'required|min_length[5]|max_length[100]');
 
         $data = array(
-			//Validar campo unico
+            //Validar campo unico
             'rif_cliente' => $this->input->post('rif_cliente'),
             'razon_social' => $this->input->post('razon_social'),
             'observacion' => $this->input->post('observacion'),
             'activo' => $this->input->post('activo')
         );
         if ($this->form_validation->run() == FALSE)
-			$this->load->view('transporte/reg_cliente');
-		else
-			$resultado['almacenes_cliente'] = $this->almacenmodel->registro_cliente($data);
+            $this->load->view('transporte/reg_cliente');
+        else
+            $resultado['almacenes_cliente'] = $this->almacenmodel->registro_cliente($data);
     }
     
     public function crear_chofer(){
 
-		$this->form_validation->set_rules('cedula', 'Cedula', 'required|max_length[8]');
+        $this->form_validation->set_rules('cedula', 'Cedula', 'required|max_length[8]');
         $this->form_validation->set_rules('nombre', 'Nombre Chofer', 'required|max_length[100]');
 
         $data = array(
-			// Validar cedula sea unico en la bd
+            // Validar cedula sea unico en la bd
             'cedula' => $this->input->post('cedula'),
             'nombre' => $this->input->post('nombre'),
             'observacion' => $this->input->post('observacion'),
@@ -112,18 +112,18 @@ class Transporte extends CI_Controller {
         );
         
         if ($this->form_validation->run() == FALSE)
-			$this->load->view('transporte/reg_chofer');
-		else
-			$resultado['almacenes_chofer'] = $this->almacenmodel->registro_chofer($data);
+            $this->load->view('transporte/reg_chofer');
+        else
+            $resultado['almacenes_chofer'] = $this->almacenmodel->registro_chofer($data);
     }
 
     public function crear_proveedor(){
-		
-		$this->form_validation->set_rules('rif_proveedor', 'Rif Proveedor', 'required|min_length[5]|max_length[20]');
+        
+        $this->form_validation->set_rules('rif_proveedor', 'Rif Proveedor', 'required|min_length[5]|max_length[20]');
         $this->form_validation->set_rules('razon_social', 'Razon Social', 'required|min_length[5]|max_length[100]');
-		
+        
         $data = array(
-			// Campo unico en la bd
+            // Campo unico en la bd
             'rif_proveedor' => $this->input->post('rif_proveedor'),
             'razon_social' => $this->input->post('razon_social'),
             'observacion' => $this->input->post('observacion'),
@@ -131,19 +131,19 @@ class Transporte extends CI_Controller {
         );
         
         if ($this->form_validation->run() == FALSE)
-			$this->load->view('transporte/reg_proveedor');
-		else
-			$resultado['almacenes_proveedor'] = $this->almacenmodel->registro_proveedor($data);
+            $this->load->view('transporte/reg_proveedor');
+        else
+            $resultado['almacenes_proveedor'] = $this->almacenmodel->registro_proveedor($data);
     }
 
     public function crear_vehiculo(){
-		
-		//Ojo no se cuales son las especificaciones para una placa asi que las saltare por ahora
-		$this->form_validation->set_rules('rif_proveedor', 'Rif Proveedor', 'required|min_length[5]|max_length[20]');
+        
+        //Ojo no se cuales son las especificaciones para una placa asi que las saltare por ahora
+        $this->form_validation->set_rules('rif_proveedor', 'Rif Proveedor', 'required|min_length[5]|max_length[20]');
         $this->form_validation->set_rules('razon_social', 'Razon Social', 'required|min_length[5]|max_length[100]');
 
         $data = array(
-			//Imagino que la placa si debe ser unica
+            //Imagino que la placa si debe ser unica
             'placa' => $this->input->post('placa'),
             'placa_chuto' => $this->input->post('placa_chuto'),
             'placa_tanque' => $this->input->post('placa_tanque'),
@@ -155,8 +155,8 @@ class Transporte extends CI_Controller {
         );
         
         if ($this->form_validation->run() == FALSE)
-			$this->load->view('transporte/reg_vehiculo');
-		else
-			$resultado['almacenes_vehiculo'] = $this->almacenmodel->registro_vehiculo($data);
+            $this->load->view('transporte/reg_vehiculo');
+        else
+            $resultado['almacenes_vehiculo'] = $this->almacenmodel->registro_vehiculo($data);
     }
 }

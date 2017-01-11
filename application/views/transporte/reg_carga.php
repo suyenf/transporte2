@@ -2,13 +2,16 @@
 	$origen_flete = array('name' => 'origen_flete','class' =>'form-control', 'placeholder' => 'Origen Flete');
 	$destino_flete = array('name' => 'destino_flete','class' =>'form-control', 'placeholder' => 'Destino Flete');
 	
-	$monto_viatico = array('name' => 'monto_viatico','class' =>'form-control', 'placeholder' => 'Monto viatico');
+	//Tipo solo numerico
+	$monto = array('name' => 'monto_viatico','class' =>'form-control', 'placeholder' => 'Monto viatico');
+	
+	$uni = array('batea' => 'Batea', 'granel' => 'Granel', 'carga_suelta' => 'Carga Suelta');
 	
 	$modelo = array('name' => 'modelo','class' =>'form-control', 'placeholder' => 'Modelo');
 	$marca = array('name' => 'marca','class' =>'form-control', 'placeholder' => 'Marca');
 	$anio = array('name' => 'anio','class' =>'form-control', 'placeholder' => 'Año');
 	
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Proveedor');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga');
 ?>
 <div class="col-sm-12">
     <div class="widget-header">
@@ -37,50 +40,61 @@
 				<div class="col-sm-9">
 					<?php echo form_input($destino_flete);?><br>
 				</div> 
-			</div>    
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Unidad</strong></big> </label>
-                        <div class="col-sm-9">
-                        <select name="id_unidad" id="id_unidad">
-                            <option>Batea</option>
-                            <option selected="selected">Granel</option>
-                            <option>Carga Suelta</option>
-                        </select>
-                         </div>
-                    </div>
-			<!--<br>Crear combo html con id unidad (normalito) con los datos de ,  y  </br>-->
+			</div>        
+
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Monto Viatico</strong></big> </label>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Unidad</strong></big> </label>
 				<div class="col-sm-9">
-					<?php echo form_input($monto_viatico);?><br>
+					<?php echo form_dropdown('unidad', $uni);?><br>
+				</div> 
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Producto</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_dropdown('producto', $productos);?><br>
 				</div> 
 			</div>
 			 
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Modelo</strong></big> </label>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Monto viatico</strong></big> </label>
 				<div class="col-sm-9">
-					<?php echo form_input($modelo); ?><br>
+					<?php echo form_input($monto); ?><br>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Marca</strong></big> </label>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Cliente</strong></big> </label>
 				<div class="col-sm-9">
-					<?php echo form_input($marca); ?><br>
+					<?php echo form_dropdown('cliente', $clientes);?><br>
 				</div>
 			</div>
 			
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Año</strong></big> </label>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Proveedor</strong></big> </label>
 				<div class="col-sm-9">
-					<?php echo form_input($anio); ?><br>
+					<?php echo form_dropdown('proveedor', $proveedores);?><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Chofer</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_dropdown('chofer', $choferes);?><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Vehiculo</strong></big> </label>
+				<div class="col-sm-9">
+					<?php echo form_dropdown('vehiculo', $vehiculos);?><br>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>
 				<div class="col-sm-9">
-					<?php echo form_input($observacion); ?><br><br>
+					<?php echo form_textarea($observacion); ?><br>
 				</div>
 			</div>
 			
@@ -88,7 +102,7 @@
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Activo</strong></big> </label>
 					<?php // echo form_label('Activo', 'Activo');?>                
 				<label>
-					<input name="switch-field-1" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
+					<input name="activo" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
 					<span class="lbl"></span>
 				</label>
 			</div>

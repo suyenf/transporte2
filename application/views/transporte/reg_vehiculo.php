@@ -7,7 +7,7 @@
 	$marca = array('name' => 'marca','class' =>'form-control', 'placeholder' => 'Marca');
 	$anio = array('name' => 'anio','class' =>'form-control', 'placeholder' => 'Año');
 	
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Proveedor');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de vehiculo');
 ?>
 <div class="col-sm-12">
     <div class="widget-header">
@@ -69,7 +69,7 @@
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>
 				<div class="col-sm-9">
-					<?php echo form_input($observacion); ?><br><br>
+					<?php echo form_textarea($observacion); ?><br>
 				</div>
 			</div>
 			
@@ -77,7 +77,7 @@
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Activo</strong></big> </label>
 					<?php // echo form_label('Activo', 'Activo');?>                
 				<label>
-					<input name="switch-field-1" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
+					<input name="activo" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
 					<span class="lbl"></span>
 				</label>
 			</div>
