@@ -1,7 +1,7 @@
  <div class="footer">
             <div class="footer-inner">
                 <div >
-<!--                <div class="footer-content">-->
+                <!--<div class="footer-content">-->
                     <span class="bigger-120">
                         
                         <span class="blue bolder">Copyright</span>
