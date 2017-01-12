@@ -239,4 +239,22 @@ class Almacenmodel extends CI_Model {
         $query->free_result();
         return $datos;
     }
+
+    public function traer_productos(){
+
+        $datos = array();
+        
+        $query = $this->db->order_by("creado desc");
+        $query = $this->db->get('almacenes_producto');
+
+        if($query->num_rows() > 0){
+
+            foreach ($query->result() as $fila){
+                $datos[] = $fila;
+            }
+            $query->free_result();
+            return $datos;
+        }else
+            return FALSE;
+    }
 }

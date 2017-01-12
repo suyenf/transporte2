@@ -159,4 +159,10 @@ class Transporte extends CI_Controller {
         else
             $resultado['almacenes_vehiculo'] = $this->almacenmodel->registro_vehiculo($data);
     }
+
+    public function productos(){
+        
+        $data['productos'] = $this->almacenmodel->traer_productos();
+        $this->load->view('transporte/list_productos',$data);
+    }
 }
