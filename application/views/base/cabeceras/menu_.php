@@ -284,7 +284,7 @@
             <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
         </div>
          </div>
-<!--- REVISARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR --->
+
         <div class="main-content">
             <div class="main-content-inner">
                 <div class="page-content"></div>
