@@ -32,8 +32,8 @@
 -->
 
 <div>
-<!--<div class="row">-->
-    <div class="col-xs-12">
+<div class="row">
+    <div class="col-xs-11">
         <div class="widget-header">
             <h1 class="widget-title">Productos</h1>
         </div>
@@ -41,21 +41,31 @@
         <div class="clearfix">
             <div class="pull-right tableTools-container"></div>
         </div>
-        <div class="table-header" margin= "auto">
-            Resultados para  "Últimos dominios registrados"
+        <div  margin= "auto">
+            <div class="row">
+                <div class="col-xs-3">
+           
+                </div>
+                <div class="col-xs-6">
+                </div>
+                <div class="col-xs-3">
             <a href="<?= base_url('index.php/transporte/Transporte/crear_producto') ?>"
-               <button class="btn btn-lg btn-success" margin= "auto">
-                    <i class="ace-icon fa fa-check">Agregar producto</i>
+               <button class="btn btn-lg btn-danger" >
+                    <i class="amenu-icon fa fa-cubes">Agregar producto</i>
                 </button>
-            </a>
-        
+                </a>
+                </div>
+            </div>
+            </div>
+        <br>
         </div>
 
         <!-- div.table-responsive -->
 
         <!-- div.dataTables_borderWrap -->
         <div>
-            <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable" style="font-size: 85%" margin= "auto">
+            <div class="col-xs-11">
+            <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable" >
                 <thead>
                     <tr>
                         
@@ -77,8 +87,6 @@
                         <!--<th class="hidden-480">Observación</th>-->
                         <th class="hidden-480">Estado</th>
                         <th colspan=""> Opciones</th>
-
-                        <th></th>
                     </tr>
                 </thead>
 
@@ -1712,16 +1720,18 @@
                 </tbody>
             </table>
         </div>
-    </div>
+        </div>
+</div>
 </div>
 
 
 
 <!-- PAGE CONTENT ENDS -->
-
+<div class="col-xs-11">
 <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
     <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 </a>
+
 </div><!-- /.main-container -->
 
 <!-- basic scripts -->
@@ -1796,12 +1806,12 @@
 
         new $.fn.dataTable.Buttons(myTable, {
             buttons: [
-                {
-                    "extend": "colvis",
-                    "text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Mostrar / Ocultar Columnas</span>",
-                    "className": "btn btn-white btn-primary btn-bold",
-                    columns: ':not(:first):not(:last)'
-                },
+//                {
+//                    "extend": "colvis",
+//                    "text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Mostrar / Ocultar Columnas</span>",
+//                    "className": "btn btn-white btn-primary btn-bold",
+//                    columns: ':not(:first):not(:last)'
+//                },
                 {
                     "extend": "copy",
                     "text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copiar al Portapapeles</span>",
@@ -1826,7 +1836,7 @@
                     "extend": "print",
                     "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Imprimir</span>",
                     "className": "btn btn-white btn-primary btn-bold",
-                    autoPrint: false,
+                    autoPrint: true,
                     message: 'Esta impresión se produjo utilizando el botón Imprimir'
                 }
             ]

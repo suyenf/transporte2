@@ -14,7 +14,7 @@
         <title><?php echo $titulo  ?><?php if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('assets/css/bootstrap.css') ?>" rel="stylesheet">
         <link type="text/css" href="<?= base_url('assets/font-awesome/4.5.0/css/font-awesome.min.css') ?>" rel="stylesheet" />
 
         <!-- page specific plugin styles -->
@@ -26,13 +26,13 @@
         <link href="<?= base_url('assets/css/fonts.googleapis.com.css') ?>" rel="stylesheet">
 
         <!-- ace styles -->
-        <link rel="stylesheet" href="<?= base_url('assets/css/ace.min.css') ?>" class="ace-main-stylesheet" id="main-ace-style" />
+        <link rel="stylesheet" href="<?= base_url('assets/css/ace.css') ?>" class="ace-main-stylesheet" id="main-ace-style" />
 
 
         <!-- skins -->
         <link href="<?= base_url('assets/css/ace-skins.min.css') ?>" rel="stylesheet">
         <link href="<?= base_url('assets/css/ace-rtl.min.css') ?>" rel="stylesheet">
-        <link href="<?= base_url('assets/css/ace-part2.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('assets/css/ace-part2.css') ?>" rel="stylesheet">
 
         <!-- ace settings handler -->
         <link href="<?= base_url('assets/js/ace-extra.min.js') ?>" rel="stylesheet" type="text/css">
