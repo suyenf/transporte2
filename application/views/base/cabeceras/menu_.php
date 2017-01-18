@@ -80,24 +80,27 @@
 
             <div class="sidebar-shortcuts" id="sidebar-shortcuts">
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                    
-                    <button class="btn btn-warning"  >
-                        <i class="ace-icon fa fa-user" src="<?= base_url('index.php/transporte/Transporte/crear_cliente')?>" title="Reg.de Cliente">
-                                                       
-                        </i>
-                    </button>
+                    <!--<div>-->
+                    <a href="<?= base_url('index.php/transporte/Transporte/crear_cliente') ?>">   
+                        <button  class="btn btn-warning"  >
+                            <i class="ace-icon fa fa-user"  title="Reg.de Cliente">
 
-                    <button class="btn btn-success">
-                        <i class="ace-icon fa fa-users" title="Reg.de Proveedor"></i>
-                    </button>
-
-                    <button class="btn btn-danger ">
-                        <i class="ace-icon fa fa-cubes" title="Reg.de Productos"></i>
-                    </button>
-
-                    <button class="btn btn-info">
+                            </i>
+                        </button>
+                    </a>     
+                    <a href="<?= base_url('index.php/transporte/Transporte/crear_proveedor') ?>">  
+                        <button class="btn btn-success">
+                            <i class="ace-icon fa fa-users" title="Reg.de Proveedor"></i>
+                        </button>
+                    </a>   
+                    <a href="<?= base_url('index.php/transporte/Transporte/crear_producto') ?>">
+                        <button class="btn btn-danger ">
+                            <i class="ace-icon fa fa-cubes" title="Reg.de Productos"></i>
+                        </button>
+                    </a> 
+<!--                    <button class="btn btn-info">
                         <i class="ace-icon fa fa-list" title="Reportes"></i>
-                    </button>
+                    </button>-->
                 </div>
 
                 <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
@@ -200,11 +203,11 @@
                                         <i class="menu-icon fa fa-pencil orange"></i>
 
                                         Recibo/Entrada
-                                        <b class="arrow fa fa-angle-down"></b>
+                                        <!--<b class="arrow fa fa-angle-down"></b>-->
                                     </a>
 
                                     <b class="arrow"></b>
-
+                                <!--        
                                     <ul class="submenu">
                                         <li class="">
                                             <a href="#">
@@ -224,6 +227,7 @@
                                             <b class="arrow"></b>
                                         </li>
                                     </ul>
+                                -->
                                 </li>
                             </ul>
                         </li>
@@ -260,7 +264,7 @@
                         </li>
                         
                         <li class="">
-                            <a href="<?= base_url('jqgrid.html')?>">
+                            <a href="<?= base_url('index.php/transporte/Transporte/productos')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                  Por Producto
                             </a>

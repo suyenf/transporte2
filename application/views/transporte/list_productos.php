@@ -48,16 +48,15 @@
                 </div>
                 <div class="col-xs-6">
                 </div>
-                <div class="col-xs-3">
+<!--                <div class="col-xs-3">
             <a href="<?= base_url('index.php/transporte/Transporte/crear_producto') ?>"
                <button class="btn btn-lg btn-danger" >
                     <i class="amenu-icon fa fa-cubes">Agregar producto</i>
                 </button>
                 </a>
-                </div>
+                </div>-->
             </div>
             </div>
-        <br>
         </div>
 
         <!-- div.table-responsive -->
@@ -65,10 +64,9 @@
         <!-- div.dataTables_borderWrap -->
         <div>
             <div class="col-xs-11">
-            <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable" >
+            <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable" style="font-size: 85%" >
                 <thead>
                     <tr>
-                        
                         <th class="center">
                             <label class="pos-rel">
                                 <input type="checkbox" class="ace" />
@@ -119,9 +117,7 @@
                          <td> <?php echo $row->creado; ?> </td>
                          <!--<td> <?php echo $row->observacion; ?> </td>-->
                          <td> <?php echo $act; ?> </td>
-                                                 
-                        
-					
+                         		
 				<?php // }}else{ print "No hay datos que mostrar<br><br>";  } ?>
 			
 
@@ -147,7 +143,7 @@
                                     </button>
 
                                     <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                        <li>
+                                            
                                             <a href="#" class="tooltip-info" data-rel="tooltip" title="Ver">
                                                 <span class="blue">
                                                     <i class="ace-icon fa fa-search-plus bigger-120"></i>
@@ -1812,33 +1808,48 @@
 //                    "className": "btn btn-white btn-primary btn-bold",
 //                    columns: ':not(:first):not(:last)'
 //                },
-                {
-                    "extend": "copy",
-                    "text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copiar al Portapapeles</span>",
+//                {
+//                    "extend": "copy",
+//                    "text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copiar al Portapapeles</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
+//                },
+//                {
+//                    "extend": "csv",
+//                    "text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Exportar a CSV</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
+//                },
+                
+    {
+                    
+                    "src": "<?= base_url('index.php/transporte/Transporte/crear_producto') ?>",
+                    "text": "<i class='fa fa fa-cubes bigger-110 red'></i> <span class='hidden'>Agregar Producto</span>",
                     "className": "btn btn-white btn-primary btn-bold"
                 },
+    
                 {
                     "extend": "csv",
-                    "text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Exportar a CSV</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
-                {
-                    "extend": "excel",
                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
                     "className": "btn btn-white btn-primary btn-bold"
                 },
-                {
-                    "extend": "pdf",
-                    "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Exportar a PDF</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
+//                {
+//                    "extend": "excel",
+//                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
+//                },
+//                {
+//                    "extend": "pdf",
+//                    "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Exportar a PDF</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
+//                },
+
                 {
                     "extend": "print",
-                    "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Imprimir</span>",
+                    "text": "<i class='fa fa-print bigger-110 pink'></i> <span class='hidden'>Imprimir</span>",
                     "className": "btn btn-white btn-primary btn-bold",
                     autoPrint: true,
                     message: 'Esta impresión se produjo utilizando el botón Imprimir'
                 }
+                
             ]
         });
         myTable.buttons().container().appendTo($('.tableTools-container'));

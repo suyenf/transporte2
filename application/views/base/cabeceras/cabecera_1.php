@@ -3,6 +3,7 @@
     <head>
 
         <meta charset="utf-8">
+        
         <title>VendeCar</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,8 @@
      <!-- Put favicon.ico and apple-touch-icologo.jpgn(s).png in the images folder -->
         <link href="<?= base_url('assets/images/favicon.ico')?>" rel="shortcut icon" >
         
-        <title><?php echo $titulo  ?><?php if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>
+        <title><?php if(isset($titulo)){echo $titulo;}else{echo "VendeCar";}  ?><?php if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>
+<!--        <title><?php // echo $titulo  ?><?php // if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>-->
 
         <!-- Bootstrap Core CSS -->
         <link href="<?= base_url('assets/css/bootstrap.css') ?>" rel="stylesheet">
@@ -36,7 +38,7 @@
 
         <!-- ace settings handler -->
         <link href="<?= base_url('assets/js/ace-extra.min.js') ?>" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="<?= base_url('assets/css/select2.min.css') ?>" />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -300,4 +302,16 @@
 
             })
         </script>
+        
+    
+    
+    
+    
+    
+    </script>
+        
+        
+        
+        
+        
     </body>
