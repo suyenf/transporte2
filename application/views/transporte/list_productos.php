@@ -41,6 +41,9 @@
         <div class="clearfix">
             <div class="pull-right tableTools-container"></div>
         </div>
+ 
+
+        
         <div  margin= "auto">
             <div class="row">
                 <div class="col-xs-3">
@@ -49,11 +52,37 @@
                 <div class="col-xs-6">
                 </div>
                 <div class="col-xs-3">
-            <a href = <?php echo base_url().'index.php/transporte/Transporte/crear_producto'; ?>>
-               <button class="btn btn-lg btn-danger" >
-                    <i class="amenu-icon fa fa-cubes">Agregar producto</i>
+                    <div class="btn-group">
+                        <a href = <?php echo base_url().'index.php/transporte/Transporte/crear_producto'; ?>>
+                            <button type="button" class="btn btn-white btn-sm btn-primary" title="Agregar un producto">
+                            <i class="ace-icon fa fa-cubes red bigger-120 "></i>
+                        </button>
+                        </a>    
+                        <button type="button" class="btn btn-white btn-sm btn-primary" title="Exportar Excel" > 
+                         <i class="ace-icon fa fa-file-excel-o green bigger-120 "></i>
+                        </button>
+                        <script>
+                        {
+                        "extend": "print",
+                        "text": "<i class='fa fa-print bigger-110 pink'></i> <span class='hidden'>Imprimir</span>",                    
+                        "className": "btn btn-white btn-primary btn-bold",
+                        autoPrint: true,
+                        message: 'Esta impresión se produjo utilizando el botón Imprimir'
+                        }
+                        
+                        </script>
+                        <button type="button" class="btn btn-white btn-sm btn-primary" title="Imprimir" > 
+                         <i class="ace-icon fa fa-print pink bigger-120 "></i>
+                        </button>
+                    </div>
+                    
+                    
+                    
+<!--            <a href = <?php echo base_url().'index.php/transporte/Transporte/crear_producto'; ?>>
+               <button class="btn btn-block btn-danger" >
+                    <i class=" fa fa-cubes">Agregar producto</i>
                 </button>
-                </a>
+                </a>-->
                 </div>
             </div>
             </div>
@@ -1789,35 +1818,17 @@
 
         new $.fn.dataTable.Buttons(myTable, {
             buttons: [
-//                {
-//                    "extend": "colvis",
-//                    "text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Mostrar / Ocultar Columnas</span>",
-//                    "className": "btn btn-white btn-primary btn-bold",
-//                    columns: ':not(:first):not(:last)'
-//                },
-                {
-                    "extend": "copy",
-                    "text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copiar al Portapapeles</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
-                {
-                    "extend": "csv",
-                    "text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Exportar a CSV</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
-                {
+//               
+               {
                     "extend": "excel",
-                    "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
+                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
                     "className": "btn btn-white btn-primary btn-bold"
-                },
-                {
-                    "extend": "pdf",
-                    "text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Exportar a PDF</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                },
+                 },
+//        
+//               
                 {
                     "extend": "print",
-                    "text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Imprimir</span>",
+                    "text": "<i class='fa fa-print bigger-110 pink'></i> <span class='hidden'>Imprimir</span>",                    
                     "className": "btn btn-white btn-primary btn-bold",
                     autoPrint: true,
                     message: 'Esta impresión se produjo utilizando el botón Imprimir'

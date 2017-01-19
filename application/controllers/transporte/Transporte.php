@@ -59,6 +59,8 @@ class Transporte extends CI_Controller {
         $resultado['almacenes_carga'] = $this->almacenmodel->registro_carga($data);
         //print_r($data);
         $this->load->view('transporte/reg_carga',$data);
+        $this->load->view('transporte/reg_producto_modal');
+        
     }
     
     public function crear_producto(){

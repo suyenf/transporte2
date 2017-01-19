@@ -13,13 +13,7 @@
 	
 	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga','required'=>'true');
 ?>
-<?php
-	$nombre_producto = array('name' => 'nombre_producto','class' =>'form-control','placeholder' => 'Nombre del producto','required'=>'true');
-	$codigo_producto = array('name' => 'codigo_producto','class' =>'form-control', 'placeholder' => 'Codigo de producto','required'=>'true');
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de producto','required'=>'true');
-	//$activo = array('name' => 'activo','class' =>'form-control', 'value' => '1', 'checked' => TRUE);
-//	echo form_open('transporte/transporte/reg_producto'); /* Usar Form_open para abrir el controlador */
-?>
+
 
 
 <div class="col-sm-12">
@@ -62,77 +56,11 @@
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Producto</strong></big> </label>
 				<div class="col-sm-3">
 					<?php echo form_dropdown('producto', $productos);?>
-                                    <!--<button class="glyphicon glyphicon-plus btn-minier help-button btn-yellow"></button>-->
-                                    <button class="glyphicon glyphicon-plus btn-minier help-button btn-yellow" data-toggle="modal" data-target="#myModal">
-                                        <!--<span class="fa fa-plus-circle"></span> Nuevo Detalle-->
+                                    <button class=" fa fa-cubes btn-minier help-button btn-danger" data-toggle="modal" data-target="#myModal" title="Agregar Producto">
                                     </button>
 
 				</div> 
-
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h3 class="modal-title" id="myModalLabel">Nuevo Producto</h3>
-                                            </div>
-                                            <div class="modal-body">
-                                                <?php
-                                                echo form_open('index.php/transporte/Transporte/crear_producto');
-                                                ?>
-
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Nombre del Producto</strong></big> </label>
-                                                    <div class="col-sm-3">
-                                                        <?php echo form_input($nombre_producto); ?><br>
-                                                    </div> 
-                                                    <!--			</div>
-                                                                             
-                                                                            <div class="form-group">-->
-                                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Código de Producto</strong></big> </label>
-                                                    <div class="col-sm-3">
-                                                        <?php echo form_input($codigo_producto); ?><br>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>
-                                                    <div class="col-sm-9">
-                                                        <?php echo form_textarea($observacion); ?>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Activo</strong></big> </label>
-                                                    <?php // echo form_label('Activo', 'Activo');?>                
-                                                    <label>
-                                                        <input name="switch-field-1" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
-                                                        <span class="lbl"></span>
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="col-md-offset-6 col-md-10">
-                                                        <div class="col-sm-6">
-                                                            <button onclick="miFuncion()" class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar'); ?>
-                                                                    <i class="ace-icon fa fa-check bigger-130"></i>Guardar
-                                                            </button> <br><br><br>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <?php echo form_close(); ?>
-                                        </div>
-                                        <!-- /.modal-content -->
-                                    </div>
-                                    <!-- /.modal-dialog -->
-                                </div>
-                                
-                                
-                                
-                                
-                                
-			</div>
-			 
+                                <br><br><br>
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Viatico</strong></big> </label>
 				<div class="col-sm-3">
@@ -142,30 +70,48 @@
 			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Cliente</strong></big> </label>
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<?php echo form_dropdown('cliente', $clientes);?>
+                                    <button class=" fa fa-user  btn-minier help-button btn-warning" data-toggle="modal" data-target="#myModal" title="Agregar Cliente">
+                                    </button>
 				</div>
 <!--			</div>
 			
 			<div class="form-group">-->
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Proveedor</strong></big> </label>
-				<div class="col-sm-3">
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Proveedor</strong></big> </label>
+				<div class="col-sm-1">
 					<?php echo form_dropdown('proveedor', $proveedores);?>
 				</div>
+                                <div class="col-xs-11 col-xs-1 control-label no-padding-right">
+                                <div class="col-xs-11 col-xs-1">
+                                    <button class=" fa fa-users  btn-minier help-button btn-success" data-toggle="modal" data-target="#myModal" title="Agregar Proveedor">
+                                    </button>
+                                </div>
+                                </div>
 			</div>
 			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Chofer</strong></big> </label>
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 					<?php echo form_dropdown('chofer', $choferes);?>
+                                        <button class=" fa fa-male  btn-minier help-button btn-grey " data-toggle="modal" data-target="#myModal" title="Agregar Chofer">
+                                    </button>
 				</div>
 <!--			</div>
 			
 			<div class="form-group">-->
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Vehiculo</strong></big> </label>
-				<div class="col-sm-3">
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Vehiculo</strong></big> </label>
+				<div class="col-sm-1">
 					<?php echo form_dropdown('vehiculo', $vehiculos);?>
 				</div>
+                                <div class="col-xs-11 col-xs-1 control-label no-padding-right">
+                                <div class="col-xs-1">
+                                    <button class=" fa fa-car  btn-minier help-button btn-grey " data-toggle="modal" data-target="#myModal" title="Agregar Vehiculo">
+                                    </button>
+                                    
+                                </div>
+                                </div>
+                                
 			</div>
 			
 			<div class="form-group">

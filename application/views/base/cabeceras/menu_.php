@@ -207,27 +207,7 @@
                                     </a>
 
                                     <b class="arrow"></b>
-                                <!--        
-                                    <ul class="submenu">
-                                        <li class="">
-                                            <a href="#">
-                                                <i class="menu-icon fa fa-plus purple"></i>
-                                                Add Product
-                                            </a>
-
-                                            <b class="arrow"></b>
-                                        </li>
-
-                                        <li class="">
-                                            <a href="#">
-                                                <i class="menu-icon fa fa-eye pink"></i>
-                                                View Products
-                                            </a>
-
-                                            <b class="arrow"></b>
-                                        </li>
-                                    </ul>
-                                -->
+                     
                                 </li>
                             </ul>
                         </li>
