@@ -61,16 +61,12 @@
                         <button type="button" class="btn btn-white btn-sm btn-primary" title="Exportar Excel" > 
                          <i class="ace-icon fa fa-file-excel-o green bigger-120 "></i>
                         </button>
-                        <script>
-                        {
-                        "extend": "print",
-                        "text": "<i class='fa fa-print bigger-110 pink'></i> <span class='hidden'>Imprimir</span>",                    
-                        "className": "btn btn-white btn-primary btn-bold",
-                        autoPrint: true,
-                        message: 'Esta impresión se produjo utilizando el botón Imprimir'
-                        }
+                        <a href = <?php echo base_url().'index.php/export/pdf_controller'; ?>>
+                            <button type="button" class="btn btn-white btn-sm btn-primary" title="Exportar PDF">
+                            <i class="ace-icon fa fa-file-pdf-o bigger-110 red"></i> <span class="hidden">Exportar a PDF</span>
+                        </button>
+                        </a>    
                         
-                        </script>
                         <button type="button" class="btn btn-white btn-sm btn-primary" title="Imprimir" > 
                          <i class="ace-icon fa fa-print pink bigger-120 "></i>
                         </button>
