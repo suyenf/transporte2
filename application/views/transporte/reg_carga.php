@@ -32,7 +32,7 @@
 		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_carga'); ?>" method="post" role="form">
                     <br><br><br>
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Origen Flete</strong></big> </label>
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1"><big><strong> Origen Flete</strong></big> </label>
 				<div class="col-sm-3">
 					<?php echo form_input($origen_flete);?>
 				</div> 
@@ -53,13 +53,23 @@
 <!--			</div>
 
 			<div class="form-group">-->
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Producto</strong></big> </label>
+                                <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Proveedor</strong></big> </label>
+				<div class="col-sm-1">
+					<?php echo form_dropdown('proveedor', $proveedores);?>
+				</div>
+                                <div class="col-sm-3 control-label no-padding-right">
+                                <div class="col-sm-12">
+                                    <button class=" fa fa-users  btn-minier help-button btn-success" data-toggle="modal" data-target="#myModal" title="Agregar Proveedor">
+                                    </button>
+                                </div>
+                                </div>
+<!--				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Producto</strong></big> </label>
 				<div class="col-sm-3">
 					<?php echo form_dropdown('producto', $productos);?>
                                     <button class=" fa fa-cubes btn-minier help-button btn-danger" data-toggle="modal" data-target="#myModal" title="Agregar Producto">
                                     </button>
 
-				</div> 
+				</div> -->
                                 <br><br><br>
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Viatico</strong></big> </label>
@@ -75,19 +85,27 @@
                                     <button class=" fa fa-user  btn-minier help-button btn-warning" data-toggle="modal" data-target="#myModal" title="Agregar Cliente">
                                     </button>
 				</div>
+                                
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-1"><big><strong> Producto</strong></big> </label>
+				<div class="col-sm-3">
+					<?php echo form_dropdown('producto', $productos);?>
+                                    <button class=" fa fa-cubes btn-minier help-button btn-danger" data-toggle="modal" data-target="#myModal" title="Agregar Producto">
+                                    </button>
+
+				</div> 
 <!--			</div>
 			
 			<div class="form-group">-->
-				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Proveedor</strong></big> </label>
+<!--				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Proveedor</strong></big> </label>
 				<div class="col-sm-1">
 					<?php echo form_dropdown('proveedor', $proveedores);?>
 				</div>
-                                <div class="col-xs-11 col-xs-1 control-label no-padding-right">
-                                <div class="col-xs-11 col-xs-1">
+                                <div class="col-sm-3 control-label no-padding-right">
+                                <div class="col-sm-12">
                                     <button class=" fa fa-users  btn-minier help-button btn-success" data-toggle="modal" data-target="#myModal" title="Agregar Proveedor">
                                     </button>
                                 </div>
-                                </div>
+                                </div>-->
 			</div>
 			
 			<div class="form-group">
@@ -100,12 +118,12 @@
 <!--			</div>
 			
 			<div class="form-group">-->
-				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Vehiculo</strong></big> </label>
-				<div class="col-sm-1">
+				<label class="col-sm-1 control-label no-padding-right" for="form-field-1-1"><big><strong> Vehiculo</strong></big> </label>
+				<div class="col-sm-3">
 					<?php echo form_dropdown('vehiculo', $vehiculos);?>
-				</div>
+<!--				</div>
                                 <div class="col-xs-11 col-xs-1 control-label no-padding-right">
-                                <div class="col-xs-1">
+                                <div class="col-xs-1">-->
                                     <button class=" fa fa-car  btn-minier help-button btn-grey " data-toggle="modal" data-target="#myModal" title="Agregar Vehiculo">
                                     </button>
                                     

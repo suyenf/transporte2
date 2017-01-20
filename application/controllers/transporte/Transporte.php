@@ -60,6 +60,7 @@ class Transporte extends CI_Controller {
         //print_r($data);
         $this->load->view('transporte/reg_carga',$data);
         $this->load->view('transporte/reg_producto_modal');
+        $this->load->view('transporte/reg_proveedor_modal');
         
     }
     

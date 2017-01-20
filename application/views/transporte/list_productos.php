@@ -61,16 +61,8 @@
                         <button type="button" class="btn btn-white btn-sm btn-primary" title="Exportar Excel" > 
                          <i class="ace-icon fa fa-file-excel-o green bigger-120 "></i>
                         </button>
-                        <script>
-                        {
-                        "extend": "print",
-                        "text": "<i class='fa fa-print bigger-110 pink'></i> <span class='hidden'>Imprimir</span>",                    
-                        "className": "btn btn-white btn-primary btn-bold",
-                        autoPrint: true,
-                        message: 'Esta impresión se produjo utilizando el botón Imprimir'
-                        }
-                        
-                        </script>
+                     <iframe id="txtArea1" style="display:none"></iframe>
+                     <button id="btnExport" onclick="fnExcelReport();"> EXPORT </button>
                         <button type="button" class="btn btn-white btn-sm btn-primary" title="Imprimir" > 
                          <i class="ace-icon fa fa-print pink bigger-120 "></i>
                         </button>
