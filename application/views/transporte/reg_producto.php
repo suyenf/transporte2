@@ -47,9 +47,8 @@
                     
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Activo</strong></big> </label>
-					<?php // echo form_label('Activo', 'Activo');?>                
 				<label>
-					<input name="switch-field-1" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
+					<input name="activo" class="ace ace-switch ace-switch-6" id="activo" value = '1' checked type="checkbox" />
 					<span class="lbl"></span>
 				</label>
 			</div>

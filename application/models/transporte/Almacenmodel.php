@@ -18,6 +18,11 @@ class Almacenmodel extends CI_Model {
         
         //Fecha actual - "2016-05-24 15:02:43-04:30"
         $hoy = date("Y-m-d H:i:s");
+
+        if (($data['activo']) == "")
+            $act = 0;
+        else
+            $act = 1;
         
         $this->db->insert('almacenes_carga', array(
             'fecha' => $hoy, //Preguntar si se registran a destiempo
@@ -45,7 +50,7 @@ class Almacenmodel extends CI_Model {
         $hoy = date("Y-m-d H:i:s");
 
         //Estado del campo activo
-        if (empty($data['activo']))
+        if (($data['activo']) == "")
             $act = 0;
         else
             $act = 1;
@@ -66,7 +71,7 @@ class Almacenmodel extends CI_Model {
         $hoy = date("Y-m-d H:i:s");
 
         //Estado del campo activo
-        if (empty($data['activo']))
+        if (($data['activo']) == "")
             $act = 0;
         else
             $act = 1;
@@ -86,8 +91,7 @@ class Almacenmodel extends CI_Model {
         //Fecha actual - "2016-05-24 15:02:43-04:30"
         $hoy = date("Y-m-d H:i:s");
 
-        //Estado del campo activo
-        if (empty($data['activo']))
+        if (($data['activo']) == "")
             $act = 0;
         else
             $act = 1;
@@ -109,7 +113,7 @@ class Almacenmodel extends CI_Model {
         $hoy = date("Y-m-d H:i:s");
 
         //Estado del campo activo
-        if (empty($data['activo']))
+        if (($data['activo']) == "")
             $act = 0;
         else
             $act = 1;
@@ -146,7 +150,7 @@ class Almacenmodel extends CI_Model {
         $hoy = date("Y-m-d H:i:s");
 
         //Estado del campo activo
-        if (empty($data['activo']))
+        if (($data['activo']) == "")
             $act = 0;
         else
             $act = 1;
@@ -208,7 +212,7 @@ class Almacenmodel extends CI_Model {
         $query = $this->db->where('activo','1');
         $query = $this->db->get('almacenes_cliente');
         
-        $datos = array();      
+        $datos = array();
         foreach($query->result() as $row)
             $datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->rif, ENT_QUOTES)." - ".htmlspecialchars($row->razon_social, ENT_QUOTES);
 
@@ -220,7 +224,7 @@ class Almacenmodel extends CI_Model {
         $query = $this->db->where('activo','1');
         $query = $this->db->get('almacenes_proveedor');
         
-        $datos = array();      
+        $datos = array();
         foreach($query->result() as $row)
             $datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->rif, ENT_QUOTES)." - ".htmlspecialchars($row->razon_social, ENT_QUOTES);
 
@@ -232,7 +236,7 @@ class Almacenmodel extends CI_Model {
         $query = $this->db->where('activo','1');
         $query = $this->db->get('almacenes_vehiculo');
         
-        $datos = array();      
+        $datos = array();
         foreach($query->result() as $row)
             $datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->placa, ENT_QUOTES);
 
@@ -246,6 +250,78 @@ class Almacenmodel extends CI_Model {
         
         $query = $this->db->order_by("creado desc");
         $query = $this->db->get('almacenes_producto');
+
+        if($query->num_rows() > 0){
+
+            foreach ($query->result() as $fila){
+                $datos[] = $fila;
+            }
+            $query->free_result();
+            return $datos;
+        }else
+            return FALSE;
+    }
+
+    public function traer_clientes(){
+
+        $datos = array();
+        
+        $query = $this->db->order_by("creado desc");
+        $query = $this->db->get('almacenes_cliente');
+
+        if($query->num_rows() > 0){
+
+            foreach ($query->result() as $fila){
+                $datos[] = $fila;
+            }
+            $query->free_result();
+            return $datos;
+        }else
+            return FALSE;
+    }
+
+    public function traer_proveedores(){
+
+        $datos = array();
+        
+        $query = $this->db->order_by("creado desc");
+        $query = $this->db->get('almacenes_proveedor');
+
+        if($query->num_rows() > 0){
+
+            foreach ($query->result() as $fila){
+                $datos[] = $fila;
+            }
+            $query->free_result();
+            return $datos;
+        }else
+            return FALSE;
+    }
+
+    public function traer_choferes(){
+
+        $datos = array();
+        
+        $query = $this->db->order_by("creado desc");
+        $query = $this->db->get('almacenes_chofer');
+
+        if($query->num_rows() > 0){
+
+            foreach ($query->result() as $fila){
+                $datos[] = $fila;
+            }
+            $query->free_result();
+            return $datos;
+        }else
+            return FALSE;
+    }
+
+    public function traer_vehiculos(){
+
+        $datos = array();
+        
+        $query = $this->db->order_by("creado desc");
+        $query = $this->db->get('almacenes_vehiculo');
 
         if($query->num_rows() > 0){
 

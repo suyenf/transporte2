@@ -79,8 +79,10 @@ class Transporte extends CI_Controller {
             
         if ($this->form_validation->run() == FALSE)
             $this->load->view('transporte/reg_producto');
-        else
-            $resultado['almacenes_producto'] = $this->almacenmodel->registro_producto($data);
+        else{
+            $this->almacenmodel->registro_producto($data);
+            redirect('transporte/Transporte/productos','refresh');
+        }
     }
 
     public function crear_cliente(){
@@ -97,8 +99,10 @@ class Transporte extends CI_Controller {
         );
         if ($this->form_validation->run() == FALSE)
             $this->load->view('transporte/reg_cliente');
-        else
-            $resultado['almacenes_cliente'] = $this->almacenmodel->registro_cliente($data);
+        else{
+            $this->almacenmodel->registro_cliente($data);
+            redirect('transporte/Transporte/clientes','refresh');
+        }
     }
     
     public function crear_chofer(){
@@ -116,8 +120,10 @@ class Transporte extends CI_Controller {
         
         if ($this->form_validation->run() == FALSE)
             $this->load->view('transporte/reg_chofer');
-        else
-            $resultado['almacenes_chofer'] = $this->almacenmodel->registro_chofer($data);
+        else{
+            $this->almacenmodel->registro_chofer($data);
+            redirect('transporte/Transporte/choferes','refresh');
+        }
     }
 
     public function crear_proveedor(){
@@ -135,8 +141,10 @@ class Transporte extends CI_Controller {
         
         if ($this->form_validation->run() == FALSE)
             $this->load->view('transporte/reg_proveedor');
-        else
-            $resultado['almacenes_proveedor'] = $this->almacenmodel->registro_proveedor($data);
+        else{
+            $this->almacenmodel->registro_proveedor($data);
+            redirect('transporte/Transporte/proveedores','refresh');
+        }
     }
 
     public function crear_vehiculo(){
@@ -159,13 +167,39 @@ class Transporte extends CI_Controller {
         
         if ($this->form_validation->run() == FALSE)
             $this->load->view('transporte/reg_vehiculo');
-        else
-            $resultado['almacenes_vehiculo'] = $this->almacenmodel->registro_vehiculo($data);
+        else{
+            $this->almacenmodel->registro_vehiculo($data);
+            redirect('transporte/Transporte/vehiculos','refresh');
+        }
     }
 
     public function productos(){
         
         $data['productos'] = $this->almacenmodel->traer_productos();
         $this->load->view('transporte/list_productos',$data);
+    }
+
+    public function clientes(){
+        
+        $data['clientes'] = $this->almacenmodel->traer_clientes();
+        $this->load->view('transporte/list_clientes',$data);
+    }
+
+    public function proveedores(){
+        
+        $data['proveedores'] = $this->almacenmodel->traer_proveedores();
+        $this->load->view('transporte/list_proveedores',$data);
+    }
+
+    public function choferes(){
+        
+        $data['choferes'] = $this->almacenmodel->traer_choferes();
+        $this->load->view('transporte/list_choferes',$data);
+    }
+
+    public function vehiculos(){
+        
+        $data['vehiculos'] = $this->almacenmodel->traer_vehiculos();
+        $this->load->view('transporte/list_vehiculos',$data);
     }
 }
