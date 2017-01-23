@@ -182,24 +182,24 @@ class Transporte extends CI_Controller {
     public function clientes(){
         
         $data['clientes'] = $this->almacenmodel->traer_clientes();
-        $this->load->view('transporte/list_clientes',$data);
+        $this->load->view('transporte/list_cliente',$data);
     }
 
     public function proveedores(){
         
         $data['proveedores'] = $this->almacenmodel->traer_proveedores();
-        $this->load->view('transporte/list_proveedores',$data);
+        $this->load->view('transporte/list_proveedor',$data);
     }
 
     public function choferes(){
         
         $data['choferes'] = $this->almacenmodel->traer_choferes();
-        $this->load->view('transporte/list_choferes',$data);
+        $this->load->view('transporte/list_chofer',$data);
     }
 
     public function vehiculos(){
         
         $data['vehiculos'] = $this->almacenmodel->traer_vehiculos();
-        $this->load->view('transporte/list_vehiculos',$data);
+        $this->load->view('transporte/list_vehiculo',$data);
     }
 }

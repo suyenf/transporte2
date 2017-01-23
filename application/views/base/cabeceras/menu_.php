@@ -226,7 +226,7 @@
 
                     <ul class="submenu">
                         <li class="">
-                            <a href="<?= base_url('tables.html')?>">
+                            <a href="<?= base_url('index.php/transporte/Transporte/clientes')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Por Cliente
                             </a>
@@ -235,7 +235,7 @@
                         </li>
 
                         <li class="">
-                            <a href="<?= base_url('jqgrid.html')?>">
+                            <a href="<?= base_url('index.php/transporte/Transporte/proveedores')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                  Por Proveedor
                             </a>

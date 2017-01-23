@@ -1,41 +1,11 @@
-<!--
-<table class = "table table-hover table-condensed">
-				<tr>
-					<th>#</th>
-					<th>Nombre</th>
-					<th>Codigo</th>
-					<th>Creado</th>
-					<th>Observacion</th>
-					<th>Activo</th>
-				</tr>
-				<?php if(isset($productos)){ ?>
-				<?php 
-					$i = 0;
-					foreach ($productos as $row){ 
 
-					//Campo activo
-					if($row->activo)
-						$act = "SI";
-					else
-						$act = "NO";
-				?>
-					<?php print "<tr>
-					<td>".++$i."</td>
-					<td><a href='".base_url()."modificar_producto/".$row->id."'>".$row->nombre."</a></td>
-					<td>".$row->codigo."</td>
-					<td>".$row->creado."</td>
-					<td>".$row->observacion."</td>
-					<td>".$act."</td>
-					</tr>" ?> 
-				<?php }}else{ print "No hay datos que mostrar<br><br>";  } ?>
-			</table>
--->
+			<!--</table>-->
 
 <div>
 <div class="row">
     <div class="col-xs-11">
         <div class="widget-header">
-            <h1 class="widget-title">Listado de Productos</h1>
+            <h1 class="widget-title">Listado de Choferes</h1>
         </div>
 
         <div class="clearfix">
@@ -96,7 +66,7 @@
                         
                         <th>#</th>
                         <th>Nombre</th>
-                        <th class="hidden-480">Código</th>
+                        <th class="hidden-480">Cédula</th>
 
                         <th>
                             <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
@@ -110,10 +80,10 @@
                 <tbody>
                     <tr>
                         
-                        <?php if(isset($productos)){ ?>
+                        <?php if(isset($choferes)){ ?>
 				<?php 
 					$i = 0;
-					foreach ($productos as $row){ 
+					foreach ($choferes as $row){ 
 
 					//Campo activo
 					if($row->activo)
@@ -132,7 +102,7 @@
 
                          <td> <?php echo ++$i; ?></td>
                          <td> <?php echo $row->nombre; ?></td>
-                         <td> <?php echo $row->codigo; ?></td>
+                         <td> <?php echo $row->cedula; ?></td>
                          <td> <?php echo $row->creado; ?> </td>
                          <td> <?php echo $act; ?> </td>
 
@@ -142,7 +112,7 @@
                                     <i class="ace-icon fa fa-search-plus bigger-130"></i>
                                 </a>
 
-                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_producto/'.$row->id; ?>><i class="ace-icon fa fa-pencil bigger-130"></i></a>
+                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_chofer/'.$row->id; ?>><i class="ace-icon fa fa-pencil bigger-130"></i></a>
                                     
                                 </a>
 
