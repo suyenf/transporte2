@@ -177,6 +177,24 @@
                                     <b class="arrow"></b>
                                 </li>
 
+                                <li class="">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_chofer')?>">
+                                        <i class="menu-icon fa fa-user-plus blue"></i>
+                                        Chofer
+                                    </a>
+
+                                    <b class="arrow"></b>
+                                </li>
+
+                                <li class="">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_vehiculo')?>">
+                                        <i class="menu-icon fa fa-car purple "></i>
+                                        Vehiculo
+                                    </a>
+
+                                    <b class="arrow"></b>
+                                </li>
+
                             </ul>
                         </li>
                        <li class="">

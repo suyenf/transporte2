@@ -21,47 +21,47 @@
 </div>
 
 <div class="row">
-	<div class="col-xs-12">
+	<div class="col-xs-10">
 		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_vehiculo'); ?>" method="post" role="form">
-                    
+                    <br><br><br>
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Placa</strong></big> </label>
-				<div class="col-sm-9">
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1"><big><strong> Placa</strong></big> </label>
+				<div class="col-sm-2">
 					<?php echo form_input($placa);?><br>
 				</div> 
-			</div>       
+<!--			</div>       
 			 
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Placa Chuto</strong></big> </label>
-				<div class="col-sm-9">
+			<div class="form-group">-->
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1"><big><strong> Placa Chuto</strong></big> </label>
+				<div class="col-sm-2">
 					<?php echo form_input($placa_chuto);?><br>
 				</div> 
-			</div>        
+<!--			</div>        
 			
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Placa Tanque</strong></big> </label>
-				<div class="col-sm-9">
+			<div class="form-group">-->
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1"><big><strong> Placa Tanque</strong></big> </label>
+				<div class="col-sm-2">
 					<?php echo form_input($placa_tanque);?><br>
 				</div> 
 			</div>
 			 
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Modelo</strong></big> </label>
-				<div class="col-sm-9">
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Modelo</strong></big> </label>
+				<div class="col-sm-2">
 					<?php echo form_input($modelo); ?><br>
 				</div>
-			</div>
+<!--			</div>
 			
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Marca</strong></big> </label>
-				<div class="col-sm-9">
+			<div class="form-group">-->
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Marca</strong></big> </label>
+				<div class="col-sm-2">
 					<?php echo form_input($marca); ?><br>
 				</div>
-			</div>
+<!--			</div>
 			
-			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Año</strong></big> </label>
-				<div class="col-sm-9">
+			<div class="form-group">-->
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Año</strong></big> </label>
+				<div class="col-sm-2">
 					<?php echo form_input($anio); ?><br>
 				</div>
 			</div>
@@ -83,12 +83,16 @@
 			</div>
 				  
 			<div class="form-group">
-				<div class="col-md-offset-3 col-md-9">
+				<div class="col-md-offset-6 col-md-10">
+                                     <div class="col-sm-6">
 					<button class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar');?>
 						<i class="ace-icon fa fa-check bigger-130"></i>Guardar
 					</button>
-				</div>
+                                    </div>
+                                </div>
 			</div>
 		<?php  echo form_close();?> 
+                </form>
+            <br><br><br>
 	</div><!-- /.row -->
 </div><!-- /.page-content -->
