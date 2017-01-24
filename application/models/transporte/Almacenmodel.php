@@ -23,24 +23,22 @@ class Almacenmodel extends CI_Model {
             $act = 0;
         else
             $act = 1;
-        
+
         $this->db->insert('almacenes_carga', array(
             'fecha' => $hoy, //Preguntar si se registran a destiempo
-            //'correlativo_id' => $data['correlativo_id'],
             'origen_flete' => $data['origen_flete'],
             'destino_flete' => $data['destino_flete'],
             'unidad' => $data['unidad'],
             'monto_viatico' => $data['monto_viatico'],
             'observacion' => $data['observacion'],
-            'estado' => $data['estado'],
-            'activo' => $data['activo'],
+            'estado' => 1,
+            'activo' => $act,
             'chofer_id' => $data['chofer_id'],
             'cliente_id' => $data['cliente_id'],
             'producto_id' => $data['producto_id'],
             'proveedor_id' => $data['proveedor_id'],
             'vehiculo_id' => $data['vehiculo_id'],
-            'usuario_id' => 1
-            
+            'usuario_id' => 1        
         ));
     }
       

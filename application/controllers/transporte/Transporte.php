@@ -29,25 +29,24 @@ class Transporte extends CI_Controller {
       $this->load->view('base/home');      
     }
 
-    
-    
- public function crear_carga(){
+    public function crear_carga(){
+
+        $this->form_validation->set_rules('origen_flete', 'Origen Flete', 'required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('destino_flete', 'Destino Flete', 'required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('monto_viatico', 'monto', 'required|min_length[1]');
         
         $data = array(
-            //Analizar un correlativo es el ID del registro
-            //'correlativo_id' => $this->input->post('correlativo_id'),
             'origen_flete' => $this->input->post('origen_flete'),
             'destino_flete' => $this->input->post('destino_flete'),
-            'unidad' => $this->input->post('unidad'), //Esto es un combo html normal, la explicacion en la vista
+            'unidad' => $this->input->post('unidad'),
             'monto_viatico' => $this->input->post('monto_viatico'),
             'observacion' => $this->input->post('observacion'),
-            'estado' => 'cargado', //Campo interno se muestra en vista
             'activo' => $this->input->post('activo'),
-            'chofer_id' => $this->input->post('chofer_id'),
-            'cliente_id' => $this->input->post('cliente_id'),
-            'producto_id' => $this->input->post('producto_id'),
-            'proveedor_id' => $this->input->post('proveedor_id'),
-            'vehiculo_id' => $this->input->post('vehiculo_id')      
+            'chofer_id' => $this->input->post('chofer'),
+            'cliente_id' => $this->input->post('cliente'),
+            'producto_id' => $this->input->post('producto'),
+            'proveedor_id' => $this->input->post('proveedor'),
+            'vehiculo_id' => $this->input->post('vehiculo')      
         );
 
         $data['productos'] = $this->almacenmodel->listar_productos();
@@ -56,12 +55,12 @@ class Transporte extends CI_Controller {
         $data['choferes'] = $this->almacenmodel->listar_choferes();
         $data['vehiculos'] = $this->almacenmodel->listar_vehiculos();
         
-        $resultado['almacenes_carga'] = $this->almacenmodel->registro_carga($data);
-        //print_r($data);
-        $this->load->view('transporte/reg_carga',$data);
-        $this->load->view('transporte/reg_producto_modal');
-        $this->load->view('transporte/reg_proveedor_modal');
-        
+        if ($this->form_validation->run() == FALSE)
+            $this->load->view('transporte/reg_carga',$data);
+        else{
+            $this->almacenmodel->registro_carga($data);
+            redirect('transporte/Transporte/cargas','refresh');
+        }
     }
     
     public function crear_producto(){
