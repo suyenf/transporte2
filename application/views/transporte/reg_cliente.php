@@ -1,7 +1,7 @@
 <?php
-	$rif_cliente = array('name' => 'rif_cliente','class' =>'form-control', 'placeholder' => 'RIF Cliente');
-	$razon_social = array('name' => 'razon_social','class' =>'form-control', 'placeholder' => 'Razón Social del Cliente');
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Cliente');
+	$rif_cliente = array('name' => 'rif_cliente','class' =>'form-control', 'placeholder' => 'RIF Cliente','required'=>'true');
+	$razon_social = array('name' => 'razon_social','class' =>'form-control', 'placeholder' => 'Razón Social del Cliente','required'=>'true');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Cliente','required'=>'true');
 ?>
 <div class="col-sm-12">
     <div class="widget-header">

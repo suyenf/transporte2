@@ -1,6 +1,6 @@
 <?php
-	$cedula = array('name' => 'cedula','class' =>'form-control', 'placeholder' => 'Cedula Chofer');
-	$nombre = array('name' => 'nombre','class' =>'form-control', 'placeholder' => 'Nombre Chofer');
+	$cedula = array('name' => 'cedula','class' =>'form-control', 'placeholder' => 'Cedula Chofer','required'=>'true');
+	$nombre = array('name' => 'nombre','class' =>'form-control', 'placeholder' => 'Nombre Chofer','required'=>'true');
 	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Chofer');
 ?>
 <div class="col-sm-12">

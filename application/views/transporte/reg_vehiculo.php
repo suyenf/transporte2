@@ -1,11 +1,11 @@
 <?php
-	$placa = array('name' => 'placa','class' =>'form-control', 'placeholder' => 'Placa');
-	$placa_chuto = array('name' => 'placa_chuto','class' =>'form-control', 'placeholder' => 'Placa Chuto');
-	$placa_tanque = array('name' => 'placa_tanque','class' =>'form-control', 'placeholder' => 'Placa Tanque');
+	$placa = array('name' => 'placa','class' =>'form-control', 'placeholder' => 'Placa','required'=>'true');
+	$placa_chuto = array('name' => 'placa_chuto','class' =>'form-control', 'placeholder' => 'Placa Chuto','required'=>'true');
+	$placa_tanque = array('name' => 'placa_tanque','class' =>'form-control', 'placeholder' => 'Placa Tanque','required'=>'true');
 	
-	$modelo = array('name' => 'modelo','class' =>'form-control', 'placeholder' => 'Modelo');
-	$marca = array('name' => 'marca','class' =>'form-control', 'placeholder' => 'Marca');
-	$anio = array('name' => 'anio','class' =>'form-control', 'placeholder' => 'Año');
+	$modelo = array('name' => 'modelo','class' =>'form-control', 'placeholder' => 'Modelo','required'=>'true');
+	$marca = array('name' => 'marca','class' =>'form-control', 'placeholder' => 'Marca','required'=>'true');
+	$anio = array('name' => 'anio','class' =>'form-control', 'placeholder' => 'Año','required'=>'true');
 	
 	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de vehiculo');
 ?>

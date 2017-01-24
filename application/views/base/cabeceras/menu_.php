@@ -82,20 +82,30 @@
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                     <!--<div>-->
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_cliente') ?>">   
-                        <button  class="btn btn-warning"  >
+                        <button  class="btn-xs btn-warning"  >
                             <i class="ace-icon fa fa-user"  title="Reg.de Cliente">
 
                             </i>
                         </button>
                     </a>     
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_proveedor') ?>">  
-                        <button class="btn btn-success">
+                        <button class="btn-xs btn-success">
                             <i class="ace-icon fa fa-users" title="Reg.de Proveedor"></i>
                         </button>
                     </a>   
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_producto') ?>">
-                        <button class="btn btn-danger ">
+                        <button class="btn-xs btn-danger ">
                             <i class="ace-icon fa fa-cubes" title="Reg.de Productos"></i>
+                        </button>
+                    </a> 
+                    <a href="<?= base_url('index.php/transporte/Transporte/crear_chofer') ?>">
+                        <button class="btn-xs btn-primary ">
+                            <i class="ace-icon fa fa-user-plus " title="Reg.de Chofer"></i>
+                        </button>
+                    </a> 
+                    <a href="<?= base_url('index.php/transporte/Transporte/crear_vehiculo') ?>">
+                        <button class="btn-xs btn-purple ">
+                            <i class="ace-icon fa fa-car white" title="Reg.de Vehiculos"></i>
                         </button>
                     </a> 
 <!--                    <button class="btn btn-info">
@@ -266,6 +276,24 @@
                             <a href="<?= base_url('index.php/transporte/Transporte/productos')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                  Por Producto
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        
+                        <li class="">
+                            <a href="<?= base_url('index.php/transporte/Transporte/choferes')?>">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                 Por Chofer
+                            </a>
+
+                            <b class="arrow"></b>
+                        </li>
+                        
+                        <li class="">
+                            <a href="<?= base_url('index.php/transporte/Transporte/vehiculos')?>">
+                                <i class="menu-icon fa fa-caret-right"></i>
+                                 Por Vehiculo
                             </a>
 
                             <b class="arrow"></b>

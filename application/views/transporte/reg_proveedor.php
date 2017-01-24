@@ -1,7 +1,7 @@
 <?php
-	$rif_proveedor = array('name' => 'rif_proveedor','class' =>'form-control', 'placeholder' => 'RIF Proveedor');
-	$razon_social = array('name' => 'razon_social','class' =>'form-control', 'placeholder' => 'Razón Social del Proveedor');
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Proveedor');
+	$rif_proveedor = array('name' => 'rif_proveedor','class' =>'form-control', 'placeholder' => 'RIF Proveedor','required'=>'true');
+	$razon_social = array('name' => 'razon_social','class' =>'form-control', 'placeholder' => 'Razón Social del Proveedor','required'=>'true');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Proveedor','required'=>'true');
 ?>
 <div class="col-sm-12">
     <div class="widget-header">
