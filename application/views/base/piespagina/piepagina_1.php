@@ -11,14 +11,14 @@
                     &nbsp; &nbsp;
                     <span class="action-buttons">
 
-                        <a href="https://www.facebook.com/InversionTecnologicaFaudito/">
+                        <a href="<?= base_url('https://www.facebook.com/InversionTecnologicaFaudito/')?>">
                             <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
                         </a>
 
-                        <a href="https://twitter.com/InverTecFaudit">
+                        <a href="<?= base_url('https://twitter.com/InverTecFaudit')?>">
                             <i class="ace-icon fa fa-twitter-square light-green bigger-150"></i>
                         </a>
-                        <a href="https://www.linkedin.com/company/10916551">
+                        <a href="<?= base_url('https://www.linkedin.com/company/10916551')?>">
                             <i class="ace-icon fa fa-linkedin-square bigger-150"></i>
                         </a>
                     </span>

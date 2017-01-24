@@ -15,9 +15,9 @@
 <!--</div>-->
 
 <!-- Errores se formulario -->
-<!--<div style = "color: red;">
-      <?php // echo validation_errors(); ?>
-</div>-->
+<div style = "color: red;">
+      <?php echo validation_errors(); ?>
+</div>
 
 
 <div class="row">
@@ -64,22 +64,6 @@
 			</div>
 		<?php echo form_close();?> 
                 </form>
-            
-            
-            
-            <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert">
-                    <i class="ace-icon fa fa-times"></i>
-                </button>
-
-                <strong>
-                    <i class="ace-icon fa fa-check"></i>
-                    Alerta!
-                </strong>
-
-                <?php echo validation_errors(); ?>
-                <br />
-            </div>
         </div><!-- /.row -->
 
         </div><!-- /-->
