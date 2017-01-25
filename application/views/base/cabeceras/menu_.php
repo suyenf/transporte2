@@ -82,30 +82,34 @@
                 <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                     <!--<div>-->
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_cliente') ?>">   
-                        <button  class="btn-xs btn-warning"  >
+                        <button  class="btn btn-warning"  >
                             <i class="ace-icon fa fa-user"  title="Reg.de Cliente">
-
                             </i>
                         </button>
                     </a>     
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_proveedor') ?>">  
-                        <button class="btn-xs btn-success">
+                        <button class="btn btn-success">
                             <i class="ace-icon fa fa-users" title="Reg.de Proveedor"></i>
                         </button>
                     </a>   
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_producto') ?>">
-                        <button class="btn-xs btn-danger ">
+                        <button class="btn btn-danger">
                             <i class="ace-icon fa fa-cubes" title="Reg.de Productos"></i>
                         </button>
                     </a> 
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_chofer') ?>">
-                        <button class="btn-xs btn-primary ">
-                            <i class="ace-icon fa fa-user-plus " title="Reg.de Chofer"></i>
+                        <button class="btn btn-primary">
+                            <i class="ace-icon fa fa-user-secret" title="Reg.de Chofer"></i>
                         </button>
                     </a> 
                     <a href="<?= base_url('index.php/transporte/Transporte/crear_vehiculo') ?>">
-                        <button class="btn-xs btn-purple ">
-                            <i class="ace-icon fa fa-car white" title="Reg.de Vehiculos"></i>
+                        <button class="btn btn-purple">
+                            <i class="ace-icon fa fa-bus" title="Reg.de Vehiculos"></i>
+                        </button>
+                    </a> 
+                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga')?>">                        
+                        <button class="btn btn-pink">
+                            <i class="ace-icon fa fa-desktop" title="Reg.de Carga"></i>
                         </button>
                     </a> 
 <!--                    <button class="btn btn-info">
@@ -115,13 +119,17 @@
 
                 <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
                     
-                    <span class="btn btn-success"></span>
-                    
-                    <span class="btn btn-info"></span>
-
                     <span class="btn btn-warning"></span>
+                    
+                    <span class="btn btn-success"></span>
 
                     <span class="btn btn-danger"></span>
+
+                    <span class="btn btn-primary"></span>
+                    
+                    <span class="btn btn-purple"></span>
+                    
+                    <span class="btn btn-pink"></span>
                 </div>
             </div><!-- /.sidebar-shortcuts -->
 
@@ -220,7 +228,7 @@
                             <ul class="submenu">
                                 <li class="">
                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_carga')?>">
-                                        <i class="menu-icon fa fa-desktop green"></i>
+                                        <i class="menu-icon fa fa-desktop pink"></i>
                                         Registro de Carga
                                     </a>
 
@@ -299,7 +307,7 @@
                             <b class="arrow"></b>
                         </li>
                         <li class="">
-                            <a href="<?= base_url('jqgrid.html')?>">
+                            <a href="<?= base_url('index.php/transporte/Transporte/cargas')?>">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                  Por Carga
                             </a>

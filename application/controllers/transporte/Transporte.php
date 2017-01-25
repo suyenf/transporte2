@@ -201,4 +201,10 @@ class Transporte extends CI_Controller {
         $data['vehiculos'] = $this->almacenmodel->traer_vehiculos();
         $this->load->view('transporte/list_vehiculo',$data);
     }
+
+    public function cargas(){
+        
+        $data['cargas'] = $this->almacenmodel->traer_cargas();
+        $this->load->view('transporte/list_carga',$data);
+    }
 }

@@ -23,10 +23,10 @@
 		<form class="form-horizontal" action="<?php base_url('transporte/transporte/crear_carga'); ?>" method="post" role="form">
         	<br><br><br>
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Origen Flete</strong></big></label>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Origen</strong></big></label>
 				<div class="col-sm-3"><?php echo form_input($origen_flete);?></div>
 
-				<label class="col-sm-2 control-label no-padding-right" for="form-field-1"><big><strong> Destino Flete</strong></big> </label>
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1"><big><strong> Destino</strong></big> </label>
 				<div class="col-sm-3"><?php echo form_input($destino_flete);?></div> 
 			</div>        
 

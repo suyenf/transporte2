@@ -331,4 +331,22 @@ class Almacenmodel extends CI_Model {
         }else
             return FALSE;
     }
+
+    public function traer_cargas(){
+
+        $datos = array();
+        
+        $query = $this->db->order_by("fecha desc");
+        $query = $this->db->get('almacenes_carga');
+
+        if($query->num_rows() > 0){
+
+            foreach ($query->result() as $fila){
+                $datos[] = $fila;
+            }
+            $query->free_result();
+            return $datos;
+        }else
+            return FALSE;
+    }
 }
