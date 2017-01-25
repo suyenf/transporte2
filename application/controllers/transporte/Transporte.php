@@ -207,4 +207,32 @@ class Transporte extends CI_Controller {
         $data['cargas'] = $this->almacenmodel->traer_cargas();
         $this->load->view('transporte/list_carga',$data);
     }
+
+    public function crear_entrada(){
+
+        $this->form_validation->set_rules('peso', 'peso', 'required|min_length[1]');
+        $this->form_validation->set_rules('monto_peaje', 'Monto Peaje', 'required|min_length[1]');
+        $this->form_validation->set_rules('monto_caleta', 'Monto Caleta', 'required|min_length[1]');
+        
+        $data = array(
+            'peso' => $this->input->post('peso'),
+            'monto_peaje' => $this->input->post('monto_peaje'),
+            'monto_caleta' => $this->input->post('monto_caleta'),
+            'correlativo' => $this->input->post('correlativo'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')    
+        );
+
+        $data['cargas'] = $this->almacenmodel->listar_cargas();
+
+
+        
+        if ($this->form_validation->run() == FALSE)
+            $this->load->view('transporte/reg_recepcion',$data);
+        else{
+            $this->almacenmodel->registro_recepcion($data);
+            var_dump($data);
+            //redirect('transporte/Transporte/recepciones','refresh');
+        }
+    }
 }

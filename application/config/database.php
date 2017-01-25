@@ -76,9 +76,10 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+	#CONEXION INVEPAL
 	'username' => 'root',
-	'password' => '',
-	'database' => 'transporte',
+	'password' => 'invepal',
+	'database' => 'alma',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

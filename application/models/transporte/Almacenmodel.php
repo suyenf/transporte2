@@ -127,19 +127,32 @@ class Almacenmodel extends CI_Model {
     }
     
     public function registro_recepcion($data) {
+
+        //Fecha actual - "2016-05-24 15:02:43-04:30"
+        $hoy = date("Y-m-d H:i:s");
+
+        //Estado del campo activo
+        if (($data['activo']) == "")
+            $act = 0;
+        else
+            $act = 1;
+
         $this->db->insert('almacenes_recepcion', array(
-            'id' => $data['cod_recepcion'],
-            'fecha' => $data['fecha_registro'],
+            'fecha' => $hoy,
             'peso' => $data['peso'],
             'monto_peaje' => $data['monto_peaje'],
             'monto_caleta' => $data['monto_caleta'],
-            'creado' => $data['fecha_creado'],
+            'creado' => $hoy,
             'observacion' => $data['observacion'],
-            'activo' => $data['activo'],
-            'correlativo_id' => $data['correlativo_id'],
-            'usuario_id' => $data['usuario']
-            
+            'activo' => $act,
+            'correlativo_id' => $data['correlativo'],
+            'usuario_id' => 1            
         ));
+
+        //Actualizao la carga que le di entrada a status 2
+        $this->db->where('id', $data['correlativo']);
+        $actualizar = array('estado' => 2);
+        $this->db->update('almacenes_carga', $actualizar);
     }
     
     public function registro_vehiculo($data) {
@@ -180,6 +193,19 @@ class Almacenmodel extends CI_Model {
             'is_active' => $data['activo'],
             'date_joined' => $data['fecha_registro']
         ));
+    }
+
+    public function listar_cargas(){
+        $query = $this->db->where('activo','1');
+        $query = $this->db->where('estado','1'); //Esto significa que fue cargada pero no se le ha realizado entrada
+        $query = $this->db->get('almacenes_carga');
+        
+        $datos = array();      
+        foreach($query->result() as $row)
+            $datos[htmlspecialchars($row->id, ENT_QUOTES)] = htmlspecialchars($row->id, ENT_QUOTES)." - ".htmlspecialchars($row->origen_flete, ENT_QUOTES)."/".htmlspecialchars($row->destino_flete, ENT_QUOTES);
+
+        $query->free_result();
+        return $datos;
     }
     
     public function listar_choferes(){
