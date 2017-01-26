@@ -1,10 +1,10 @@
 <?php
-	$origen_flete = array('name' => 'origen_flete','class' =>'form-control', 'placeholder' => 'Origen Flete');
-	$destino_flete = array('name' => 'destino_flete','class' =>'form-control', 'placeholder' => 'Destino Flete');
+	$origen_flete = array('name' => 'origen_flete','class' =>'form-control', 'placeholder' => 'Origen Flete','required'=>'true');
+	$destino_flete = array('name' => 'destino_flete','class' =>'form-control', 'placeholder' => 'Destino Flete','required'=>'true');
 	
-	$monto = array('name' => 'monto_viatico','class' =>'form-control', 'placeholder' => 'Monto viatico');
-	$uni = array('batea' => 'Batea', 'granel' => 'Granel', 'carga_s' => 'Carga Suelta');
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga');
+	$monto = array('name' => 'monto_viatico','class' =>'form-control', 'placeholder' => 'Monto viatico','required'=>'true');
+	$uni = array('batea' => 'Batea', 'granel' => 'Granel', 'carga_s' => 'Carga Suelta','required'=>'true');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga','required'=>'true');
 ?>
 
 <div class="col-sm-12">

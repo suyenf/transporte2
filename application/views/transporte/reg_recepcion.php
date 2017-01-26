@@ -1,8 +1,8 @@
 <?php
-	$peso = array('name' => 'peso','class' =>'form-control', 'placeholder' => 'Peso');
-	$monto_peaje = array('name' => 'monto_peaje','class' =>'form-control', 'placeholder' => 'Monto Peaje');
-	$monto_caleta = array('name' => 'monto_caleta','class' =>'form-control', 'placeholder' => 'Monto Caleta');
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga');
+	$peso = array('name' => 'peso','class' =>'form-control', 'placeholder' => 'Peso','required'=>'true');
+	$monto_peaje = array('name' => 'monto_peaje','class' =>'form-control', 'placeholder' => 'Monto Peaje','required'=>'true');
+	$monto_caleta = array('name' => 'monto_caleta','class' =>'form-control', 'placeholder' => 'Monto Caleta','required'=>'true');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga','required'=>'true');
 ?>
 
 <div class="col-sm-12">
@@ -24,7 +24,7 @@
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Peso</strong></big></label>
 				<div class="col-sm-3"><?php echo form_input($peso);?></div>
 
-				<label class="col-sm-2 control-label no-padding-right" for="form-field-1"><big><strong> Monto Peaje</strong></big> </label>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Monto Peaje</strong></big> </label>
 				<div class="col-sm-3"><?php echo form_input($monto_peaje);?></div> 
 			</div>        
 
@@ -32,9 +32,9 @@
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"><big><strong> Monto Caleta</strong></big> </label>
 				<div class="col-sm-3"><?php echo form_input($monto_caleta);?></div> 
 
-				<label class="col-sm-1 control-label no-padding-right" for="form-field-1-1"><big><strong> Correlativo</strong></big> </label>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Correlativo</strong></big> </label>
 				<div class="col-sm-3"><?php echo form_dropdown('correlativo', $cargas);?></div>
-            </div>
+                        </div>
 			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>

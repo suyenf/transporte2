@@ -23,6 +23,7 @@ class Transporte extends CI_Controller {
         $this->load->helper('form');
         $this->load->model('transporte/almacenmodel');
         $this->load->library('form_validation');
+        $this->config->set_item('language','spanish'); 
     }
    
     public function index() {

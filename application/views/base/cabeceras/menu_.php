@@ -227,7 +227,7 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga')?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga') ?>">
                                         <i class="menu-icon fa fa-desktop pink"></i>
                                         Registro de Carga
                                     </a>
@@ -236,7 +236,7 @@
                                 </li>
 
                                 <li class="">                                     
-                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga') ?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_entrada') ?>">
                                         <i class="menu-icon fa fa-pencil orange"></i>
 
                                         Recibo/Entrada

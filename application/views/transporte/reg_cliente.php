@@ -47,15 +47,18 @@
 					<span class="lbl"></span>
 				</label>
 			</div>
-				  
-			<div class="form-group">
+                    
+                    
+                    <FORM>
+                        <div class="form-group">
 				<div class="col-md-offset-6 col-md-10">
                                      <div class="col-sm-6">
-					<button class="btn btn-lg btn-success"  <?php echo form_submit('botonSubmit', 'Enviar');?>
+					<button class="btn btn-lg btn-success" <?php echo form_submit('botonSubmit', 'Enviar');?>
 						<i class="ace-icon fa fa-check bigger-130"></i>Guardar
 					</button>
                                      </div>
 				</div>
+
 			</div>
 		<?php  echo form_close();?> 
                 </form>
@@ -63,3 +66,4 @@
         </div><!-- /.row -->
 </div>        
 </div><!-- /.page-content -->
+

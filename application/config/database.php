@@ -78,8 +78,8 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	#CONEXION INVEPAL
 	'username' => 'root',
-	'password' => 'invepal',
-	'database' => 'alma',
+	'password' => '',
+	'database' => 'transporte',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
