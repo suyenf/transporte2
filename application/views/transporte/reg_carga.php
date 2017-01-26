@@ -1,10 +1,12 @@
 <?php
-	$origen_flete = array('name' => 'origen_flete','class' =>'form-control', 'placeholder' => 'Origen Flete','required'=>'true');
-	$destino_flete = array('name' => 'destino_flete','class' =>'form-control', 'placeholder' => 'Destino Flete','required'=>'true');
+	$origen_flete = array('name' => 'origen_flete','class' =>'form-control', 'placeholder' => 'Origen Flete');
+	$destino_flete = array('name' => 'destino_flete','class' =>'form-control', 'placeholder' => 'Destino Flete');
 	
-	$monto = array('name' => 'monto_viatico','class' =>'form-control', 'placeholder' => 'Monto viatico','required'=>'true');
-	$uni = array('batea' => 'Batea', 'granel' => 'Granel', 'carga_s' => 'Carga Suelta','required'=>'true');
-	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga','required'=>'true');
+	$monto = array('name' => 'monto_viatico','class' =>'form-control', 'placeholder' => 'Monto viatico');
+	$peso = array('name' => 'peso','class' =>'form-control', 'placeholder' => 'Peso de carga');
+	$pesot = array('name' => 'pesot','class' =>'form-control', 'placeholder' => 'Peso de tara');
+	$uni = array('batea' => 'Batea', 'granel' => 'Granel', 'carga_s' => 'Carga Suelta');
+	$observacion = array('name' => 'observacion','class' =>'form-control', 'placeholder' => 'Observacion de Carga');
 ?>
 
 <div class="col-sm-12">
@@ -38,8 +40,11 @@
 				<div class="col-sm-1"><?php echo form_dropdown('proveedor', $proveedores);?></div><br><br><br>
 
 			<div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Viatico</strong></big> </label>
-				<div class="col-sm-3"><?php echo form_input($monto); ?></div>
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Peso Tara</strong></big> </label>
+				<div class="col-sm-3"><?php echo form_input($pesot); ?></div>
+
+				<label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"><big><strong> Peso</strong></big> </label>
+				<div class="col-sm-3"><?php echo form_input($peso); ?></div>
 			</div>
 			
 			<div class="form-group">
@@ -57,6 +62,11 @@
 				<label class="col-sm-1 control-label no-padding-right" for="form-field-1-1"><big><strong> Vehiculo</strong></big> </label>
 				<div class="col-sm-3"><?php echo form_dropdown('vehiculo', $vehiculos);?></div>
             </div>
+
+            <div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"><big><strong> Viaticos</strong></big> </label>
+				<div class="col-sm-3"><?php echo form_input($monto); ?></div>
+			</div>
 			
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"><big><strong> Observacion</strong></big> </label>

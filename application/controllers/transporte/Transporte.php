@@ -34,20 +34,24 @@ class Transporte extends CI_Controller {
 
         $this->form_validation->set_rules('origen_flete', 'Origen Flete', 'required|min_length[5]|max_length[100]');
         $this->form_validation->set_rules('destino_flete', 'Destino Flete', 'required|min_length[5]|max_length[100]');
-        $this->form_validation->set_rules('monto_viatico', 'monto', 'required|min_length[1]');
-        
+        $this->form_validation->set_rules('monto_viatico', 'monto', 'required|min_length[1]|numeric');
+        $this->form_validation->set_rules('peso', 'peso', 'required|min_length[1]|numeric');
+        $this->form_validation->set_rules('pesot', 'peso', 'required|min_length[1]|numeric');
+
         $data = array(
             'origen_flete' => $this->input->post('origen_flete'),
             'destino_flete' => $this->input->post('destino_flete'),
             'unidad' => $this->input->post('unidad'),
             'monto_viatico' => $this->input->post('monto_viatico'),
+            'peso' => $this->input->post('peso'),
+            'pesot' => $this->input->post('pesot'),
             'observacion' => $this->input->post('observacion'),
             'activo' => $this->input->post('activo'),
             'chofer_id' => $this->input->post('chofer'),
             'cliente_id' => $this->input->post('cliente'),
             'producto_id' => $this->input->post('producto'),
             'proveedor_id' => $this->input->post('proveedor'),
-            'vehiculo_id' => $this->input->post('vehiculo')      
+            'vehiculo_id' => $this->input->post('vehiculo')
         );
 
         $data['productos'] = $this->almacenmodel->listar_productos();
@@ -211,7 +215,7 @@ class Transporte extends CI_Controller {
 
     public function crear_entrada(){
 
-        $this->form_validation->set_rules('peso', 'peso', 'required|min_length[1]');
+        //$this->form_validation->set_rules('peso', 'peso', 'required|min_length[1]');
         $this->form_validation->set_rules('monto_peaje', 'Monto Peaje', 'required|min_length[1]');
         $this->form_validation->set_rules('monto_caleta', 'Monto Caleta', 'required|min_length[1]');
         
@@ -225,15 +229,12 @@ class Transporte extends CI_Controller {
         );
 
         $data['cargas'] = $this->almacenmodel->listar_cargas();
-
-
         
         if ($this->form_validation->run() == FALSE)
             $this->load->view('transporte/reg_recepcion',$data);
         else{
             $this->almacenmodel->registro_recepcion($data);
-            var_dump($data);
-            //redirect('transporte/Transporte/recepciones','refresh');
+            redirect('transporte/Transporte/recepciones','refresh');
         }
     }
 }

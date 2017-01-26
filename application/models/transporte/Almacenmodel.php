@@ -24,12 +24,17 @@ class Almacenmodel extends CI_Model {
         else
             $act = 1;
 
+        $peso_bruto = $data['peso'] - $data['pesot'];
+
         $this->db->insert('almacenes_carga', array(
             'fecha' => $hoy, //Preguntar si se registran a destiempo
             'origen_flete' => $data['origen_flete'],
             'destino_flete' => $data['destino_flete'],
             'unidad' => $data['unidad'],
             'monto_viatico' => $data['monto_viatico'],
+            'peso' => $data['peso'],
+            'pesot' => $data['pesot'],
+            'pesob' => $peso_bruto,
             'observacion' => $data['observacion'],
             'estado' => 1,
             'activo' => $act,
@@ -137,9 +142,21 @@ class Almacenmodel extends CI_Model {
         else
             $act = 1;
 
+        //Obtengo el peso por el registro correlativo
+        $peso = $this->almacenmodel->traer_peso($data['correlativo']);
+        $pesot = $this->almacenmodel->traer_peso($data['correlativo']) - $data['monto_caleta'];
+        $pesod = $this->almacenmodel->traer_peso($data['correlativo']) - $data['monto_caleta'];
+        $pesop = $this->almacenmodel->traer_peso($data['correlativo']) / $data['monto_caleta'];
+
+        if ($pesop < 0)
+            $pesop = pesod * -1;
+
         $this->db->insert('almacenes_recepcion', array(
             'fecha' => $hoy,
-            'peso' => $data['peso'],
+            'peso' => $peso,
+            'pesot' => $pesot,
+            'pesod' => $pesod,
+            'pesop' => $pesop,
             'monto_peaje' => $data['monto_peaje'],
             'monto_caleta' => $data['monto_caleta'],
             'creado' => $hoy,
@@ -374,5 +391,16 @@ class Almacenmodel extends CI_Model {
             return $datos;
         }else
             return FALSE;
+    }
+
+    public function traer_peso($id){
+        $query = $this->db->where('id', $id);
+        $query = $this->db->get('almacenes_carga');
+        
+        foreach($query->result() as $row)
+            $peso = htmlspecialchars($row->pesob, ENT_QUOTES);
+
+        $query->free_result();
+        return $peso;
     }
 }
