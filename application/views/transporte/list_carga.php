@@ -7,7 +7,7 @@
         <div class="widget-header">
             <h1 class="widget-title">Listado de Cargas Realizadas</h1>
         </div>
-
+<!--BOTONERA ENTRE LA TABLA Y EL TITULO-->
         <div class="clearfix">
             <div class="pull-right tableTools-container"></div>
         </div>
@@ -19,7 +19,7 @@
                 <div class="col-xs-3">
            
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-3">
                 </div>
             </div>
             </div>
@@ -30,7 +30,8 @@
 
         <!-- div.dataTables_borderWrap -->
         <div>
-            <div class="col-xs-11">
+            
+            <div class="col-xs-11"><!--ANCHO DEL SEARCH-->
             <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable" >
                 <thead>
                     <tr>
@@ -42,16 +43,24 @@
                             </label>
                         </th>
                         
-                        <th>#</th>
+                        <th><small>#</small></th>
                         <th>
                             <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                            Fecha
+                            <small>Fecha</small>
                         </th>
-                        <th>Origen</th>
-                        <th class="hidden-480">Destino</th>
+                        <th><small>Origen</small></th>
+                        <th class="hidden-480"><small>Destino</small></th>
 
-                        <th class="hidden-480">Unidad</th>
-                        <th colspan=""> Opciones</th>
+                        <th class="hidden-480"><small>Unidad</small></th>
+                        <th class="hidden-480"><small>Monto</small></th>
+                        <th class="hidden-480"><small>Observación</small></th>
+                        <th class="hidden-480"><small>Chofer</small></th>
+                        <th class="hidden-480"><small>Cliente</small></th>
+                        <th class="hidden-480"><small>Producto</small></th>
+                        <th class="hidden-480"><small>Proveedor</small></th>
+                        <th class="hidden-480"><small>Vehiculo</small></th>
+                        <th class="hidden-480"><small>Estado</small></th>
+                        <th colspan=""><small>Opción</small></th>
                     </tr>
                 </thead>
 
@@ -62,13 +71,13 @@
 				<?php 
 					$i = 0;
 					foreach ($cargas as $row){ 
-
-					//Campo activo
-					if($row->activo)
-						$act = "SI";
-					else
-						$act = "NO";
-				?>
+                                            
+                                            $act1 = "activo";
+                                            $act2 = "inactivo";
+//                                            $T == ("$act1,$act2");
+                                  ?>
+					<!--//Campo activo-->
+				
                         
                         
                         <td class="center">
@@ -83,8 +92,20 @@
                          <td> <?php echo $row->origen_flete; ?></td>
                          <td> <?php echo $row->destino_flete; ?> </td>
                          <td> <?php echo $row->unidad; ?> </td>
-                         <!--<td> <?php // echo $act; ?> </td>-->
-
+                         <td> <?php echo $row->monto_viatico; ?> </td>
+                         <td> <?php echo $row->observacion; ?> </td>
+                         <td> <?php echo $row->chofer_id; ?> </td>
+                         <td> <?php echo $row->cliente_id; ?> </td>
+                         <td> <?php echo $row->producto_id; ?> </td>
+                         <td> <?php echo $row->proveedor_id; ?> </td>
+                         <td> <?php echo $row->vehiculo_id; ?> </td>
+                         <td> <?php if($row->activo){ ?>
+                             <span class="badge badge-success"><?php echo $act1; ?></span>
+                             <!--<td><?php // $act = "SI"; ?></td>-->
+                             <?php }else{ ?>
+                             <span class="badge badge-danger"><?php echo $act2;
+                             } ?></span> </td>
+                         
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons"margin= "auto">
                                 <a class="blue" href="#">
@@ -185,7 +206,7 @@
                     bAutoWidth: false,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null,
+/*celdas de la tabla*/  null, null, null, null, null, null, null, null, null, null, null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],

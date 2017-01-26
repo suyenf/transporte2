@@ -2646,7 +2646,7 @@ caption {
 }
 
 .table {
-    width: 949px;
+    width: 1059px;/*ANCHO ENTRE CELDAS*/
     max-width: 100%;
     margin-bottom: 20px
 }

@@ -380,8 +380,9 @@ class Almacenmodel extends CI_Model {
         $datos = array();
         
         $query = $this->db->order_by("fecha desc");
+        
+//                $this->db->join('T2', 'T1.id = T2.id');
         $query = $this->db->get('almacenes_carga');
-
         if($query->num_rows() > 0){
 
             foreach ($query->result() as $fila){
