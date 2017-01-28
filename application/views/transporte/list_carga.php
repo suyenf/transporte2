@@ -108,14 +108,7 @@
                          
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons"margin= "auto">
-                                <a class="blue" href="#">
-                                    <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                </a>
-
-                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_carga/'.$row->id; ?>><i class="ace-icon fa fa-pencil bigger-130"></i></a>
-                                    
-                                </a>
-
+                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_carga/'.$row->id; ?>><i class="ace-icon fa fa-pencil purple bigger-130"></i></a>
                             </div>
 
                             <div class="hidden-md hidden-lg" margin= "auto">
@@ -123,25 +116,6 @@
                                     <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
                                         <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
                                     </button>
-
-                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                        <li>
-                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="Ver">
-                                                <span class="blue">
-                                                    <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                </span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="tooltip-success" data-rel="tooltip" title="Editar">
-                                                <span class="green">
-                                                    <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                                </span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
                                 </div>
                             </div>
                         </td>
@@ -152,7 +126,18 @@
                 </tbody>
             </table>
         </div>
+            <!-- BOTON DE AGREGAR -->
+
+            <a style="top:39px; right:135px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
+               tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Agregar Producto"
+               href = <?php echo base_url() . 'index.php/transporte/Transporte/crear_producto'; ?>>
+                <span>
+                    <i class=" fa fa-cubes bigger-110 red"></i> 
+                    <span class="hidden">Agregar Producto</span></span>
+            </a>
+            <!-- BOTON DE AGREGAR -->
         </div>
+        
 </div>
 </div>
 
@@ -196,6 +181,7 @@
 <script src="<?= base_url('assets/js/ace.min.js')?>"></script>
 
 <!-- inline scripts related to this page -->
+
 <script type="text/javascript">
         jQuery(function($) {
                 //initiate dataTables plugin
@@ -239,14 +225,22 @@
         new $.fn.dataTable.Buttons(myTable, {
             buttons: [
 //               
-               {
-                    "extend": "excel",
-                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                 },
+//               {
+//                    "extend": "excel",
+//                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
+//                 },
 //        
 //               
+                      {
+                     "extend": "csv",
+                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
+                     "className": "btn btn-white btn-primary btn-bold"
+               },
                 {
+//                    "extend": "excel",
+//                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
                     "extend": "print",
                     "text": "<i class='fa fa-print bigger-110 pink'></i> <span class='hidden'>Imprimir</span>",                    
                     "className": "btn btn-white btn-primary btn-bold",
@@ -421,4 +415,5 @@
 
 
     })
-</script>	
+</script>
+

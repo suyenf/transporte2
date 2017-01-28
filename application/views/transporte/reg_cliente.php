@@ -47,9 +47,7 @@
 					<span class="lbl"></span>
 				</label>
 			</div>
-                    
-                    
-                    <FORM>
+                 
                         <div class="form-group">
 				<div class="col-md-offset-6 col-md-10">
                                      <div class="col-sm-6">

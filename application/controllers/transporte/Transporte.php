@@ -210,6 +210,9 @@ class Transporte extends CI_Controller {
     public function cargas(){
         
         $data['cargas'] = $this->almacenmodel->traer_cargas();
+        //Convierto los id's a nombres
+//        print $data['chofer_id'];
+        
         $this->load->view('transporte/list_carga',$data);
     }
 
