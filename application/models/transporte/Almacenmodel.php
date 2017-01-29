@@ -143,10 +143,11 @@ class Almacenmodel extends CI_Model {
             $act = 1;
 
         //Obtengo el peso por el registro correlativo
-        $peso = $this->almacenmodel->traer_peso($data['correlativo']);
-        $pesot = $this->almacenmodel->traer_peso($data['correlativo']) - $data['monto_caleta'];
-        $pesod = $this->almacenmodel->traer_peso($data['correlativo']) - $data['monto_caleta'];
-        $pesop = $this->almacenmodel->traer_peso($data['correlativo']) / $data['monto_caleta'];
+        $peso = $this->almacenmodel->obtener($data['correlativo'], 'almacenes_carga', 'pesob');
+        $caleta = $data['monto_caleta'];
+        
+        $pesod = $pesot = $peso - $caleta;
+        $pesop = $peso / $caleta;
 
         if ($pesop < 0)
             $pesop = pesod * -1;
@@ -285,123 +286,48 @@ class Almacenmodel extends CI_Model {
         return $datos;
     }
 
-    public function traer_productos(){
-
-        $datos = array();
-        
-        $query = $this->db->order_by("creado desc");
-        $query = $this->db->get('almacenes_producto');
-
-        if($query->num_rows() > 0){
-
-            foreach ($query->result() as $fila){
-                $datos[] = $fila;
-            }
-            $query->free_result();
-            return $datos;
-        }else
-            return FALSE;
-    }
-
-    public function traer_clientes(){
-
-        $datos = array();
-        
-        $query = $this->db->order_by("creado desc");
-        $query = $this->db->get('almacenes_cliente');
-
-        if($query->num_rows() > 0){
-
-            foreach ($query->result() as $fila){
-                $datos[] = $fila;
-            }
-            $query->free_result();
-            return $datos;
-        }else
-            return FALSE;
-    }
-
-    public function traer_proveedores(){
-
-        $datos = array();
-        
-        $query = $this->db->order_by("creado desc");
-        $query = $this->db->get('almacenes_proveedor');
-
-        if($query->num_rows() > 0){
-
-            foreach ($query->result() as $fila){
-                $datos[] = $fila;
-            }
-            $query->free_result();
-            return $datos;
-        }else
-            return FALSE;
-    }
-
-    public function traer_choferes(){
-
-        $datos = array();
-        
-        $query = $this->db->order_by("creado desc");
-        $query = $this->db->get('almacenes_chofer');
-
-        if($query->num_rows() > 0){
-
-            foreach ($query->result() as $fila){
-                $datos[] = $fila;
-            }
-            $query->free_result();
-            return $datos;
-        }else
-            return FALSE;
-    }
-
-    public function traer_vehiculos(){
-
-        $datos = array();
-        
-        $query = $this->db->order_by("creado desc");
-        $query = $this->db->get('almacenes_vehiculo');
-
-        if($query->num_rows() > 0){
-
-            foreach ($query->result() as $fila){
-                $datos[] = $fila;
-            }
-            $query->free_result();
-            return $datos;
-        }else
-            return FALSE;
-    }
-
     public function traer_cargas(){
 
         $datos = array();
         
         $query = $this->db->order_by("fecha desc");
-        
-//                $this->db->join('T2', 'T1.id = T2.id');
         $query = $this->db->get('almacenes_carga');
         if($query->num_rows() > 0){
 
             foreach ($query->result() as $fila){
+				$fila->chofer_id = $this->almacenmodel->obtener($fila->chofer_id, 'almacenes_chofer', 'nombre');
+                $fila->cliente_id = $this->almacenmodel->obtener($fila->cliente_id, 'almacenes_cliente', 'razon_social');
+                $fila->proveedor_id = $this->almacenmodel->obtener($fila->proveedor_id, 'almacenes_proveedor', 'razon_social');
+                $fila->producto_id = $this->almacenmodel->obtener($fila->producto_id, 'almacenes_producto', 'nombre');
+                $fila->vehiculo_id = $this->almacenmodel->obtener($fila->vehiculo_id, 'almacenes_vehiculo', 'placa');
                 $datos[] = $fila;
             }
-            $query->free_result();
+            
+			$query->free_result();
             return $datos;
         }else
             return FALSE;
     }
+    
+    //Esta es una funcion generica para obterner cualquier dato de cualquier tabla por medio de su id
+    public function obtener($id = NULL, $tabla, $campo = NULL){
 
-    public function traer_peso($id){
-        $query = $this->db->where('id', $id);
-        $query = $this->db->get('almacenes_carga');
+        //Aqui validar si el campo id viene vacio (Traer todo o un registro en especifico
+        if($id != NULL){
+			$query = $this->db->where('id', $id);
+			$valor = array();
+		}
+        $query = $this->db->order_by("creado desc");
+        $query = $this->db->get($tabla);
         
-        foreach($query->result() as $row)
-            $peso = htmlspecialchars($row->pesob, ENT_QUOTES);
-
+        if($query->num_rows() > 0)
+			foreach($query->result() as $row)
+				if($id != NULL)
+					$valor = htmlspecialchars($row->$campo, ENT_QUOTES);
+				else
+					$valor[] = $row;
+					
         $query->free_result();
-        return $peso;
+        return $valor;
     }
 }
