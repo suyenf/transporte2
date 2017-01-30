@@ -1,36 +1,3 @@
-<!--
-<table class = "table table-hover table-condensed">
-				<tr>
-					<th>#</th>
-					<th>Nombre</th>
-					<th>Codigo</th>
-					<th>Creado</th>
-					<th>Observacion</th>
-					<th>Activo</th>
-				</tr>
-				<?php if(isset($productos)){ ?>
-				<?php 
-					$i = 0;
-					foreach ($productos as $row){ 
-
-					//Campo activo
-					if($row->activo)
-						$act = "SI";
-					else
-						$act = "NO";
-				?>
-					<?php print "<tr>
-					<td>".++$i."</td>
-					<td><a href='".base_url()."modificar_producto/".$row->id."'>".$row->nombre."</a></td>
-					<td>".$row->codigo."</td>
-					<td>".$row->creado."</td>
-					<td>".$row->observacion."</td>
-					<td>".$act."</td>
-					</tr>" ?> 
-				<?php }}else{ print "No hay datos que mostrar<br><br>";  } ?>
-			</table>
--->
-
 <div>
 <div class="row">
     <div class="col-xs-11">
@@ -41,9 +8,7 @@
         <div class="clearfix">
             <div class="pull-right tableTools-container"></div>
         </div>
- 
 
-        
         <div  margin= "auto">
             <div class="row">
                 <div class="col-xs-3">
@@ -51,35 +16,11 @@
                 </div>
                 <div class="col-xs-6">
                 </div>
-<!--                <div class="col-xs-3">
-                    <div class="btn-group">
-                        <a href = <?php echo base_url().'index.php/transporte/Transporte/crear_producto'; ?>>
-                            <button type="button" class="btn btn-white btn-sm btn-primary" title="Agregar un producto">
-                            <i class="ace-icon fa fa-cubes red bigger-120 "></i>
-                        </button>
-                        </a>    
-                        
-                        <button type="button" class="btn btn-white btn-sm btn-primary" title="Exportar Excel" > 
-                         <i class="ace-icon fa fa-file-excel-o green bigger-120 "></i>
-                        </button>
-                    
-                    </div>
-                    
-                    
-                    
-            <a href = <?php echo base_url().'index.php/transporte/Transporte/crear_producto'; ?>>
-               <button class="btn btn-block btn-danger" >
-                    <i class=" fa fa-cubes">Agregar producto</i>
-                </button>
-                </a>
-                </div>-->
+
             </div>
             </div>
         <br>
         </div>
-
-        <!-- div.table-responsive -->
-
         <!-- div.dataTables_borderWrap -->
         <div>
             <div class="col-xs-11">
@@ -95,15 +36,16 @@
                         </th>
                         
                         <th>#</th>
-                        <th>Nombre</th>
-                        <th class="hidden-480">Código</th>
+                        <th><small>Nombre</small></th>
+                        <th class="hidden-480"><small>Código</small></th>
 
                         <th>
-                            <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                            Creado
+                           <small> <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
+                            Creado</small>
                         </th>
-                        <th class="hidden-480">Activo</th>
-                        <th colspan=""> Opciones</th>
+                        <th class="hidden-480"><small>Observación</small></th>
+                        <th class="hidden-480"><small>Estado</small></th>
+                        <th colspan=""><small> Opciones</small></th>
                     </tr>
                 </thead>
 
@@ -114,13 +56,11 @@
 				<?php 
 					$i = 0;
 					foreach ($productos as $row){ 
-
-					//Campo activo
-					if($row->activo)
-						$act = "SI";
-					else
-						$act = "NO";
-				?>
+                                            
+                                            $act1 = "activo";
+                                            $act2 = "inactivo";
+                                  ?>
+					<!--//Campo activo-->
                         
                         
                         <td class="center">
@@ -130,18 +70,19 @@
                             </label>
                         <!--</td>-->
 
-                         <td> <?php echo ++$i; ?></td>
-                         <td> <?php echo $row->nombre; ?></td>
-                         <td> <?php echo $row->codigo; ?></td>
-                         <td> <?php echo $row->creado; ?> </td>
-                         <td> <?php echo $act; ?> </td>
+                        <td><small> <?php echo ++$i; ?></small></td>
+                         <td><small> <?php echo $row->nombre; ?></small></td>
+                         <td><small> <?php echo $row->codigo; ?></small></td>
+                         <td><small><?php echo $row->creado; ?></small> </td>
+                         <td><small> <?php echo $row->observacion; ?></small> </td>
+                         <td><small> <?php if($row->activo){ ?></small>
+                             <span class="badge badge-success"><small><?php echo $act1; ?></small></span>
+                             <?php }else{ ?>
+                             <span class="badge badge-danger"><small><?php echo $act2;
+                             } ?></small></span> </td>
 
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons"margin= "auto">
-                                <a class="blue" href="#">
-                                    <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                </a>
-
                                 <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_producto/'.$row->id; ?>><i class="ace-icon fa fa-pencil bigger-130"></i></a>
                                     
                                 </a>
@@ -155,14 +96,6 @@
                                     </button>
 
                                     <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                        <li>
-                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="Ver">
-                                                <span class="blue">
-                                                    <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                </span>
-                                            </a>
-                                        </li>
-
                                         <li>
                                             <a href="#" class="tooltip-success" data-rel="tooltip" title="Editar">
                                                 <span class="green">
@@ -182,6 +115,17 @@
                 </tbody>
             </table>
         </div>
+            <!-- BOTON DE AGREGAR -->
+
+            <a style="top:39px; right:133px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
+               tabindex="0" aria-controls="dynamic-table" 
+               title="Agregar Producto" data-rel="tooltip"  href = <?php echo base_url() . 'index.php/transporte/Transporte/crear_producto'; ?>>
+                <span>
+                    <i class=" bigger-110 fa fa-cubes red "></i> 
+                </span>
+            </a>
+            <!-- BOTON DE AGREGAR -->   
+
         </div>
 </div>
 </div>
@@ -236,7 +180,7 @@
                     bAutoWidth: false,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null,
+                        null, null, null, null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],
@@ -286,6 +230,13 @@
             ]
         });
         myTable.buttons().container().appendTo($('.tableTools-container'));
+
+        /////////////////////////////////
+        //Burbuja de alerta
+         $('[data-rel=tooltip]').tooltip();
+	 $('[data-rel=popover]').popover({html:true});
+        /////////////////////////////////
+        //Burbuja de alerta
 
         //style the message box
         var defaultCopyAction = myTable.button(1).action();

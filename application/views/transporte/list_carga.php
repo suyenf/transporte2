@@ -44,10 +44,7 @@
                         </th>
                         
                         <th><small>#</small></th>
-                        <th>
-                            <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-                            <small>Fecha</small>
-                        </th>
+                        <th><small>Fecha</small></th>
                         <th><small>Origen</small></th>
                         <th class="hidden-480"><small>Destino</small></th>
 
@@ -87,28 +84,28 @@
                             </label>
                         <!--</td>-->
 
-                         <td> <?php echo ++$i; ?></td>
-                         <td> <?php echo $row->fecha; ?></td>
-                         <td> <?php echo $row->origen_flete; ?></td>
-                         <td> <?php echo $row->destino_flete; ?> </td>
-                         <td> <?php echo $row->unidad; ?> </td>
-                         <td> <?php echo $row->monto_viatico; ?> </td>
-                         <td> <?php echo $row->observacion; ?> </td>
-                         <td> <?php echo $row->chofer_id; ?> </td>
-                         <td> <?php echo $row->cliente_id; ?> </td>
-                         <td> <?php echo $row->producto_id; ?> </td>
-                         <td> <?php echo $row->proveedor_id; ?> </td>
-                         <td> <?php echo $row->vehiculo_id; ?> </td>
-                         <td> <?php if($row->activo){ ?>
-                             <span class="badge badge-success"><?php echo $act1; ?></span>
+                         <td><small> <?php echo ++$i; ?></small></td>
+                         <td><small> <?php echo $row->fecha; ?></small></td>
+                         <td><small> <?php echo $row->origen_flete; ?></small></td>
+                         <td><small> <?php echo $row->destino_flete; ?></small></td>
+                         <td><small> <?php echo $row->unidad; ?></small></td>
+                         <td><small> <?php echo $row->monto_viatico; ?></small></td>
+                         <td><small> <?php echo $row->observacion; ?></small></td>
+                         <td><small> <?php echo $row->chofer_id; ?></small></td>
+                         <td><small> <?php echo $row->cliente_id; ?></small></td>
+                         <td><small> <?php echo $row->producto_id; ?></small></td>
+                         <td><small> <?php echo $row->proveedor_id; ?></small></td>
+                         <td><small> <?php echo $row->vehiculo_id; ?></small></td>
+                         <td><small> <?php if($row->activo){ ?></small>
+                             <span class="badge badge-success"><small><?php echo $act1; ?></small></span>
                              <!--<td><?php // $act = "SI"; ?></td>-->
                              <?php }else{ ?>
-                             <span class="badge badge-danger"><?php echo $act2;
-                             } ?></span> </td>
+                             <span class="badge badge-danger"><small><?php echo $act2;
+                             } ?></small></span> </td>
                          
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons"margin= "auto">
-                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_carga/'.$row->id; ?>><i class="ace-icon fa fa-pencil purple bigger-130"></i></a>
+                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_carga/'.$row->id; ?>><i class="ace-icon fa fa-pencil blue bigger-130"></i></a>
                             </div>
 
                             <div class="hidden-md hidden-lg" margin= "auto">
@@ -129,7 +126,7 @@
             <!-- BOTON DE AGREGAR -->
 
             <a style="top:39px; right:135px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
-               tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Agregar Producto"
+               tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Agregar Producto" data-rel="tooltip" 
                href = <?php echo base_url() . 'index.php/transporte/Transporte/crear_producto'; ?>>
                 <span>
                     <i class=" fa fa-cubes bigger-110 red"></i> 
@@ -250,6 +247,13 @@
             ]
         });
         myTable.buttons().container().appendTo($('.tableTools-container'));
+
+        /////////////////////////////////
+        //Burbuja de alerta
+         $('[data-rel=tooltip]').tooltip();
+	 $('[data-rel=popover]').popover({html:true});
+        /////////////////////////////////
+        //Burbuja de alerta
 
         //style the message box
         var defaultCopyAction = myTable.button(1).action();

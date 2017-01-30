@@ -21,28 +21,7 @@
                 </div>
                 <div class="col-xs-6">
                 </div>
-<!--                <div class="col-xs-3">
-                    <div class="btn-group">
-                        <a href = <?php echo base_url().'index.php/transporte/Transporte/crear_producto'; ?>>
-                            <button type="button" class="btn btn-white btn-sm btn-primary" title="Agregar un producto">
-                            <i class="ace-icon fa fa-cubes red bigger-120 "></i>
-                        </button>
-                        </a>    
-                        
-                        <button type="button" class="btn btn-white btn-sm btn-primary" title="Exportar Excel" > 
-                         <i class="ace-icon fa fa-file-excel-o green bigger-120 "></i>
-                        </button>
-                    
-                    </div>
-                    
-                    
-                    
-            <a href = <?php echo base_url().'index.php/transporte/Transporte/crear_producto'; ?>>
-               <button class="btn btn-block btn-danger" >
-                    <i class=" fa fa-cubes">Agregar producto</i>
-                </button>
-                </a>
-                </div>-->
+
             </div>
             </div>
         <br>
@@ -72,7 +51,8 @@
                             <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
                             Creado
                         </th>
-                        <th class="hidden-480">Activo</th>
+                        <th class="hidden-480">Observación</th>
+                        <th class="hidden-480">Estado</th>
                         <th colspan=""> Opciones</th>
                     </tr>
                 </thead>
@@ -84,13 +64,12 @@
 				<?php 
 					$i = 0;
 					foreach ($choferes as $row){ 
-
-					//Campo activo
-					if($row->activo)
-						$act = "SI";
-					else
-						$act = "NO";
-				?>
+                                            
+                                            $act1 = "activo";
+                                            $act2 = "inactivo";
+//                                            $T == ("$act1,$act2");
+                                  ?>
+					<!--//Campo activo-->
                         
                         
                         <td class="center">
@@ -104,14 +83,15 @@
                          <td> <?php echo $row->nombre; ?></td>
                          <td> <?php echo $row->cedula; ?></td>
                          <td> <?php echo $row->creado; ?> </td>
-                         <td> <?php echo $act; ?> </td>
+                         <td> <?php echo $row->observacion; ?> </td>
+                         <td><small> <?php if($row->activo){ ?></small>
+                             <span class="badge badge-success"><small><?php echo $act1; ?></small></span>
+                             <?php }else{ ?>
+                             <span class="badge badge-danger"><small><?php echo $act2;
+                             } ?></small></span> </td>
 
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons"margin= "auto">
-                                <a class="blue" href="#">
-                                    <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                </a>
-
                                 <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_chofer/'.$row->id; ?>><i class="ace-icon fa fa-pencil bigger-130"></i></a>
                                     
                                 </a>
@@ -125,13 +105,6 @@
                                     </button>
 
                                     <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                        <li>
-                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="Ver">
-                                                <span class="blue">
-                                                    <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                </span>
-                                            </a>
-                                        </li>
 
                                         <li>
                                             <a href="#" class="tooltip-success" data-rel="tooltip" title="Editar">
@@ -152,6 +125,16 @@
                 </tbody>
             </table>
         </div>
+            <!-- BOTON DE AGREGAR -->
+
+            <a style="top:39px; right:125px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
+               tabindex="0" aria-controls="dynamic-table" 
+               title="Agregar Chofer" data-rel="tooltip"  href = <?php echo base_url() . 'index.php/transporte/Transporte/crear_chofer'; ?>>
+                <span>
+                    <i class=" fa fa-car bigger-110 purple "></i> 
+                </span>
+            </a>
+            <!-- BOTON DE AGREGAR -->
         </div>
 </div>
 </div>
@@ -206,7 +189,7 @@
                     bAutoWidth: false,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null,
+                        null, null, null, null, null, null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],
@@ -256,7 +239,12 @@
             ]
         });
         myTable.buttons().container().appendTo($('.tableTools-container'));
-
+         /////////////////////////////////
+        //Burbuja de alerta
+         $('[data-rel=tooltip]').tooltip();
+	 $('[data-rel=popover]').popover({html:true});
+        /////////////////////////////////
+        //Burbuja de alerta
         //style the message box
         var defaultCopyAction = myTable.button(1).action();
         myTable.button(1).action(function (e, dt, button, config) {

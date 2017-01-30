@@ -12,7 +12,7 @@
      <!-- Put favicon.ico and apple-touch-icologo.jpgn(s).png in the images folder -->
         <link href="<?= base_url('assets/images/favicon.ico')?>" rel="shortcut icon" >
         
-        <title><?php if(isset($titulo)){echo $titulo;}else{echo "VendeCar";}  ?><?php if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>
+        <title><?php if(isset($titulo)){echo $titulo;}  ?><?php if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>
 <!--        <title><?php // echo $titulo  ?><?php // if (isset($subtitulo)) { echo " - {$subtitulo}"; }  ?></title>-->
 
         <!-- Bootstrap Core CSS -->
