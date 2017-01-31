@@ -240,4 +240,37 @@ class Transporte extends CI_Controller {
             redirect('transporte/Transporte/recepciones','refresh');
         }
     }
+    public function modificar_vehiculo($vehiculo = NULL) {
+        
+        
+        $this->load->model('transporte/almacenmodel');
+     
+        if ($this->input->post('submit')) {
+            $this->almacenmodel->actualizar_vehiculo();
+        }
+
+        $verificar = $this->almacenmodel->get_vehiculo($vehiculo);
+        if ($this->form_validation->run() === TRUE) {
+            $data = array(
+                'titulo' => 'Editar Vehiculo',
+                'error' => 'Vehiculo no Existe',
+            );
+        } else {
+            $data = array(
+                'titulo' => 'Editar Vehiculo',
+                'placa' => $verificar['placa'],
+                'placa_chuto' => $verificar['placa_chuto'],
+                'placa_tanque' => $verificar['placa_tanque'],
+                'marca' => $verificar['marca'],
+                'modelo' => $verificar['modelo'],
+                'anio' => $verificar['anio'],
+                'creado' => $verificar['creado'],
+                'observacion' => $verificar['observacion'],
+                'activo' => $verificar['activo']
+            );
+        }
+        $data['almacenes_vehiculo'] = $vehiculo;
+        $this->load->view('transporte/mod_vehiculo', $data);
+    }
+
 }

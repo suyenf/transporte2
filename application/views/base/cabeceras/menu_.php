@@ -206,7 +206,7 @@
 
                                 <li class="">
                                      <a href="<?= base_url('index.php/transporte/Transporte/crear_vehiculo')?>">
-                                        <i class="menu-icon fa fa-car purple "></i>
+                                        <i class="menu-icon fa fa-bus purple "></i>
                                         Vehiculo
                                     </a>
 

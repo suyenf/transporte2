@@ -128,11 +128,11 @@
         </div>
              <!-- BOTON DE AGREGAR -->
 
-            <a style="top:39px; right:133px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
+            <a style="top:39px; right:125px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
                tabindex="0" aria-controls="dynamic-table" 
                title="Agregar Vehiculo" data-rel="tooltip"  href = <?php echo base_url() . 'index.php/transporte/Transporte/crear_vehiculo'; ?>>
                 <span>
-                    <i class=" bigger-110 fa fa-car purple "></i> 
+                    <i class=" bigger-110 fa fa-bus purple "></i> 
                 </span>
             </a>
             <!-- BOTON DE AGREGAR -->   
