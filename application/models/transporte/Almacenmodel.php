@@ -322,7 +322,7 @@ class Almacenmodel extends CI_Model {
         
         if($query->num_rows() > 0)
 			foreach($query->result() as $row)
-				if($id != NULL)
+				if($id != NULL and $campo != NULL)
 					$valor = htmlspecialchars($row->$campo, ENT_QUOTES);
 				else
 					$valor[] = $row;
@@ -330,37 +330,23 @@ class Almacenmodel extends CI_Model {
         $query->free_result();
         return $valor;
     }
-
     
-     public function get_vehiculo($vehiculo) { /* Funcion que se utiliza para llamar la id y mostrarla */
+    public function mod_pro($data) {
 
-//         $query = $this->db->get_where('mytable', array('id' => $id), $limit, $offset);
-         
-        $consulta = $this->db->get_where('almacenes_vehiculo', array('id' => $vehiculo));
-        if ($consulta->num_rows() > 0) {//si es mayor a 0 or lo tanto existe
-            return $consulta->row_array();
-        } else {
-            return false;
-        }
+        if (($data['activo']) == "")
+            $act = 0;
+        else
+            $act = 1;
+
+		$this->db->where('id', $data['id']);
+        $this->db->update('almacenes_producto', array(
+            'nombre' => $data['nombre_producto'],
+            'codigo' => $data['codigo_producto'],
+            'observacion' => $data['observacion'],
+            'activo' => $act,
+
+        ));
     }
 
-    public function actualizar_vehiculo() { /* Función que se utiliza para la opción de modificar el contenido */
-        $this->db //->set($key, $value)
-                ->where('id', $this->input->post('id'))
-                ->update($this->almacenes_vehiculo, array(
-//                    'id' => $this->input->post('id'),
-                    'placa' => $this->input->post('placa'),
-                    'placa_chuto' => $this->input->post('placa_chuto'),
-                    'placa_tanque' => $this->input->post('placa_tanque'),
-                    'marca' => $this->input->post('marca'),
-                    'modelo' => $this->input->post('modelo'),
-                    'anio' => $this->input->post('anio'),
-                    'creado' => $this->input->post('creado'),
-                    'observacion' => $this->input->post('observacion'),
-                    'activo' => $this->input->post('activo')
-                    
-        ));        
-    }
-
-    }
+}
     

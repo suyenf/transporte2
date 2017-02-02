@@ -272,5 +272,34 @@ class Transporte extends CI_Controller {
         $data['almacenes_vehiculo'] = $vehiculo;
         $this->load->view('transporte/mod_vehiculo', $data);
     }
+    
+    public function modificar_producto(){
+		
+		//Obtengo el id del producto a editar del segmento
+		$id = $this->uri->segment(4);
+		$this->form_validation->set_rules('nombre_producto', 'Nombre de producto', 'required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('codigo_producto', 'Codigo de producto', 'required|min_length[5]|max_length[10]');
+        
+        $data = array(
+			'id' => $id,
+            'nombre_producto' => $this->input->post('nombre_producto'),
+            // Este campo se debe validar sea unico en la tabla
+            'codigo_producto' => $this->input->post('codigo_producto'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+            
+        if ($this->form_validation->run() == FALSE){
+            $data['productos'] = $this->almacenmodel->obtener($id, 'almacenes_producto', NULL);
+			$this->load->view('transporte/mod_producto',$data);
+        }else{
+            $this->almacenmodel->mod_pro($data);
+            redirect('transporte/Transporte/productos','refresh');
+        }
+		
+		
+		
+		
+	}
 
 }

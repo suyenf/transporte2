@@ -169,7 +169,7 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_cliente')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/clientes')?>">
                                         <i class="menu-icon fa fa-user orange"></i>
                                         Clientes
                                     </a>
@@ -178,7 +178,7 @@
                                 </li>
 
                                 <li class="">
-                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_proveedor')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/proveedores')?>">
                                         <i class="menu-icon fa fa-users green"></i>
                                         Proveedores
                                     </a>
@@ -187,7 +187,7 @@
                                 </li>
 
                                 <li class="">
-                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_producto')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/productos')?>">
                                         <i class="menu-icon fa fa-cubes red"></i>
                                         Productos
                                     </a>
@@ -196,18 +196,18 @@
                                 </li>
 
                                 <li class="">
-                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_chofer')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/choferes')?>">
                                         <i class="menu-icon fa fa-user-plus blue"></i>
-                                        Chofer
+                                        Choferes
                                     </a>
 
                                     <b class="arrow"></b>
                                 </li>
 
                                 <li class="">
-                                     <a href="<?= base_url('index.php/transporte/Transporte/crear_vehiculo')?>">
+                                     <a href="<?= base_url('index.php/transporte/Transporte/vehiculos')?>">
                                         <i class="menu-icon fa fa-bus purple "></i>
-                                        Vehiculo
+                                        Vehiculos
                                     </a>
 
                                     <b class="arrow"></b>
@@ -219,7 +219,7 @@
                             <a href="#" class="dropdown-toggle">
                                 <i class="menu-icon fa fa-caret-right"></i>
 
-                                Entrada de Carga
+                                Carga de Mercancia
                                 <b class="arrow fa fa-angle-down"></b>
                             </a>
 
@@ -227,19 +227,19 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga') ?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/cargas') ?>">
                                         <i class="menu-icon fa fa-desktop pink"></i>
-                                        Registro de Carga
+                                        Carga de Mercancia
                                     </a>
 
                                     <b class="arrow"></b>
                                 </li>
 
                                 <li class="">                                     
-                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_entrada') ?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/entradas') ?>">
                                         <i class="menu-icon fa fa-pencil orange"></i>
 
-                                        Recibo/Entrada
+                                        Entrada de Mercancia
                                         <!--<b class="arrow fa fa-angle-down"></b>-->
                                     </a>
 
