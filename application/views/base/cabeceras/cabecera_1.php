@@ -45,6 +45,7 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+    
     </head>
     <body>
         <script src="<?= base_url('assets/js/jquery-1.11.3.min.js')?>"></script>
@@ -58,9 +59,9 @@
         <script type="text/javascript">
                 if('ontouchstart' in document.documentElement) document.write("<script src='<?= base_url ('assets/js/jquery.mobile.custom.min.js')?>>"+"<"+"/script>");
         </script>
-       
-
-        <!-- page specific plugin scripts -->
+          <!-- page specific plugin scripts -->
+ 
+          
 
         <!--[if lte IE 8]>
           <script src="assets/js/excanvas.min.js"></script>
@@ -342,8 +343,7 @@
     return (sa);
 }
     
-    
-    </script>
+ </script>
       
 <!-- ALERTAS -->
 
@@ -369,8 +369,4 @@
 <script src="assets/js/ace.min.js"></script>
 
 <!-- inline scripts related to this page -->
-     
-   
-
-
     </body>
