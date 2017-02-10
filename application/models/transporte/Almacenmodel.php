@@ -344,7 +344,75 @@ class Almacenmodel extends CI_Model {
             'codigo' => $data['codigo_producto'],
             'observacion' => $data['observacion'],
             'activo' => $act,
+        ));
+    }
 
+    public function mod_cli($data) {
+
+        if (($data['activo']) == "")
+            $act = 0;
+        else
+            $act = 1;
+
+        $this->db->where('id', $data['id']);
+        $this->db->update('almacenes_cliente', array(
+            'rif' => $data['rif_cliente'],
+            'razon_social' => $data['razon_social'],
+            'observacion' => $data['observacion'],
+            'activo' => $act,
+        ));
+    }
+
+    public function mod_prov($data) {
+
+        if (($data['activo']) == "")
+            $act = 0;
+        else
+            $act = 1;
+
+        $this->db->where('id', $data['id']);
+        $this->db->update('almacenes_proveedor', array(
+            'rif' => $data['rif_proveedor'],
+            'razon_social' => $data['razon_social'],
+            'observacion' => $data['observacion'],
+            'activo' => $act,
+        ));
+    }
+
+    public function mod_cho($data) {
+
+        if (($data['activo']) == "")
+            $act = 0;
+        else
+            $act = 1;
+
+        $this->db->where('id', $data['id']);
+        $this->db->update('almacenes_chofer', array(
+            'cedula' => $data['cedula'],
+            'nombre' => $data['nombre'],
+            'observacion' => $data['observacion'],
+            'activo' => $act,
+        ));
+    }
+
+    public function mod_veh($data) {
+
+        if (($data['activo']) == "")
+            $act = 0;
+        else
+            $act = 1;
+
+        $this->db->where('id', $data['id']);
+        $this->db->update('almacenes_vehiculo', array(
+
+            'placa' => $data['placa'],
+            'placa_chuto' => $data['placa_chuto'],
+            'placa_tanque' => $data['placa_tanque'],
+            'modelo' => $data['modelo'],
+            'marca' => $data['marca'],
+            'anio' => $data['anio'],
+            'observacion' => $data['observacion'],
+            'activo' => $act,
         ));
     }
 

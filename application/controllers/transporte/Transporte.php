@@ -109,27 +109,6 @@ class Transporte extends CI_Controller {
         }
     }
     
-    public function crear_chofer(){
-
-        $this->form_validation->set_rules('cedula', 'Cedula', 'required|max_length[8]');
-        $this->form_validation->set_rules('nombre', 'Nombre Chofer', 'required|max_length[100]');
-
-        $data = array(
-            // Validar cedula sea unico en la bd
-            'cedula' => $this->input->post('cedula'),
-            'nombre' => $this->input->post('nombre'),
-            'observacion' => $this->input->post('observacion'),
-            'activo' => $this->input->post('activo')
-        );
-        
-        if ($this->form_validation->run() == FALSE)
-            $this->load->view('transporte/reg_chofer');
-        else{
-            $this->almacenmodel->registro_chofer($data);
-            redirect('transporte/Transporte/choferes','refresh');
-        }
-    }
-
     public function crear_proveedor(){
         
         $this->form_validation->set_rules('rif_proveedor', 'Rif Proveedor', 'required|min_length[5]|max_length[20]');
@@ -154,8 +133,12 @@ class Transporte extends CI_Controller {
     public function crear_vehiculo(){
         
         //Ojo no se cuales son las especificaciones para una placa asi que las saltare por ahora
-        $this->form_validation->set_rules('rif_proveedor', 'Rif Proveedor', 'required|min_length[5]|max_length[20]');
-        $this->form_validation->set_rules('razon_social', 'Razon Social', 'required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('placa_tanque', 'placa tanque', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('placa_chuto', 'placa chuto', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('placa', 'placa', 'required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('anio', 'anio', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('marca', 'marca', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('modelo', 'modelo', 'required|min_length[5]|max_length[20]');
 
         $data = array(
             //Imagino que la placa si debe ser unica
@@ -240,38 +223,6 @@ class Transporte extends CI_Controller {
             redirect('transporte/Transporte/recepciones','refresh');
         }
     }
-    public function modificar_vehiculo($vehiculo = NULL) {
-        
-        
-        $this->load->model('transporte/almacenmodel');
-     
-        if ($this->input->post('submit')) {
-            $this->almacenmodel->actualizar_vehiculo();
-        }
-
-        $verificar = $this->almacenmodel->get_vehiculo($vehiculo);
-        if ($this->form_validation->run() === TRUE) {
-            $data = array(
-                'titulo' => 'Editar Vehiculo',
-                'error' => 'Vehiculo no Existe',
-            );
-        } else {
-            $data = array(
-                'titulo' => 'Editar Vehiculo',
-                'placa' => $verificar['placa'],
-                'placa_chuto' => $verificar['placa_chuto'],
-                'placa_tanque' => $verificar['placa_tanque'],
-                'marca' => $verificar['marca'],
-                'modelo' => $verificar['modelo'],
-                'anio' => $verificar['anio'],
-                'creado' => $verificar['creado'],
-                'observacion' => $verificar['observacion'],
-                'activo' => $verificar['activo']
-            );
-        }
-        $data['almacenes_vehiculo'] = $vehiculo;
-        $this->load->view('transporte/mod_vehiculo', $data);
-    }
     
     public function modificar_producto(){
 		
@@ -296,10 +247,110 @@ class Transporte extends CI_Controller {
             $this->almacenmodel->mod_pro($data);
             redirect('transporte/Transporte/productos','refresh');
         }
-		
-		
-		
-		
 	}
+
+    public function modificar_cliente(){
+        
+        $id = $this->uri->segment(4);
+        $this->form_validation->set_rules('rif_cliente', 'Rif Cliente', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('razon_social', 'Razon Social', 'required|min_length[5]|max_length[100]');
+
+        $data = array(
+            'id' => $id,
+            //Validar campo unico
+            'rif_cliente' => $this->input->post('rif_cliente'),
+            'razon_social' => $this->input->post('razon_social'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        if ($this->form_validation->run() == FALSE){
+            $data['clientes'] = $this->almacenmodel->obtener($id, 'almacenes_cliente', NULL);
+            $this->load->view('transporte/mod_cliente', $data);
+        }else{
+            $this->almacenmodel->mod_cli($data);
+            redirect('transporte/Transporte/clientes','refresh');
+        }
+    }
+
+    public function modificar_chofer(){
+
+        $id = $this->uri->segment(4);
+        $this->form_validation->set_rules('cedula', 'Cedula', 'required|max_length[8]');
+        $this->form_validation->set_rules('nombre', 'Nombre Chofer', 'required|max_length[100]');
+
+        $data = array(
+            'id' => $id,
+            // Validar cedula sea unico en la bd
+            'cedula' => $this->input->post('cedula'),
+            'nombre' => $this->input->post('nombre'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        
+        if ($this->form_validation->run() == FALSE){
+            $data['choferes'] = $this->almacenmodel->obtener($id, 'almacenes_chofer', NULL);
+            $this->load->view('transporte/mod_chofer', $data);
+        }else{
+            $this->almacenmodel->mod_cho($data);
+            redirect('transporte/Transporte/choferes','refresh');
+        }
+    }
+
+    public function modificar_proveedor(){
+        
+        $id = $this->uri->segment(4);
+        $this->form_validation->set_rules('rif_proveedor', 'Rif Proveedor', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('razon_social', 'Razon Social', 'required|min_length[5]|max_length[100]');
+        
+        $data = array(
+            'id' => $id,
+            // Campo unico en la bd
+            'rif_proveedor' => $this->input->post('rif_proveedor'),
+            'razon_social' => $this->input->post('razon_social'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        
+        if ($this->form_validation->run() == FALSE){
+            $data['proveedores'] = $this->almacenmodel->obtener($id, 'almacenes_proveedor', NULL);
+            $this->load->view('transporte/mod_proveedor', $data);
+        }else{
+            $this->almacenmodel->mod_prov($data);
+            redirect('transporte/Transporte/proveedores','refresh');
+        }
+    }
+
+    public function modificar_vehiculo(){
+        
+        $id = $this->uri->segment(4);
+        //Ojo no se cuales son las especificaciones para una placa asi que las saltare por ahora
+        $this->form_validation->set_rules('placa_tanque', 'placa tanque', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('placa_chuto', 'placa chuto', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('placa', 'placa', 'required|min_length[5]|max_length[100]');
+        $this->form_validation->set_rules('anio', 'año', 'required|min_length[4]|max_length[20]');
+        $this->form_validation->set_rules('marca', 'marca', 'required|min_length[5]|max_length[20]');
+        $this->form_validation->set_rules('modelo', 'modelo', 'required|min_length[5]|max_length[20]');
+
+        $data = array(
+            'id' => $id,
+            //Imagino que la placa si debe ser unica
+            'placa' => $this->input->post('placa'),
+            'placa_chuto' => $this->input->post('placa_chuto'),
+            'placa_tanque' => $this->input->post('placa_tanque'),
+            'modelo' => $this->input->post('modelo'),
+            'marca' => $this->input->post('marca'),
+            'anio' => $this->input->post('anio'),
+            'observacion' => $this->input->post('observacion'),
+            'activo' => $this->input->post('activo')
+        );
+        
+        if ($this->form_validation->run() == FALSE){
+            $data['vehiculos'] = $this->almacenmodel->obtener($id, 'almacenes_vehiculo', NULL);
+            $this->load->view('transporte/mod_vehiculo', $data);
+        }else{
+            $this->almacenmodel->mod_veh($data);
+            redirect('transporte/Transporte/vehiculos','refresh');
+        }
+    }
 
 }

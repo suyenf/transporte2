@@ -88,7 +88,7 @@
                         <td>
                             <div class="hidden-sm hidden-xs action-buttons"margin= "auto">
 
-                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_producto/'.$row->id; ?>><i class="ace-icon fa fa-pencil bigger-130"></i></a>
+                                <a href = <?php echo base_url().'index.php/transporte/Transporte/modificar_cliente/'.$row->id; ?>><i class="ace-icon fa fa-pencil bigger-130"></i></a>
                                     
                                 </a>
 
