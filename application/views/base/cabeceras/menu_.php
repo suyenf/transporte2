@@ -27,9 +27,7 @@
                     <li class="light-blue dropdown-modal">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                             <!--<img class="nav-user-photo" src="<?= base_url('assets/images/avatars/user.jpg')?>" alt="Jason's Photo" />-->
-                            <p class="user-info" style="color: #F4F9FD">
-                                Admin
-                            </p>
+                            <p class="user-info" style="color: #F4F9FD"><?= $usuario; ?></p>
 
                             <i class="ace-icon fa fa-caret-down" style="color: #F4F9FD"></i>
                         </a>
@@ -398,7 +396,6 @@
     <script src="<?= base_url('assets/js/jquery.ui.touch-punch.min.js')?>"></script>
 
     <!-- ace scripts -->
-    <script src="<?= base_url('assets/js/ace-elements.min.js')?>"></script>
     <script src="<?= base_url('assets/js/ace.min.js')?>"></script>
 
     <!-- inline scripts related to this page -->

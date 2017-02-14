@@ -415,21 +415,5 @@ class Almacenmodel extends CI_Model {
             'activo' => $act,
         ));
     }
-/*
-    function verificaUsuario($usuario, $contrasena){
-
-    $this->db->select('id, usuario');
-    $this->db->where('user', $usuario);
-    $this->db->where('password', $contrasena);
-    $this->db->limit(1);
-    $query = $this->db->get('auth_user');
-
-    // si el resultado de la query es positivo
-    if ($query->num_rows() > 0)
-        return TRUE;
-    else
-        return FALSE;
-  }
-*/
 }
     

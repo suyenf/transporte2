@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/transporte2/';
+$config['base_url'] = 'http://b3f70880.ngrok.io/transporte2/';
 
 /*
 |--------------------------------------------------------------------------

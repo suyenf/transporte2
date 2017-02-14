@@ -350,23 +350,23 @@
 <script type="text/javascript">
                         if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
 
 <!-- page specific plugin scripts -->
 
 <!--[if lte IE 8]>
   <script src="assets/js/excanvas.min.js"></script>
 <![endif]-->
-<script src="assets/js/jquery-ui.custom.min.js"></script>
-<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-<script src="assets/js/bootbox.js"></script>
-<script src="assets/js/jquery.easypiechart.min.js"></script>
-<script src="assets/js/jquery.gritter.min.js"></script>
-<script src="assets/js/spin.js"></script>
+<script src="<?= base_url('assets/js/jquery-ui.custom.min.js'); ?>"></script>
+<script src="<?= base_url('assets/js/jquery.ui.touch-punch.min.js'); ?>"></script>
+<script src="<?= base_url('assets/js/bootbox.js'); ?>"></script>
+<script src="<?= base_url('assets/js/jquery.easypiechart.min.js'); ?>"></script>
+<script src="<?= base_url('assets/js/jquery.gritter.min.js'); ?>"></script>
+<script src="<?= base_url('assets/js/spin.js'); ?>"></script>
 
 <!-- ace scripts -->
-<script src="assets/js/ace-elements.min.js"></script>
-<script src="assets/js/ace.min.js"></script>
+<script src="<?= base_url('assets/js/ace-elements.min.js'); ?>"></script>
+<script src="<?= base_url('assets/js/ace.min.js'); ?>"></script>
 
 <!-- inline scripts related to this page -->
      

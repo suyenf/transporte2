@@ -17,17 +17,25 @@ class Transporte extends CI_Controller {
         parent::__construct();
         
         $this->load->view('base/cabeceras/cabecera_1');
-        $this->load->view('base/cabeceras/menu_');
-        $this->load->view('base/piespagina/piepagina_1');
+
+        //Datos de usuario logueado al sistema
+        $this->load->library('session');
+        $data['usuario'] = $this->session->userdata('usuario_id');
+        $this->load->view('base/cabeceras/menu_', $data);
+
+        $this->load->view('base/piespagina/piepagina_1'); 
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->model('transporte/almacenmodel');
         $this->load->library('form_validation');
-        $this->config->set_item('language','spanish'); 
+        $this->config->set_item('language','spanish');
     }
    
     public function index() {
-      $this->load->view('base/home');      
+        if($this->session->userdata('login'))
+           $this->load->view('base/home');    
+        else
+            redirect('Welcome/login', 'refresh');
     }
 
     public function crear_carga(){
@@ -161,9 +169,11 @@ class Transporte extends CI_Controller {
     }
 
     public function productos(){
-        
-        $data['productos'] = $this->almacenmodel->obtener(NULL, 'almacenes_producto', NULL);
-        $this->load->view('transporte/list_productos',$data);
+        //if (!$this->session->userdata('usuario_id')){
+            $data['productos'] = $this->almacenmodel->obtener(NULL, 'almacenes_producto', NULL);
+            $this->load->view('transporte/list_productos',$data);
+        //}else
+            //$this->load->view('login');
     }
 
     public function clientes(){
