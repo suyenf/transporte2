@@ -125,7 +125,7 @@
         </div>
             <!-- BOTON DE AGREGAR -->
 
-            <a style="top:39px; right:135px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
+            <a style="top:39px; right:97px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
                tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Agregar Producto" data-rel="tooltip" 
                href = <?php echo base_url() . 'index.php/transporte/Transporte/crear_producto'; ?>>
                 <span>
@@ -224,11 +224,11 @@
         new $.fn.dataTable.Buttons(myTable, {
             buttons: [
 //               
-               {
-                    "extend": "excel",
-                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
-                    "className": "btn btn-white btn-primary btn-bold"
-                 },
+//               {
+//                    "extend": "excel",
+//                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
+//                    "className": "btn btn-white btn-primary btn-bold"
+//                 },
 //        
 //               
 //                      {
