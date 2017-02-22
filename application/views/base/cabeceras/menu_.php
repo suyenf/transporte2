@@ -227,16 +227,15 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="<?= base_url('index.php/transporte/Transporte/cargas') ?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga') ?>">
                                         <i class="menu-icon fa fa-desktop pink"></i>
-                                        Carga de Mercancia
+                                        Orden de Carga
                                     </a>
 
                                     <b class="arrow"></b>
                                 </li>
-
                                 <li class="">                                     
-                                    <a href="<?= base_url('index.php/transporte/Transporte/entradas') ?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_entrada') ?>">
                                         <i class="menu-icon fa fa-pencil orange"></i>
 
                                         Entrada de Mercancia
@@ -246,6 +245,7 @@
                                     <b class="arrow"></b>
                      
                                 </li>
+                                
                             </ul>
                         </li>
                     </ul>
