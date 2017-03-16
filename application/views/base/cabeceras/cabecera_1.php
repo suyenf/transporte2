@@ -32,7 +32,7 @@
 
 
         <!-- skins -->
-        <link href="<?= base_url('assets/css/ace-skins.min.css') ?>" rel="stylesheet">
+        <link href="<?= base_url('assets/css/ace-skins.css') ?>" rel="stylesheet">
         <link href="<?= base_url('assets/css/ace-rtl.min.css') ?>" rel="stylesheet">
         <link href="<?= base_url('assets/css/ace-part2.css') ?>" rel="stylesheet">
 
