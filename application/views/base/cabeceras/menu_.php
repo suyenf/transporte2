@@ -1,4 +1,4 @@
-<body  class="skin-1">
+<body  class="skin-2">
     <div id="navbar" class="navbar navbar-default          ace-save-state">
         <div class="navbar-container ace-save-state" id="navbar-container">
             <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
@@ -225,16 +225,15 @@
 
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="<?= base_url('index.php/transporte/Transporte/cargas') ?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_carga') ?>">
                                         <i class="menu-icon fa fa-desktop pink"></i>
-                                        Carga de Mercancia
+                                        Orden de Carga
                                     </a>
 
                                     <b class="arrow"></b>
                                 </li>
-
                                 <li class="">                                     
-                                    <a href="<?= base_url('index.php/transporte/Transporte/entradas') ?>">
+                                    <a href="<?= base_url('index.php/transporte/Transporte/crear_entrada') ?>">
                                         <i class="menu-icon fa fa-pencil orange"></i>
 
                                         Entrada de Mercancia
@@ -244,6 +243,7 @@
                                     <b class="arrow"></b>
                      
                                 </li>
+                                
                             </ul>
                         </li>
                     </ul>
@@ -325,7 +325,7 @@
          </div>
 
         <div class="main-content">
-            <div class="main-content-inner">
+<!--            <div class="main-content-inner">
                 <div class="page-content"></div>
                 
                     <div class="ace-settings-container" id="ace-settings-container">
@@ -348,7 +348,7 @@
                                 </div>
 
 
-                            </div><!-- /.pull-left -->
+                            </div> /.pull-left 
 
                             <div class="pull-left width-50">
                                 <div class="ace-settings-item">
@@ -365,11 +365,11 @@
                                     <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
                                     <label class="lbl" for="ace-settings-highlight"> Alt. Elemento activo</label>
                                 </div>
-                            </div><!-- /.pull-left -->
-                        </div><!-- /.ace-settings-box -->
+                            </div> /.pull-left 
+                        </div> /.ace-settings-box 
                     </div>
-                <!-- /.ace-settings-container -->
-                </div>
+                 /.ace-settings-container 
+                </div>-->
         <!--</div>-->
                     
                       

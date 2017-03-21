@@ -125,13 +125,15 @@
         </div>
             <!-- BOTON DE AGREGAR -->
 
-            <a style="top:39px; right:135px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
+            <a style="top:39px; right:97px ;"class="btn btn-group dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" 
                tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Agregar Producto" data-rel="tooltip" 
                href = <?php echo base_url() . 'index.php/transporte/Transporte/crear_producto'; ?>>
                 <span>
                     <i class=" fa fa-cubes bigger-110 red"></i> 
                     <span class="hidden">Agregar Producto</span></span>
             </a>
+           
+            
             <!-- BOTON DE AGREGAR -->
         </div>
         
@@ -167,9 +169,9 @@
 <script src="<?= base_url('assets/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?= base_url('assets/js/jquery.dataTables.bootstrap.min.js')?>"></script>
 <script src="<?= base_url('assets/js/dataTables.buttons.min.js')?>"></script>
-<script src="<?= base_url('assets/js/buttons.flash.min.js')?>"></script>
+<script src="<?= base_url('assets/js/buttons.flash.js')?>"></script>
 <script src="<?= base_url('assets/js/buttons.html5.min.js')?>"></script>
-<script src="<?= base_url('assets/js/buttons.print.min.js')?>"></script>
+<script src="<?= base_url('assets/js/buttons.print.js')?>"></script>
 <script src="<?= base_url('assets/js/buttons.colVis.min.js')?>"></script>
 <script src="<?= base_url('assets/js/dataTables.select.min.js')?>"></script>
 
@@ -229,15 +231,16 @@
 //                 },
 //        
 //               
-                      {
-                     "extend": "csv",
-                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
-                     "className": "btn btn-white btn-primary btn-bold"
-               },
+//                      {
+//                     "extend": "csv",
+//                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
+//                     "className": "btn btn-white btn-primary btn-bold"
+//               },
                 {
 //                    "extend": "excel",
 //                     "text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Exportar a Excel</span>",
 //                    "className": "btn btn-white btn-primary btn-bold"
+            
                     "extend": "print",
                     "text": "<i class='fa fa-print bigger-110 pink'></i> <span class='hidden'>Imprimir</span>",                    
                     "className": "btn btn-white btn-primary btn-bold",
